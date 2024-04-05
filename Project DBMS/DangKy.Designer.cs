@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -57,6 +59,7 @@
             DiaChiTB = new Guna.UI2.WinForms.Guna2TextBox();
             SDTTB = new Guna.UI2.WinForms.Guna2TextBox();
             GioiTinhTB = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -188,7 +191,7 @@
             // 
             DiaChiTB.AutoRoundedCorners = true;
             DiaChiTB.BorderRadius = 22;
-            DiaChiTB.CustomizableEdges = customizableEdges15;
+            DiaChiTB.CustomizableEdges = customizableEdges17;
             DiaChiTB.DefaultText = "";
             DiaChiTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             DiaChiTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -203,7 +206,7 @@
             DiaChiTB.PasswordChar = '\0';
             DiaChiTB.PlaceholderText = "Địa chỉ";
             DiaChiTB.SelectedText = "";
-            DiaChiTB.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            DiaChiTB.ShadowDecoration.CustomizableEdges = customizableEdges18;
             DiaChiTB.Size = new Size(305, 47);
             DiaChiTB.TabIndex = 6;
             DiaChiTB.TextOffset = new Point(10, 0);
@@ -212,7 +215,7 @@
             // 
             SDTTB.AutoRoundedCorners = true;
             SDTTB.BorderRadius = 22;
-            SDTTB.CustomizableEdges = customizableEdges13;
+            SDTTB.CustomizableEdges = customizableEdges15;
             SDTTB.DefaultText = "";
             SDTTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             SDTTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -227,7 +230,7 @@
             SDTTB.PasswordChar = '\0';
             SDTTB.PlaceholderText = "Số điện thoại";
             SDTTB.SelectedText = "";
-            SDTTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            SDTTB.ShadowDecoration.CustomizableEdges = customizableEdges16;
             SDTTB.Size = new Size(305, 47);
             SDTTB.TabIndex = 7;
             SDTTB.TextOffset = new Point(10, 0);
@@ -236,7 +239,7 @@
             // 
             GioiTinhTB.AutoRoundedCorners = true;
             GioiTinhTB.BorderRadius = 22;
-            GioiTinhTB.CustomizableEdges = customizableEdges11;
+            GioiTinhTB.CustomizableEdges = customizableEdges13;
             GioiTinhTB.DefaultText = "";
             GioiTinhTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             GioiTinhTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -251,10 +254,22 @@
             GioiTinhTB.PasswordChar = '\0';
             GioiTinhTB.PlaceholderText = "Giới tính ";
             GioiTinhTB.SelectedText = "";
-            GioiTinhTB.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            GioiTinhTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
             GioiTinhTB.Size = new Size(305, 47);
             GioiTinhTB.TabIndex = 8;
             GioiTinhTB.TextOffset = new Point(10, 0);
+            // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges11;
+            guna2ControlBox1.FillColor = Color.Transparent;
+            guna2ControlBox1.IconColor = Color.Gray;
+            guna2ControlBox1.Location = new Point(924, 0);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2ControlBox1.Size = new Size(26, 27);
+            guna2ControlBox1.TabIndex = 14;
             // 
             // DangKy
             // 
@@ -262,6 +277,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 246, 227);
             ClientSize = new Size(950, 530);
+            Controls.Add(guna2ControlBox1);
             Controls.Add(CreateBT);
             Controls.Add(GioiTinhTB);
             Controls.Add(SDTTB);
@@ -291,5 +307,6 @@
         private Guna.UI2.WinForms.Guna2TextBox SDTTB;
         private Guna.UI2.WinForms.Guna2TextBox DiaChiTB;
         private Guna.UI2.WinForms.Guna2TextBox GioiTinhTB;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }
