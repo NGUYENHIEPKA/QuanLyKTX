@@ -1,0 +1,23 @@
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\Project DBMS.exe
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\Project DBMS.deps.json
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\Project DBMS.runtimeconfig.json
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\Project DBMS.dll
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\Project DBMS.pdb
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\Guna.UI2.dll
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\System.Management.dll
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project_DBMS.Form1.resources
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project_DBMS.Properties.Resources.resources
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.csproj.GenerateResource.cache
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.AssemblyInfo.cs
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project .66CD2CA8.Up2Date
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.dll
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\refint\Project DBMS.dll
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.pdb
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project DBMS.genruntimeconfig.cache
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\ref\Project DBMS.dll
+C:\Users\ACER\Documents\Project DBMS\Project DBMS\Project DBMS\obj\Debug\net8.0-windows\Project_DBMS.DangKy.resources

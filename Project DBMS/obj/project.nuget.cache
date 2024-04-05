@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "2n/bR5vbbIYbnlMd9vVFRhyJZEOFNNCmeEKfsEttB4mHMoviUTo6quH3g/iQbBvQFASbOX58Qm71hYxlNbujvg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ACER\\Documents\\Project DBMS\\Project DBMS\\Project DBMS\\Project DBMS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ACER\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
