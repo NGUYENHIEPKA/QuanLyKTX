@@ -42,6 +42,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             UserTB = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,6 +60,7 @@
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(components);
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -75,10 +78,10 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Montserrat Black", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(599, 33);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(305, 34);
+            guna2HtmlLabel1.Size = new Size(296, 31);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "ĐĂNG NHẬP TÀI KHOẢN";
             // 
@@ -170,28 +173,28 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Montserrat ExtraBold", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.Location = new Point(630, 233);
             label1.Name = "label1";
-            label1.Size = new Size(103, 17);
+            label1.Size = new Size(112, 15);
             label1.TabIndex = 6;
             label1.Text = "REMEMBER ME";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(558, 381);
             label2.Name = "label2";
-            label2.Size = new Size(175, 21);
+            label2.Size = new Size(176, 18);
             label2.TabIndex = 7;
             label2.Text = "✔User: CMND/CCCD";
             // 
             // label3
             // 
-            label3.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlText;
             label3.Location = new Point(558, 418);
             label3.Name = "label3";
@@ -222,11 +225,11 @@
             // Forget
             // 
             Forget.AutoSize = true;
-            Forget.Font = new Font("Montserrat ExtraBold", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Forget.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Forget.LinkColor = SystemColors.ControlText;
             Forget.Location = new Point(781, 233);
             Forget.Name = "Forget";
-            Forget.Size = new Size(123, 17);
+            Forget.Size = new Size(122, 15);
             Forget.TabIndex = 10;
             Forget.TabStop = true;
             Forget.Text = "Forget Password?";
@@ -234,22 +237,22 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ControlText;
             label4.Location = new Point(562, 339);
             label4.Name = "label4";
-            label4.Size = new Size(378, 21);
+            label4.Size = new Size(366, 18);
             label4.TabIndex = 11;
             label4.Text = "    Hướng dẫn đăng nhập trang tra cứu thông tin:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Montserrat", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ControlText;
             label5.Location = new Point(562, 342);
             label5.Name = "label5";
-            label5.Size = new Size(20, 18);
+            label5.Size = new Size(16, 16);
             label5.TabIndex = 12;
             label5.Text = "⬤";
             // 
@@ -265,12 +268,25 @@
             guna2DragControl2.TargetControl = guna2GradientPanel1;
             guna2DragControl2.UseTransparentDrag = true;
             // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges13;
+            guna2ControlBox1.FillColor = Color.Transparent;
+            guna2ControlBox1.IconColor = Color.Gray;
+            guna2ControlBox1.Location = new Point(924, 0);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2ControlBox1.Size = new Size(26, 27);
+            guna2ControlBox1.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 246, 227);
             ClientSize = new Size(950, 530);
+            Controls.Add(guna2ControlBox1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(Forget);
@@ -310,5 +326,6 @@
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }
