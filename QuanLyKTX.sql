@@ -113,21 +113,3 @@ ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.T
 ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.TienNuoc(MaPhong, NgayLapBieu)
 GO
 
-CREATE PROC UTP_AddStudent
-@MaSV CHAR(8),
-@HoTen NVARCHAR(100),
-@NgaySinh DATE,
-@GioiTinh NVARCHAR(3),
-@DiaChi NVARCHAR(100),
-@SDT CHAR(10),
-@MaPhong NVARCHAR(5),
-@NgayO DATE,
-@HinhAnh VarBinary(max)
-AS
-BEGIN
-	DECLARE @Count int = 0
-	SELECT @Count = COUNT(*) FROM SinhVien WHERE MaSV = @MaPhong
-	IF (@Count = 0)
-	BEGIN
-		DECLARE @Count1 int , @Count2 int
-		SELECT @Count1 = LoaiPhong.SoNguoi, @Count2 = Phong.SoNguoi FROM Phong INNER JOIN LoaiPhong  
