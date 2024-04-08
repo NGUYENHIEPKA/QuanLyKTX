@@ -113,3 +113,12 @@ ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.T
 ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.TienNuoc(MaPhong, NgayLapBieu)
 GO
 
+CREATE TRIGGER UTG_AddSinhVien ON SinhVien AFTER INSERT
+AS 
+BEGIN
+	DECLARE @MaSV CHAR(8), @MaPhong NVARCHAR(5)
+	SELECT @MaSV = MaSV, @MaPhong = MaPhong FROM INSERTED
+	INSERT INTO TaiKhoan VALUES (@MaSV, @MaSV, 0)
+	UPDATE Phong SET SoNguoi = SoNguoi + 1 WHERE @MaPhong = MaPhong
+END
+GO
