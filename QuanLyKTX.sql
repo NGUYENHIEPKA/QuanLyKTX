@@ -113,6 +113,8 @@ ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.T
 ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.TienNuoc(MaPhong, NgayLapBieu)
 GO
 
+
+-- Thêm trigger
 CREATE TRIGGER UTG_AddSinhVien ON SinhVien AFTER INSERT
 AS 
 BEGIN
@@ -120,5 +122,40 @@ BEGIN
 	SELECT @MaSV = MaSV, @MaPhong = MaPhong FROM INSERTED
 	INSERT INTO TaiKhoan VALUES (@MaSV, @MaSV, 0)
 	UPDATE Phong SET SoNguoi = SoNguoi + 1 WHERE @MaPhong = MaPhong
+END
+GO
+
+CREATE TRIGGER UTG_DeleteSinhVien ON SinhVien INSTEAD OF DELETE
+AS
+BEGIN
+	DECLARE @MaSV CHAR(8), @MaPhong NVARCHAR(5)
+	SELECT @MaSV = MaSV, @MaPhong = MaPhong FROM DELETED
+	DELETE FROM DatPhong WHERE MaSV = @MaSV
+	DELETE FROM SinhVien WHERE MaSV = @MaSV
+	DELETE FROM TaiKhoan WHERE TaiKhoan = @MaSV
+	UPDATE Phong SET SoNguoi = SoNguoi - 1 WHERE MaPhong = @MaPhong
+END
+GO
+
+CREATE TRIGGER UTG_SuKienDatPhong ON DatPhong AFTER INSERT
+AS
+BEGIN
+	DECLARE @MaPhong NVARCHAR(5), @SoTien FLOAT, @MaSV CHAR(8)
+	SELECT @MaPhong = MaPhong, @MaSV = MaSV FROM INSERTED
+	SELECT @SoTien = GiaTien FROM Phong INNER JOIN LoaiPhong ON Phong.LoaiPhong = LoaiPhong.MaLoaiPhong
+	WHERE Phong.MaPhong = @MaPhong
+	UPDATE DatPhong SET NgayTraPhong = DATEADD (MONTH, SoKy * 4, GETDATE()), SoTien = @SoTien * SoKy WHERE MaSV= @MaSV
+END
+GO
+
+CREATE TRIGGER UTG_AddBill on HoaDon AFTER INSERT
+AS
+BEGIN 
+	DECLARE @TienDien FLOAT, @TienNuoc FLOAT, @MaPhong NVARCHAR(5), @NgayTaoHoaDon DATE
+	SELECT @MaPhong = MaPhong, @NgayTaoHoaDon = NgayTaoHoaDon FROM INSERTED
+	SELECT @TienDien = TienDien FROM TienDien WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
+	SELECT @TienNuoc = TienNuoc FROM TienNuoc WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
+	DECLARE @TongTien FLOAT = @TienDien + @TienNuoc
+	UPDATE HoaDon SET SoTien = @TongTien WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
 END
 GO
