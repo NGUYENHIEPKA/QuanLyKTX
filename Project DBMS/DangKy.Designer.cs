@@ -171,12 +171,13 @@
             CreateBT.FillColor = Color.FromArgb(122, 162, 227);
             CreateBT.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CreateBT.ForeColor = Color.White;
-            CreateBT.Location = new Point(688, 420);
+            CreateBT.Location = new Point(682, 406);
             CreateBT.Name = "CreateBT";
             CreateBT.ShadowDecoration.CustomizableEdges = customizableEdges10;
             CreateBT.Size = new Size(144, 40);
             CreateBT.TabIndex = 6;
             CreateBT.Text = "Create Account";
+            CreateBT.Click += CreateBT_Click;
             // 
             // guna2DragControl1
             // 
