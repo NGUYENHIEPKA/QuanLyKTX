@@ -177,7 +177,6 @@
             CreateBT.Size = new Size(144, 40);
             CreateBT.TabIndex = 6;
             CreateBT.Text = "Create Account";
-            CreateBT.Click += CreateBT_Click;
             // 
             // guna2DragControl1
             // 

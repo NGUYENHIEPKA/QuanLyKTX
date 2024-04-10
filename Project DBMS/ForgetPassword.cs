@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Project_DBMS
 {
-    public partial class DangKy : Form
+    public partial class ForgetPassword : Form
     {
-        public DangKy()
+        public ForgetPassword()
         {
             InitializeComponent();
         }
 
-        private void DangKy_Load(object sender, EventArgs e)
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
 
         }

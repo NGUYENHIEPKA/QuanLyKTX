@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Project_DBMS
 {
-    public partial class DangKy : Form
+    public partial class Information : Form
     {
-        public DangKy()
+        public Information()
         {
             InitializeComponent();
         }
 
-        private void DangKy_Load(object sender, EventArgs e)
+        private void guna2GradientPanel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

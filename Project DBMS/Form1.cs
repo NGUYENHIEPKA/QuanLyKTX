@@ -21,5 +21,13 @@
             DangKy.ShowDialog();
             this.Close();
         }
+
+        private void Forget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgetPassword FGPW = new ForgetPassword();
+            this.Hide();
+            FGPW.ShowDialog();
+            this.Close();
+        }
     }
 }
