@@ -49,12 +49,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel_Top = new Guna.UI2.WinForms.Guna2Panel();
             label_value = new Label();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,9 +67,9 @@
             LogOutBtn = new Guna.UI2.WinForms.Guna2Button();
             RequestBtn = new Guna.UI2.WinForms.Guna2Button();
             AccommodationBtn = new Guna.UI2.WinForms.Guna2Button();
-            ContactBtn = new Guna.UI2.WinForms.Guna2Button();
             UserInformationBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel_container = new Guna.UI2.WinForms.Guna2Panel();
+            HoaDonBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel_Top.SuspendLayout();
             guna2Panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -176,7 +176,7 @@
             guna2Panel_Right.Controls.Add(LogOutBtn);
             guna2Panel_Right.Controls.Add(RequestBtn);
             guna2Panel_Right.Controls.Add(AccommodationBtn);
-            guna2Panel_Right.Controls.Add(ContactBtn);
+            guna2Panel_Right.Controls.Add(HoaDonBtn);
             guna2Panel_Right.Controls.Add(UserInformationBtn);
             guna2Panel_Right.CustomizableEdges = customizableEdges47;
             guna2Panel_Right.Dock = DockStyle.Left;
@@ -246,7 +246,7 @@
             RequestBtn.Image = (Image)resources.GetObject("RequestBtn.Image");
             RequestBtn.ImageAlign = HorizontalAlignment.Left;
             RequestBtn.ImageOffset = new Point(8, 0);
-            RequestBtn.Location = new Point(0, 249);
+            RequestBtn.Location = new Point(0, 187);
             RequestBtn.Name = "RequestBtn";
             RequestBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
             RequestBtn.Size = new Size(205, 56);
@@ -274,7 +274,7 @@
             AccommodationBtn.Image = (Image)resources.GetObject("AccommodationBtn.Image");
             AccommodationBtn.ImageAlign = HorizontalAlignment.Left;
             AccommodationBtn.ImageOffset = new Point(8, 0);
-            AccommodationBtn.Location = new Point(0, 187);
+            AccommodationBtn.Location = new Point(0, 125);
             AccommodationBtn.Name = "AccommodationBtn";
             AccommodationBtn.ShadowDecoration.CustomizableEdges = customizableEdges42;
             AccommodationBtn.Size = new Size(205, 56);
@@ -282,34 +282,6 @@
             AccommodationBtn.Text = "Thông tin lưu trú";
             AccommodationBtn.TextOffset = new Point(8, 0);
             AccommodationBtn.Click += AccommodationBtn_Click;
-            // 
-            // ContactBtn
-            // 
-            ContactBtn.BackColor = Color.White;
-            ContactBtn.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            ContactBtn.CustomizableEdges = customizableEdges43;
-            ContactBtn.DisabledState.BorderColor = Color.DarkGray;
-            ContactBtn.DisabledState.CustomBorderColor = Color.DarkGray;
-            ContactBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            ContactBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            ContactBtn.FillColor = Color.Transparent;
-            ContactBtn.Font = new Font("Segoe UI", 9F);
-            ContactBtn.ForeColor = Color.Black;
-            ContactBtn.HoverState.BorderColor = Color.Navy;
-            ContactBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
-            ContactBtn.HoverState.ForeColor = Color.White;
-            ContactBtn.HoverState.Image = (Image)resources.GetObject("resource.Image3");
-            ContactBtn.Image = (Image)resources.GetObject("ContactBtn.Image");
-            ContactBtn.ImageAlign = HorizontalAlignment.Left;
-            ContactBtn.ImageOffset = new Point(8, 0);
-            ContactBtn.Location = new Point(0, 125);
-            ContactBtn.Name = "ContactBtn";
-            ContactBtn.ShadowDecoration.CustomizableEdges = customizableEdges44;
-            ContactBtn.Size = new Size(205, 56);
-            ContactBtn.TabIndex = 8;
-            ContactBtn.Text = "Thông tin liên lạc";
-            ContactBtn.TextOffset = new Point(8, 0);
-            ContactBtn.Click += ContactBtn_Click;
             // 
             // UserInformationBtn
             // 
@@ -350,6 +322,34 @@
             guna2Panel_container.TabIndex = 2;
             guna2Panel_container.Paint += guna2Panel1_Paint;
             // 
+            // HoaDonBtn
+            // 
+            HoaDonBtn.BackColor = Color.White;
+            HoaDonBtn.CustomBorderThickness = new Padding(0, 0, 0, 8);
+            HoaDonBtn.CustomizableEdges = customizableEdges43;
+            HoaDonBtn.DisabledState.BorderColor = Color.DarkGray;
+            HoaDonBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            HoaDonBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            HoaDonBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            HoaDonBtn.FillColor = Color.Transparent;
+            HoaDonBtn.Font = new Font("Segoe UI", 9F);
+            HoaDonBtn.ForeColor = Color.Black;
+            HoaDonBtn.HoverState.BorderColor = Color.Navy;
+            HoaDonBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
+            HoaDonBtn.HoverState.ForeColor = Color.White;
+            HoaDonBtn.HoverState.Image = (Image)resources.GetObject("resource.Image3");
+            HoaDonBtn.Image = (Image)resources.GetObject("HoaDonBtn.Image");
+            HoaDonBtn.ImageAlign = HorizontalAlignment.Left;
+            HoaDonBtn.ImageOffset = new Point(8, 0);
+            HoaDonBtn.Location = new Point(0, 249);
+            HoaDonBtn.Name = "HoaDonBtn";
+            HoaDonBtn.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            HoaDonBtn.Size = new Size(205, 56);
+            HoaDonBtn.TabIndex = 8;
+            HoaDonBtn.Text = "Hóa đơn";
+            HoaDonBtn.TextOffset = new Point(8, 0);
+            HoaDonBtn.Click += HoaDonBtn_Click;
+            // 
             // fSinhVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -381,9 +381,9 @@
         private Guna.UI2.WinForms.Guna2Button LogOutBtn;
         private Guna.UI2.WinForms.Guna2Button RequestBtn;
         private Guna.UI2.WinForms.Guna2Button AccommodationBtn;
-        private Guna.UI2.WinForms.Guna2Button ContactBtn;
         private Guna.UI2.WinForms.Guna2Button UserInformationBtn;
         private Label label_value;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel_container;
+        private Guna.UI2.WinForms.Guna2Button HoaDonBtn;
     }
 }

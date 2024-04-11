@@ -24,9 +24,9 @@ namespace Project_DBMS
             Thongtincanhan(new Information());
         }
 
-        private void ContactBtn_Click(object sender, EventArgs e)
+        private void HoaDonBtn_Click(object sender, EventArgs e)
         {
-            label_value.Text = "Thông tin liên lạc";
+            label_value.Text = "Hóa đơn";
         }
 
         private void AccommodationBtn_Click(object sender, EventArgs e)
