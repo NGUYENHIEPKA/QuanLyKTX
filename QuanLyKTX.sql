@@ -19,7 +19,7 @@ CREATE TABLE SinhVien(
 	DiaChi NVARCHAR(100) NOT NULL,
 	SDT CHAR(10) UNIQUE,
 	MaPhong NVARCHAR(5) NOT NULL,
-	NgayO DATE NOT NULL,
+	MaTang NVARCHAR(5) NOT NULL,
 	HinhAnh VarBinary(max)
 )
 GO
@@ -27,21 +27,19 @@ GO
 CREATE TABLE QuanLy(
 	MaQL NVARCHAR(8) PRIMARY KEY,
 	HoTen NVARCHAR(100) NOT NULL,
-	MaKhuQL NVARCHAR(5) NOT NULL,
+	MaTangQL NVARCHAR(5) NOT NULL,
 )
 GO
 
-CREATE TABLE KhuVuc(
-	MaKhu NVARCHAR(5) PRIMARY KEY,
+CREATE TABLE Tang(
+	MaTang NVARCHAR(5) PRIMARY KEY,
 	MaNguoiQL NVARCHAR(8) NOT NULL,
-	DiaChi NVARCHAR(100) NOT NULL,
-	TenKhu NVARCHAR(100) NOT NULL,
 )
 GO
 
 CREATE TABLE Phong(
 	MaPhong NVARCHAR(5) PRIMARY KEY,
-	MaKhu NVARCHAR(5) NOT NULL,
+	MaTang NVARCHAR(5) NOT NULL,
 	MaLoaiPhong NVARCHAR(5) NOT NULL,
 	LoaiPhong NVARCHAR(2) NOT NULL,
 	SoNguoi INT NOT NULL CHECK (SoNguoi >= 0)
@@ -101,11 +99,12 @@ CREATE TABLE HoaDon(
 GO
 
 ALTER TABLE dbo.SinhVien ADD FOREIGN KEY (MaPhong) REFERENCES dbo.Phong(MaPhong)
-ALTER TABLE dbo.QuanLy ADD FOREIGN KEY (MaKhuQL) REFERENCES dbo.KhuVuc(MaKhu)
-ALTER TABLE dbo.KhuVuc ADD FOREIGN KEY (MaNguoiQL) REFERENCES dbo.QuanLy(MaQL)
+ALTER TABLE dbo.SinhVien ADD FOREIGN KEY (MaTang) REFERENCES dbo.Tang(MaTang)
+ALTER TABLE dbo.QuanLy ADD FOREIGN KEY (MaTangQL) REFERENCES dbo.Tang(MaTang)
+ALTER TABLE dbo.Tang ADD FOREIGN KEY (MaNguoiQL) REFERENCES dbo.QuanLy(MaQL)
 ALTER TABLE dbo.DatPhong ADD FOREIGN KEY (MaNguoiQL) REFERENCES dbo.QuanLy(MaQL)
 ALTER TABLE dbo.DatPhong ADD FOREIGN KEY (MaSV) REFERENCES dbo.SinhVien(MaSV)
-ALTER TABLE dbo.Phong ADD FOREIGN KEY (MaKhu) REFERENCES dbo.KhuVuc(MaKhu)
+ALTER TABLE dbo.Phong ADD FOREIGN KEY (MaTang) REFERENCES dbo.Tang(MaTang)
 ALTER TABLE dbo.TienDien ADD FOREIGN KEY (MaPhong) REFERENCES dbo.Phong(MaPhong)
 ALTER TABLE dbo.TienNuoc ADD FOREIGN KEY (MaPhong) REFERENCES dbo.Phong(MaPhong)
 ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong) REFERENCES dbo.Phong(MaPhong)
@@ -113,8 +112,7 @@ ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.T
 ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.TienNuoc(MaPhong, NgayLapBieu)
 GO
 
-
--- Thêm trigger
+-- Trigger
 CREATE TRIGGER UTG_AddSinhVien ON SinhVien AFTER INSERT
 AS 
 BEGIN
@@ -159,3 +157,101 @@ BEGIN
 	UPDATE HoaDon SET SoTien = @TongTien WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
 END
 GO
+
+-- Hàm
+CREATE FUNCTION XemDanhSachSinhVien() RETURNS TABLE
+AS 
+RETURN(
+	SELECT * FROM SinhVien
+)
+GO
+
+CREATE FUNCTION XemDanhSachPhong() RETURNS TABLE
+AS 
+RETURN(
+	SELECT * FROM Phong
+)
+GO
+-- Thủ tục
+CREATE PROC UTP_ThemSinhVien
+@MaSV CHAR(8),
+@HoTen NVARCHAR(100),
+@NgaySinh DATE,
+@GioiTinh NVARCHAR(3),
+@DiaChi NVARCHAR(100),
+@SDT CHAR(10),
+@MaPhong NVARCHAR(5),
+@MaTang NVARCHAR(5),
+@SoKy INT,
+@HinhAnh VarBinary(max)
+AS
+BEGIN
+	DECLARE @Count INT = 0
+	SELECT @Count = COUNT(*) FROM SinhVien WHERE MaSV = @MaSV
+	IF (@Count = 0)
+	BEGIN DECLARE @Count1 INT, @Count2 INT
+	SELECT @Count = LoaiPhong.SoNguoiO, @Count2 = Phong.SoNguoi FROM Phong INNER JOIN LoaiPhong ON Phong.LoaiPhong = LoaiPhong.MaLoaiPhong
+	WHERE Phong.MaPhong = @MaPhong
+	PRINT (@Count1)
+	PRINT (@Count2)
+	IF(@Count2 < @Count1)
+		BEGIN
+			INSERT INTO SinhVien VALUES (@MaSV, @HoTen, @NgaySinh, @GioiTinh, @DiaChi, @SDT, @MaPhong, @MaTang, @HinhAnh)
+			DECLARE @MaQL NVARCHAR(8)
+			SELECT @MaQL = MaQL FROM QuanLy WHERE MaTangQL = @MaTang
+			PRINT(2)
+			INSERT INTO DatPhong (MaPhong, MaSV, MaNguoiQL, SoKy, NgayNhanPhong) VALUES (@MaPhong, @MaSV, @MaQL, @SoKy, GETDATE())
+		END
+	END
+END
+GO
+
+CREATE PROC UTP_SuaSV
+@MaSV CHAR(8),
+@HoTen NVARCHAR(100),
+@NgaySinh DATE,
+@GioiTinh NVARCHAR(3),
+@DiaChi NVARCHAR(100),
+@SDT CHAR(10),
+@HinhAnh VarBinary(max)
+AS
+BEGIN
+	UPDATE SinhVien SET HoTen = @HoTen, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, DiaChi = @DiaChi,
+	SDT = @SDT, HinhAnh = @HinhAnh WHERE MaSV = @MaSV
+END
+GO
+
+CREATE PROC UTP_XoaSuKienDatPhong
+@MaSuKien NVARCHAR(5)
+AS
+BEGIN
+	DELETE FROM DatPhong WHERE MaSuKien = @MaSuKien
+END
+GO
+
+CREATE PROC UTP_XoaSinhVien
+@MaSV CHAR(8)
+AS
+BEGIN
+	DELETE FROM SinhVien WHERE MaSV = @MaSV
+END
+GO
+
+CREATE PROC UTP_CapNhatChoOSinhVien
+@MaSV CHAR(8),
+@HoTen NVARCHAR(100),
+@NgaySinh DATE,
+@GioiTinh NVARCHAR(3),
+@DiaChi NVARCHAR(100),
+@SDT CHAR(10),
+@MaPhong NVARCHAR(5),
+@MaTang NVARCHAR(5)
+AS
+BEGIN
+	DECLARE @Count1 INT, @Count2 INT
+	SELECT @Count1 = LoaiPhong.SoNguoiO, @Count2 = Phong.SoNguoi FROM Phong INNER JOIN LoaiPhong ON Phong.LoaiPhong = LoaiPhong.GiaTien
+	WHERE Phong.MaPhong = @MaPhong
+	IF(@Count2 < @Count1)
+		UPDATE SinhVien SET HoTen = @HoTen, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, SDT = @SDT,
+		MaPhong = @MaPhong, MaTang = @MaTang
+END
