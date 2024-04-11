@@ -153,8 +153,8 @@ BEGIN
 	SELECT @MaPhong = MaPhong, @NgayTaoHoaDon = NgayTaoHoaDon FROM INSERTED
 	SELECT @TienDien = TienDien FROM TienDien WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
 	SELECT @TienNuoc = TienNuoc FROM TienNuoc WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
-	DECLARE @TongTien FLOAT = @TienDien + @TienNuoc
-	UPDATE HoaDon SET SoTien = @TongTien WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
+	DECLARE @TongNuoc FLOAT = @TienDien + @TienNuoc
+	UPDATE HoaDon SET SoTien = @TongNuoc WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
 END
 GO
 
@@ -263,19 +263,19 @@ create proc UTP_ThemHoaDonDien
 	@SoDienCuoiThang int
 as 
 begin 
-	declare @TongTien float = (@SoDienCuoiThang - @SoDienDauThang)
-	if (@TongTien <= 50)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,@TongTien * 1678)
-	else if (@TongTien > 50 and @TongTien <= 100)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongTien-50)*1734 + 50* 1678)
-		else if (@TongTien > 100 and @TongTien <= 200)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongTien-100)*2014 + 50* 1678 +50*1734)
-		else if (@TongTien > 200 and @TongTien <= 300)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongTien-200)*2536 + 50* 1678 +50*1734 +100*2014 )
-		else if (@TongTien > 300 and @TongTien <= 400)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongTien-300)*234 + 50* 1678+ 50*1734 +100*2014 + 100*2536)
-		else if (@TongTien > 400 )
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongTien-400)*2927 + 50* 1678 + 50*1734 +100*2014 + 100*2536 +100*2834)
+	declare @TongDien float = (@SoDienCuoiThang - @SoDienDauThang)
+	if (@TongDien <= 50)
+		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,@TongDien * 1806)
+	else if (@TongDien > 50 and @TongDien <= 100)
+		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-50)*1866 + 50* 1806)
+		else if (@TongDien > 100 and @TongDien <= 200)
+		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-100)*2167 + 50* 1806 +50*1866)
+		else if (@TongDien > 200 and @TongDien <= 300)
+		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-200)*2739 + 50* 1806 +50*1866 +100*2167 )
+		else if (@TongDien > 300 and @TongDien <= 400)
+		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-300)*3050 + 50* 1806+ 50*1866 +100*2167 + 100*2739)
+		else if (@TongDien > 400 )
+		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-400)*3151 + 50* 1806 + 50*1866 +100*2167 + 100*2739 +100*3050)
 end
 
 create proc UTP_ThemHoaDonNuoc
@@ -285,14 +285,14 @@ create proc UTP_ThemHoaDonNuoc
 	@SoNnuocCuoiThang int
 as 
 begin 
-	declare @TongTien float = (@SoNnuocCuoiThang - @SoNuocDauThang)
-	if (@TongTien <= 10)
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,@TongTien * 5973)
-	else if (@TongTien >10 and @TongTien <= 20)
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongTien-10)*7052 + 10* 5973)
-	else if (@TongTien > 20 and @TongTien <= 30)
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongTien-20)*8669 + 10*7052 +10* 5973)
-	else if (@TongTien > 30 )
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongTien-3)*15925 +20*8669 + 10*7052 +10* 5973 )
+	declare @TongNuoc float = (@SoNnuocCuoiThang - @SoNuocDauThang)
+	if (@TongNuoc <= 10)
+		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,@TongNuoc * 5973)
+	else if (@TongNuoc >10 and @TongNuoc <= 20)
+		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongNuoc-10)*7052 + 10* 5973)
+	else if (@TongNuoc > 20 and @TongNuoc <= 30)
+		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongNuoc-20)*8669 + 10*7052 +10* 5973)
+	else if (@TongNuoc > 30 )
+		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongNuoc-3)*15925 +20*8669 + 10*7052 +10* 5973 )
 		
 end
