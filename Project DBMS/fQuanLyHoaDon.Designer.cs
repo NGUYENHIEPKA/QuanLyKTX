@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyHoaDon));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             Renew_Btn = new Guna.UI2.WinForms.Guna2Button();
             Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -55,11 +55,19 @@
             Name_tb = new TextBox();
             pttt_Label = new Label();
             panel4 = new Panel();
+            textBox1 = new TextBox();
             MaPhong_Label = new Label();
             panel3 = new Panel();
             MSSV_tb = new TextBox();
             MaHoaDon_Label = new Label();
-            textBox1 = new TextBox();
+            panel2 = new Panel();
+            dataGridView = new DataGridView();
+            MaHoaDon_Col = new DataGridViewTextBoxColumn();
+            MaPhong_Col = new DataGridViewTextBoxColumn();
+            Pttt_Col = new DataGridViewTextBoxColumn();
+            TypeHoaDon_Col = new DataGridViewTextBoxColumn();
+            NgayTaoHoaDon_Col = new DataGridViewTextBoxColumn();
+            img_Col = new DataGridViewCheckBoxColumn();
             panel1.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
@@ -67,6 +75,8 @@
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -89,7 +99,7 @@
             // 
             // Renew_Btn
             // 
-            Renew_Btn.CustomizableEdges = customizableEdges1;
+            Renew_Btn.CustomizableEdges = customizableEdges9;
             Renew_Btn.DisabledState.BorderColor = Color.DarkGray;
             Renew_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Renew_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -101,14 +111,14 @@
             Renew_Btn.ImageAlign = HorizontalAlignment.Left;
             Renew_Btn.Location = new Point(475, 126);
             Renew_Btn.Name = "Renew_Btn";
-            Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             Renew_Btn.Size = new Size(123, 45);
             Renew_Btn.TabIndex = 7;
             Renew_Btn.Text = "Renew";
             // 
             // Delete_Btn
             // 
-            Delete_Btn.CustomizableEdges = customizableEdges3;
+            Delete_Btn.CustomizableEdges = customizableEdges11;
             Delete_Btn.DisabledState.BorderColor = Color.DarkGray;
             Delete_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Delete_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -120,14 +130,14 @@
             Delete_Btn.ImageAlign = HorizontalAlignment.Left;
             Delete_Btn.Location = new Point(325, 126);
             Delete_Btn.Name = "Delete_Btn";
-            Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             Delete_Btn.Size = new Size(123, 45);
             Delete_Btn.TabIndex = 6;
             Delete_Btn.Text = "Xóa";
             // 
             // Edit_Btn
             // 
-            Edit_Btn.CustomizableEdges = customizableEdges5;
+            Edit_Btn.CustomizableEdges = customizableEdges13;
             Edit_Btn.DisabledState.BorderColor = Color.DarkGray;
             Edit_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Edit_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -139,14 +149,14 @@
             Edit_Btn.ImageAlign = HorizontalAlignment.Left;
             Edit_Btn.Location = new Point(175, 126);
             Edit_Btn.Name = "Edit_Btn";
-            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges14;
             Edit_Btn.Size = new Size(123, 45);
             Edit_Btn.TabIndex = 5;
             Edit_Btn.Text = "Sửa";
             // 
             // Add_Btn
             // 
-            Add_Btn.CustomizableEdges = customizableEdges7;
+            Add_Btn.CustomizableEdges = customizableEdges15;
             Add_Btn.DisabledState.BorderColor = Color.DarkGray;
             Add_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Add_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -158,7 +168,7 @@
             Add_Btn.ImageAlign = HorizontalAlignment.Left;
             Add_Btn.Location = new Point(25, 126);
             Add_Btn.Name = "Add_Btn";
-            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges16;
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 4;
             Add_Btn.Text = "Thêm";
@@ -284,6 +294,13 @@
             panel4.Size = new Size(266, 57);
             panel4.TabIndex = 2;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(109, 11);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(140, 27);
+            textBox1.TabIndex = 2;
+            // 
             // MaPhong_Label
             // 
             MaPhong_Label.AutoSize = true;
@@ -318,18 +335,75 @@
             MaHoaDon_Label.TabIndex = 1;
             MaHoaDon_Label.Text = "Mã hóa đơn";
             // 
-            // textBox1
+            // panel2
             // 
-            textBox1.Location = new Point(109, 11);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(140, 27);
-            textBox1.TabIndex = 2;
+            panel2.Controls.Add(dataGridView);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 184);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1003, 513);
+            panel2.TabIndex = 2;
+            // 
+            // dataGridView
+            // 
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, MaPhong_Col, Pttt_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, img_Col });
+            dataGridView.Location = new Point(0, 0);
+            dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.Size = new Size(1003, 513);
+            dataGridView.TabIndex = 1;
+            // 
+            // MaHoaDon_Col
+            // 
+            MaHoaDon_Col.HeaderText = "Mã hóa đơn";
+            MaHoaDon_Col.MinimumWidth = 6;
+            MaHoaDon_Col.Name = "MaHoaDon_Col";
+            MaHoaDon_Col.Width = 125;
+            // 
+            // MaPhong_Col
+            // 
+            MaPhong_Col.HeaderText = "Mã phòng";
+            MaPhong_Col.MinimumWidth = 6;
+            MaPhong_Col.Name = "MaPhong_Col";
+            MaPhong_Col.Width = 125;
+            // 
+            // Pttt_Col
+            // 
+            Pttt_Col.HeaderText = "Phương thức thanh toán";
+            Pttt_Col.MinimumWidth = 6;
+            Pttt_Col.Name = "Pttt_Col";
+            Pttt_Col.Width = 200;
+            // 
+            // TypeHoaDon_Col
+            // 
+            TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
+            TypeHoaDon_Col.MinimumWidth = 6;
+            TypeHoaDon_Col.Name = "TypeHoaDon_Col";
+            TypeHoaDon_Col.Width = 200;
+            // 
+            // NgayTaoHoaDon_Col
+            // 
+            NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
+            NgayTaoHoaDon_Col.MinimumWidth = 6;
+            NgayTaoHoaDon_Col.Name = "NgayTaoHoaDon_Col";
+            NgayTaoHoaDon_Col.Width = 150;
+            // 
+            // img_Col
+            // 
+            img_Col.HeaderText = "Trạng thái thanh toán";
+            img_Col.MinimumWidth = 6;
+            img_Col.Name = "img_Col";
+            img_Col.Resizable = DataGridViewTriState.True;
+            img_Col.Width = 200;
             // 
             // fQuanLyHoaDon
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1003, 697);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fQuanLyHoaDon";
@@ -347,6 +421,8 @@
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -375,5 +451,13 @@
         private Label MaHoaDon_Label;
         private Guna.UI2.WinForms.Guna2RadioButton thanhToan_check;
         private TextBox textBox1;
+        private Panel panel2;
+        private DataGridView dataGridView;
+        private DataGridViewTextBoxColumn MaHoaDon_Col;
+        private DataGridViewTextBoxColumn MaPhong_Col;
+        private DataGridViewTextBoxColumn Pttt_Col;
+        private DataGridViewTextBoxColumn TypeHoaDon_Col;
+        private DataGridViewTextBoxColumn NgayTaoHoaDon_Col;
+        private DataGridViewCheckBoxColumn img_Col;
     }
 }
