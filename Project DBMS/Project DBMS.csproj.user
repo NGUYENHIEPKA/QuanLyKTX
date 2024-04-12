@@ -1,10 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="3ttest.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="fHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ForgetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fQuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fQuanLyPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fQuanLySinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SinhVienHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="XemNoiQuy.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -33,11 +33,13 @@ namespace Project_DBMS
         private void UserInformationBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Thông tin cá nhân";
+            //container(new fThongtinCaNhan());
         }
 
         private void RoomBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Quản lý phòng";
+            container(new fQuanLyPhong());
         }
 
         private void StudentBtn_Click(object sender, EventArgs e)
