@@ -92,11 +92,11 @@
             // label_value
             // 
             label_value.AutoSize = true;
-            label_value.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_value.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label_value.ForeColor = SystemColors.HotTrack;
-            label_value.Location = new Point(93, 17);
+            label_value.Location = new Point(382, 7);
             label_value.Name = "label_value";
-            label_value.Size = new Size(0, 28);
+            label_value.Size = new Size(0, 32);
             label_value.TabIndex = 5;
             // 
             // guna2ControlBox3
@@ -171,7 +171,7 @@
             DoiPassBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             DoiPassBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             DoiPassBtn.FillColor = Color.Transparent;
-            DoiPassBtn.Font = new Font("Segoe UI", 9F);
+            DoiPassBtn.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 163);
             DoiPassBtn.ForeColor = Color.Black;
             DoiPassBtn.HoverState.BorderColor = Color.Navy;
             DoiPassBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
@@ -180,7 +180,7 @@
             DoiPassBtn.Image = (Image)resources.GetObject("DoiPassBtn.Image");
             DoiPassBtn.ImageAlign = HorizontalAlignment.Left;
             DoiPassBtn.ImageOffset = new Point(8, 0);
-            DoiPassBtn.Location = new Point(0, 311);
+            DoiPassBtn.Location = new Point(0, 300);
             DoiPassBtn.Name = "DoiPassBtn";
             DoiPassBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             DoiPassBtn.Size = new Size(205, 56);
@@ -239,7 +239,7 @@
             RequestBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             RequestBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             RequestBtn.FillColor = Color.Transparent;
-            RequestBtn.Font = new Font("Segoe UI", 9F);
+            RequestBtn.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 163);
             RequestBtn.ForeColor = Color.Black;
             RequestBtn.HoverState.BorderColor = Color.Navy;
             RequestBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
@@ -267,7 +267,7 @@
             NoiQuyBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             NoiQuyBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             NoiQuyBtn.FillColor = Color.Transparent;
-            NoiQuyBtn.Font = new Font("Segoe UI", 9F);
+            NoiQuyBtn.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NoiQuyBtn.ForeColor = Color.Black;
             NoiQuyBtn.HoverState.BorderColor = Color.Navy;
             NoiQuyBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
@@ -295,7 +295,7 @@
             HoaDonBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             HoaDonBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             HoaDonBtn.FillColor = Color.Transparent;
-            HoaDonBtn.Font = new Font("Segoe UI", 9F);
+            HoaDonBtn.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 163);
             HoaDonBtn.ForeColor = Color.Black;
             HoaDonBtn.HoverState.BorderColor = Color.Navy;
             HoaDonBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
@@ -323,7 +323,7 @@
             UserInformationBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             UserInformationBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             UserInformationBtn.FillColor = Color.Transparent;
-            UserInformationBtn.Font = new Font("Segoe UI", 9F);
+            UserInformationBtn.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 163);
             UserInformationBtn.ForeColor = Color.Black;
             UserInformationBtn.HoverState.BorderColor = Color.Navy;
             UserInformationBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);

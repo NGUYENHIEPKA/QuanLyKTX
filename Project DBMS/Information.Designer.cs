@@ -40,6 +40,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             NameLB = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -58,12 +62,20 @@
             guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
             SdtLB = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            PhongLB = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            Guna2HtmlLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2GradientPanel8 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            TangLB = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientPanel1.SuspendLayout();
             guna2GradientPanel2.SuspendLayout();
             guna2GradientPanel3.SuspendLayout();
             guna2GradientPanel4.SuspendLayout();
             guna2GradientPanel5.SuspendLayout();
             guna2GradientPanel6.SuspendLayout();
+            guna2GradientPanel7.SuspendLayout();
+            guna2GradientPanel8.SuspendLayout();
             SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -80,9 +92,10 @@
             // NameLB
             // 
             NameLB.BackColor = Color.Transparent;
+            NameLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             NameLB.Location = new Point(149, 12);
             NameLB.Name = "NameLB";
-            NameLB.Size = new Size(121, 22);
+            NameLB.Size = new Size(143, 24);
             NameLB.TabIndex = 4;
             NameLB.Text = "guna2HtmlLabel3";
             // 
@@ -110,9 +123,10 @@
             // MSSVLB
             // 
             MSSVLB.BackColor = Color.Transparent;
+            MSSVLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             MSSVLB.Location = new Point(149, 12);
             MSSVLB.Name = "MSSVLB";
-            MSSVLB.Size = new Size(121, 22);
+            MSSVLB.Size = new Size(143, 24);
             MSSVLB.TabIndex = 4;
             MSSVLB.Text = "guna2HtmlLabel2";
             // 
@@ -140,9 +154,10 @@
             // GioitinhLB
             // 
             GioitinhLB.BackColor = Color.Transparent;
+            GioitinhLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             GioitinhLB.Location = new Point(149, 12);
             GioitinhLB.Name = "GioitinhLB";
-            GioitinhLB.Size = new Size(121, 22);
+            GioitinhLB.Size = new Size(143, 24);
             GioitinhLB.TabIndex = 4;
             GioitinhLB.Text = "guna2HtmlLabel5";
             // 
@@ -170,9 +185,10 @@
             // BirthdayLB
             // 
             BirthdayLB.BackColor = Color.Transparent;
+            BirthdayLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             BirthdayLB.Location = new Point(149, 12);
             BirthdayLB.Name = "BirthdayLB";
-            BirthdayLB.Size = new Size(121, 22);
+            BirthdayLB.Size = new Size(143, 24);
             BirthdayLB.TabIndex = 4;
             BirthdayLB.Text = "guna2HtmlLabel7";
             // 
@@ -200,9 +216,10 @@
             // DiachiLB
             // 
             DiachiLB.BackColor = Color.Transparent;
+            DiachiLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             DiachiLB.Location = new Point(149, 12);
             DiachiLB.Name = "DiachiLB";
-            DiachiLB.Size = new Size(121, 22);
+            DiachiLB.Size = new Size(143, 24);
             DiachiLB.TabIndex = 4;
             DiachiLB.Text = "guna2HtmlLabel9";
             // 
@@ -224,15 +241,16 @@
             guna2GradientPanel6.Location = new Point(39, 310);
             guna2GradientPanel6.Name = "guna2GradientPanel6";
             guna2GradientPanel6.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel6.Size = new Size(532, 56);
+            guna2GradientPanel6.Size = new Size(436, 56);
             guna2GradientPanel6.TabIndex = 5;
             // 
             // SdtLB
             // 
             SdtLB.BackColor = Color.Transparent;
+            SdtLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             SdtLB.Location = new Point(149, 12);
             SdtLB.Name = "SdtLB";
-            SdtLB.Size = new Size(129, 22);
+            SdtLB.Size = new Size(153, 24);
             SdtLB.TabIndex = 4;
             SdtLB.Text = "guna2HtmlLabel11";
             // 
@@ -246,11 +264,75 @@
             guna2HtmlLabel12.TabIndex = 1;
             guna2HtmlLabel12.Text = "Số điện thoại:";
             // 
+            // guna2GradientPanel7
+            // 
+            guna2GradientPanel7.Controls.Add(PhongLB);
+            guna2GradientPanel7.Controls.Add(Guna2HtmlLabel);
+            guna2GradientPanel7.CustomizableEdges = customizableEdges13;
+            guna2GradientPanel7.Location = new Point(481, 0);
+            guna2GradientPanel7.Name = "guna2GradientPanel7";
+            guna2GradientPanel7.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2GradientPanel7.Size = new Size(436, 56);
+            guna2GradientPanel7.TabIndex = 6;
+            // 
+            // PhongLB
+            // 
+            PhongLB.BackColor = Color.Transparent;
+            PhongLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            PhongLB.Location = new Point(98, 10);
+            PhongLB.Name = "PhongLB";
+            PhongLB.Size = new Size(143, 24);
+            PhongLB.TabIndex = 4;
+            PhongLB.Text = "guna2HtmlLabel3";
+            // 
+            // Guna2HtmlLabel
+            // 
+            Guna2HtmlLabel.BackColor = Color.Transparent;
+            Guna2HtmlLabel.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Guna2HtmlLabel.Location = new Point(14, 10);
+            Guna2HtmlLabel.Name = "Guna2HtmlLabel";
+            Guna2HtmlLabel.Size = new Size(62, 25);
+            Guna2HtmlLabel.TabIndex = 1;
+            Guna2HtmlLabel.Text = "Phòng:";
+            // 
+            // guna2GradientPanel8
+            // 
+            guna2GradientPanel8.Controls.Add(TangLB);
+            guna2GradientPanel8.Controls.Add(guna2HtmlLabel3);
+            guna2GradientPanel8.CustomizableEdges = customizableEdges15;
+            guna2GradientPanel8.Location = new Point(481, 62);
+            guna2GradientPanel8.Name = "guna2GradientPanel8";
+            guna2GradientPanel8.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2GradientPanel8.Size = new Size(436, 56);
+            guna2GradientPanel8.TabIndex = 7;
+            // 
+            // TangLB
+            // 
+            TangLB.BackColor = Color.Transparent;
+            TangLB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            TangLB.Location = new Point(98, 10);
+            TangLB.Name = "TangLB";
+            TangLB.Size = new Size(143, 24);
+            TangLB.TabIndex = 4;
+            TangLB.Text = "guna2HtmlLabel4";
+            // 
+            // guna2HtmlLabel3
+            // 
+            guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.Location = new Point(14, 10);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new Size(53, 25);
+            guna2HtmlLabel3.TabIndex = 1;
+            guna2HtmlLabel3.Text = "Tầng:";
+            // 
             // Information
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1003, 697);
+            Controls.Add(guna2GradientPanel8);
+            Controls.Add(guna2GradientPanel7);
             Controls.Add(guna2GradientPanel6);
             Controls.Add(guna2GradientPanel5);
             Controls.Add(guna2GradientPanel4);
@@ -272,6 +354,10 @@
             guna2GradientPanel5.PerformLayout();
             guna2GradientPanel6.ResumeLayout(false);
             guna2GradientPanel6.PerformLayout();
+            guna2GradientPanel7.ResumeLayout(false);
+            guna2GradientPanel7.PerformLayout();
+            guna2GradientPanel8.ResumeLayout(false);
+            guna2GradientPanel8.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -295,5 +381,11 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel SdtLB;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel7;
+        private Guna.UI2.WinForms.Guna2HtmlLabel PhongLB;
+        private Guna.UI2.WinForms.Guna2HtmlLabel Guna2HtmlLabel;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TangLB;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
     }
 }
