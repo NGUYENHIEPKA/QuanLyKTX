@@ -43,11 +43,13 @@ namespace Project_DBMS
         private void StudentBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Quản lý sinh viên";
+            container(new fQuanLySinhVien());
         }
 
         private void BillBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Quản lý hóa đơn";
+            container(new fQuanLyHoaDon());
         }
     }
 }
