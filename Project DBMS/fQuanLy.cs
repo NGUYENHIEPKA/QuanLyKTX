@@ -16,5 +16,15 @@ namespace Project_DBMS
         {
             InitializeComponent();
         }
+
+        private void guna2Panel_Top_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void fQuanLy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
