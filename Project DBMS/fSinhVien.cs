@@ -29,14 +29,18 @@ namespace Project_DBMS
             label_value.Text = "Hóa đơn";
         }
 
-        private void AccommodationBtn_Click(object sender, EventArgs e)
+        private void NoiQuyBtn_Click(object sender, EventArgs e)
         {
-            label_value.Text = "Thông tin lưu trú";
+            label_value.Text = "Nội quy";
         }
 
         private void RequestBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Thông tin yêu cầu sửa chữa";
+        }
+        private void DoiPassBtn_Click(object sender, EventArgs e)
+        {
+            label_value.Text = "Đổi mật khẩu";
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
@@ -45,7 +49,7 @@ namespace Project_DBMS
         }
         private void Thongtincanhan(object _form)
         {
-            if(guna2Panel_container.Controls.Count>0) guna2Panel_container.Controls.Clear();
+            if (guna2Panel_container.Controls.Count > 0) guna2Panel_container.Controls.Clear();
             Form fm = _form as Form;
             fm.TopLevel = false;
             fm.FormBorderStyle = FormBorderStyle.None;
@@ -54,5 +58,7 @@ namespace Project_DBMS
             guna2Panel_container.Tag = fm;
             fm.Show();
         }
+
+        
     }
 }
