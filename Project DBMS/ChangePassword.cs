@@ -30,6 +30,8 @@ namespace Project_DBMS
                 OldPassTB.PasswordChar = '•';
                 NewPassTB.PasswordChar = '•';
                 NewPassAgTB.PasswordChar = '•';
+
+
             }
         }
     }

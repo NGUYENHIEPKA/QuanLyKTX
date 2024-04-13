@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             OldPassTB = new Guna.UI2.WinForms.Guna2TextBox();
             OldPassLB = new Label();
             panel2 = new Panel();
-            NewPassTB = new Guna.UI2.WinForms.Guna2TextBox();
-            NewPassLB = new Label();
-            panel3 = new Panel();
             NewPassAgTB = new Guna.UI2.WinForms.Guna2TextBox();
             NewPassAgLB = new Label();
+            panel3 = new Panel();
+            NewPassTB = new Guna.UI2.WinForms.Guna2TextBox();
+            NewPassLB = new Label();
             panel4 = new Panel();
             ShowPassCB = new CheckBox();
             panel5 = new Panel();
@@ -67,7 +67,7 @@
             // 
             // OldPassTB
             // 
-            OldPassTB.CustomizableEdges = customizableEdges1;
+            OldPassTB.CustomizableEdges = customizableEdges9;
             OldPassTB.DefaultText = "";
             OldPassTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             OldPassTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -82,7 +82,7 @@
             OldPassTB.PasswordChar = '•';
             OldPassTB.PlaceholderText = "";
             OldPassTB.SelectedText = "";
-            OldPassTB.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            OldPassTB.ShadowDecoration.CustomizableEdges = customizableEdges10;
             OldPassTB.Size = new Size(286, 30);
             OldPassTB.TabIndex = 1;
             // 
@@ -98,56 +98,16 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(NewPassTB);
-            panel2.Controls.Add(NewPassLB);
-            panel2.Location = new Point(237, 87);
+            panel2.Controls.Add(NewPassAgTB);
+            panel2.Controls.Add(NewPassAgLB);
+            panel2.Location = new Point(237, 150);
             panel2.Name = "panel2";
             panel2.Size = new Size(532, 69);
             panel2.TabIndex = 2;
             // 
-            // NewPassTB
-            // 
-            NewPassTB.CustomizableEdges = customizableEdges3;
-            NewPassTB.DefaultText = "";
-            NewPassTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            NewPassTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            NewPassTB.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            NewPassTB.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            NewPassTB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            NewPassTB.Font = new Font("Segoe UI", 9F);
-            NewPassTB.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            NewPassTB.Location = new Point(212, 18);
-            NewPassTB.Margin = new Padding(3, 4, 3, 4);
-            NewPassTB.Name = "NewPassTB";
-            NewPassTB.PasswordChar = '•';
-            NewPassTB.PlaceholderText = "";
-            NewPassTB.SelectedText = "";
-            NewPassTB.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            NewPassTB.Size = new Size(286, 30);
-            NewPassTB.TabIndex = 1;
-            // 
-            // NewPassLB
-            // 
-            NewPassLB.AutoSize = true;
-            NewPassLB.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            NewPassLB.Location = new Point(21, 23);
-            NewPassLB.Name = "NewPassLB";
-            NewPassLB.Size = new Size(157, 19);
-            NewPassLB.TabIndex = 0;
-            NewPassLB.Text = "Nhập mật khẩu mới:";
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(NewPassAgTB);
-            panel3.Controls.Add(NewPassAgLB);
-            panel3.Location = new Point(237, 162);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(532, 57);
-            panel3.TabIndex = 2;
-            // 
             // NewPassAgTB
             // 
-            NewPassAgTB.CustomizableEdges = customizableEdges5;
+            NewPassAgTB.CustomizableEdges = customizableEdges11;
             NewPassAgTB.DefaultText = "";
             NewPassAgTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             NewPassAgTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -162,7 +122,7 @@
             NewPassAgTB.PasswordChar = '•';
             NewPassAgTB.PlaceholderText = "";
             NewPassAgTB.SelectedText = "";
-            NewPassAgTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            NewPassAgTB.ShadowDecoration.CustomizableEdges = customizableEdges12;
             NewPassAgTB.Size = new Size(286, 30);
             NewPassAgTB.TabIndex = 1;
             // 
@@ -175,6 +135,46 @@
             NewPassAgLB.Size = new Size(181, 19);
             NewPassAgLB.TabIndex = 0;
             NewPassAgLB.Text = "Nhập lại mật khẩu mới:";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(NewPassTB);
+            panel3.Controls.Add(NewPassLB);
+            panel3.Location = new Point(237, 87);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(532, 57);
+            panel3.TabIndex = 2;
+            // 
+            // NewPassTB
+            // 
+            NewPassTB.CustomizableEdges = customizableEdges13;
+            NewPassTB.DefaultText = "";
+            NewPassTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            NewPassTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            NewPassTB.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            NewPassTB.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            NewPassTB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            NewPassTB.Font = new Font("Segoe UI", 9F);
+            NewPassTB.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            NewPassTB.Location = new Point(212, 18);
+            NewPassTB.Margin = new Padding(3, 4, 3, 4);
+            NewPassTB.Name = "NewPassTB";
+            NewPassTB.PasswordChar = '•';
+            NewPassTB.PlaceholderText = "";
+            NewPassTB.SelectedText = "";
+            NewPassTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            NewPassTB.Size = new Size(286, 30);
+            NewPassTB.TabIndex = 1;
+            // 
+            // NewPassLB
+            // 
+            NewPassLB.AutoSize = true;
+            NewPassLB.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            NewPassLB.Location = new Point(21, 23);
+            NewPassLB.Name = "NewPassLB";
+            NewPassLB.Size = new Size(157, 19);
+            NewPassLB.TabIndex = 0;
+            NewPassLB.Text = "Nhập mật khẩu mới:";
             // 
             // panel4
             // 
@@ -206,7 +206,7 @@
             // 
             // DoiPassBT
             // 
-            DoiPassBT.CustomizableEdges = customizableEdges7;
+            DoiPassBT.CustomizableEdges = customizableEdges15;
             DoiPassBT.DisabledState.BorderColor = Color.DarkGray;
             DoiPassBT.DisabledState.CustomBorderColor = Color.DarkGray;
             DoiPassBT.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -216,7 +216,7 @@
             DoiPassBT.ForeColor = Color.White;
             DoiPassBT.Location = new Point(63, 22);
             DoiPassBT.Name = "DoiPassBT";
-            DoiPassBT.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            DoiPassBT.ShadowDecoration.CustomizableEdges = customizableEdges16;
             DoiPassBT.Size = new Size(185, 44);
             DoiPassBT.TabIndex = 0;
             DoiPassBT.Text = "Đổi mật khẩu";
@@ -252,11 +252,11 @@
         private Guna.UI2.WinForms.Guna2TextBox OldPassTB;
         private Label OldPassLB;
         private Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox NewPassTB;
-        private Label NewPassLB;
-        private Panel panel3;
         private Guna.UI2.WinForms.Guna2TextBox NewPassAgTB;
         private Label NewPassAgLB;
+        private Panel panel3;
+        private Guna.UI2.WinForms.Guna2TextBox NewPassTB;
+        private Label NewPassLB;
         private Panel panel4;
         private CheckBox ShowPassCB;
         private Panel panel5;
