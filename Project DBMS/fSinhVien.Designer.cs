@@ -180,7 +180,7 @@
             DoiPassBtn.Image = (Image)resources.GetObject("DoiPassBtn.Image");
             DoiPassBtn.ImageAlign = HorizontalAlignment.Left;
             DoiPassBtn.ImageOffset = new Point(8, 0);
-            DoiPassBtn.Location = new Point(0, 300);
+            DoiPassBtn.Location = new Point(0, 302);
             DoiPassBtn.Name = "DoiPassBtn";
             DoiPassBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             DoiPassBtn.Size = new Size(205, 56);
