@@ -296,3 +296,36 @@ begin
 		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongNuoc-3)*15925 +20*8669 + 10*7052 +10* 5973 )
 		
 end
+
+
+
+
+-- Insert dữ liệu
+INSERT INTO Tang (MaTang, MaNguoiQL) VALUES ('T01', 'QL001');
+INSERT INTO Tang (MaTang, MaNguoiQL) VALUES ('T02', 'QL002');
+INSERT INTO Tang (MaTang, MaNguoiQL) VALUES ('T03', 'QL003');
+INSERT INTO Tang (MaTang, MaNguoiQL) VALUES ('T04', 'QL004');
+INSERT INTO Tang (MaTang, MaNguoiQL) VALUES ('T05', 'QL005');
+GO
+
+INSERT INTO QuanLy (MaQL, HoTen, MaTangQL) VALUES ('QL001', 'Nguyen Van A', 'T01');
+INSERT INTO QuanLy (MaQL, HoTen, MaTangQL) VALUES ('QL002', 'Tran Thi B', 'T02');
+INSERT INTO QuanLy (MaQL, HoTen, MaTangQL) VALUES ('QL003', 'Le Van C', 'T03');
+INSERT INTO QuanLy (MaQL, HoTen, MaTangQL) VALUES ('QL004', 'Hoang Thi D', 'T04');
+INSERT INTO QuanLy (MaQL, HoTen, MaTangQL) VALUES ('QL005', 'Pham Van E', 'T05');
+GO
+
+INSERT INTO Phong (MaPhong, MaTang, MaLoaiPhong, LoaiPhong, SoNguoi) 
+VALUES ('P001', 'T01', 'LP001', 'A', 2),
+       ('P002', 'T02', 'LP002', 'B', 1),
+       ('P003', 'T03', 'LP003', 'C', 3),
+       ('P004', 'T04', 'LP004', 'A', 2),
+       ('P005', 'T05', 'LP005', 'B', 1);
+GO
+
+INSERT INTO SinhVien (MaSV, HoTen, NgaySinh, GioiTinh, DiaChi, SDT, MaPhong, MaTang, HinhAnh) 
+VALUES ('SV001', 'Nguyen Van A', '2000-01-01', 'Nam', '123 ABC Street', '0123456789', 'P001', 'T01', NULL),
+       ('SV002', 'Tran Thi B', '2001-02-02', 'Nu', '456 XYZ Street', '0987654321', 'P002', 'T02', NULL),
+       ('SV003', 'Le Van C', '1999-03-03', 'Nam', '789 QWE Street', '0369852471', 'P003', 'T03', NULL),
+       ('SV004', 'Pham Thi D', '1998-04-04', 'Nu', '147 RTY Street', '0957348612', 'P004', 'T04', NULL),
+       ('SV005', 'Hoang Van E', '2002-05-05', 'Nam', '258 UIO Street', '0738192546', 'P005', 'T05', NULL);

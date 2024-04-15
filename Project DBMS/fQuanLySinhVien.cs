@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project_DBMS.DAO;
+using Project_DBMS.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,11 @@ namespace Project_DBMS
         public fQuanLySinhVien()
         {
             InitializeComponent();
+            ShowListSinhVien();
+        }
+        void ShowListSinhVien()
+        {
+            dataGridView.DataSource = SinhVienDAO.Instance.GetListSinhVien();
         }
     }
 }

@@ -69,6 +69,8 @@
             Name_Col = new DataGridViewTextBoxColumn();
             GioiTinh_Col = new DataGridViewTextBoxColumn();
             Address_Col = new DataGridViewTextBoxColumn();
+            MaPhong_Col = new DataGridViewTextBoxColumn();
+            MaTang_Col = new DataGridViewTextBoxColumn();
             SDT_Col = new DataGridViewTextBoxColumn();
             img_Col = new DataGridViewImageColumn();
             panel1.SuspendLayout();
@@ -349,7 +351,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaSV_Col, Name_Col, GioiTinh_Col, Address_Col, SDT_Col, img_Col });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaSV_Col, Name_Col, GioiTinh_Col, Address_Col, MaPhong_Col, MaTang_Col, SDT_Col, img_Col });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -370,11 +372,13 @@
             dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(1003, 513);
             dataGridView.TabIndex = 0;
             // 
             // MaSV_Col
             // 
+            MaSV_Col.DataPropertyName = "MaSV";
             MaSV_Col.HeaderText = "Mã SV";
             MaSV_Col.MinimumWidth = 6;
             MaSV_Col.Name = "MaSV_Col";
@@ -382,6 +386,7 @@
             // 
             // Name_Col
             // 
+            Name_Col.DataPropertyName = "HoTen";
             Name_Col.HeaderText = "Họ và tên";
             Name_Col.MinimumWidth = 6;
             Name_Col.Name = "Name_Col";
@@ -389,6 +394,7 @@
             // 
             // GioiTinh_Col
             // 
+            GioiTinh_Col.DataPropertyName = "GioiTinh";
             GioiTinh_Col.HeaderText = "Giới tính";
             GioiTinh_Col.MinimumWidth = 6;
             GioiTinh_Col.Name = "GioiTinh_Col";
@@ -396,13 +402,31 @@
             // 
             // Address_Col
             // 
+            Address_Col.DataPropertyName = "DiaChi";
             Address_Col.HeaderText = "Địa chỉ";
             Address_Col.MinimumWidth = 6;
             Address_Col.Name = "Address_Col";
             Address_Col.Width = 200;
             // 
+            // MaPhong_Col
+            // 
+            MaPhong_Col.DataPropertyName = "MaPhong";
+            MaPhong_Col.HeaderText = "Mã Phòng";
+            MaPhong_Col.MinimumWidth = 6;
+            MaPhong_Col.Name = "MaPhong_Col";
+            MaPhong_Col.Width = 125;
+            // 
+            // MaTang_Col
+            // 
+            MaTang_Col.DataPropertyName = "MaPhong";
+            MaTang_Col.HeaderText = "Mã Tầng";
+            MaTang_Col.MinimumWidth = 6;
+            MaTang_Col.Name = "MaTang_Col";
+            MaTang_Col.Width = 125;
+            // 
             // SDT_Col
             // 
+            SDT_Col.DataPropertyName = "SDT";
             SDT_Col.HeaderText = "Số điện thoại";
             SDT_Col.MinimumWidth = 6;
             SDT_Col.Name = "SDT_Col";
@@ -410,7 +434,10 @@
             // 
             // img_Col
             // 
+            img_Col.DataPropertyName = "HinhAnh";
             img_Col.HeaderText = "Ảnh";
+            img_Col.Image = (Image)resources.GetObject("img_Col.Image");
+            img_Col.ImageLayout = DataGridViewImageCellLayout.Zoom;
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
             img_Col.Width = 225;
@@ -474,6 +501,8 @@
         private DataGridViewTextBoxColumn Name_Col;
         private DataGridViewTextBoxColumn GioiTinh_Col;
         private DataGridViewTextBoxColumn Address_Col;
+        private DataGridViewTextBoxColumn MaPhong_Col;
+        private DataGridViewTextBoxColumn MaTang_Col;
         private DataGridViewTextBoxColumn SDT_Col;
         private DataGridViewImageColumn img_Col;
     }
