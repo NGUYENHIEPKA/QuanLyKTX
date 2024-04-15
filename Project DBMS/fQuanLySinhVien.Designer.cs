@@ -38,8 +38,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             Renew_Btn = new Guna.UI2.WinForms.Guna2Button();
             Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -65,13 +63,14 @@
             MaSV_Label = new Label();
             panel2 = new Panel();
             dataGridView = new DataGridView();
-            MaSV_Col = new DataGridViewTextBoxColumn();
-            Name_Col = new DataGridViewTextBoxColumn();
-            GioiTinh_Col = new DataGridViewTextBoxColumn();
+            msv_Col = new DataGridViewTextBoxColumn();
+            name_Col = new DataGridViewTextBoxColumn();
+            birthday_Col = new DataGridViewTextBoxColumn();
+            gioitinh_Col = new DataGridViewTextBoxColumn();
             Address_Col = new DataGridViewTextBoxColumn();
-            MaPhong_Col = new DataGridViewTextBoxColumn();
-            MaTang_Col = new DataGridViewTextBoxColumn();
-            SDT_Col = new DataGridViewTextBoxColumn();
+            sdt_Col = new DataGridViewTextBoxColumn();
+            maPhong_Col = new DataGridViewTextBoxColumn();
+            maTang_Col = new DataGridViewTextBoxColumn();
             img_Col = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel8.SuspendLayout();
@@ -177,6 +176,7 @@
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 4;
             Add_Btn.Text = "Thêm";
+            Add_Btn.Click += Add_Btn_Click;
             // 
             // panel8
             // 
@@ -217,7 +217,7 @@
             BirthDay_Date.Format = DateTimePickerFormat.Short;
             BirthDay_Date.Location = new Point(109, 10);
             BirthDay_Date.Name = "BirthDay_Date";
-            BirthDay_Date.Size = new Size(145, 27);
+            BirthDay_Date.Size = new Size(140, 27);
             BirthDay_Date.TabIndex = 4;
             // 
             // BirthDay_Label
@@ -291,6 +291,7 @@
             // GioiTinhcb
             // 
             GioiTinhcb.FormattingEnabled = true;
+            GioiTinhcb.Items.AddRange(new object[] { "Nam", "Nu" });
             GioiTinhcb.Location = new Point(109, 15);
             GioiTinhcb.Name = "GioiTinhcb";
             GioiTinhcb.Size = new Size(140, 28);
@@ -344,61 +345,54 @@
             dataGridView.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaSV_Col, Name_Col, GioiTinh_Col, Address_Col, MaPhong_Col, MaTang_Col, SDT_Col, img_Col });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { msv_Col, name_Col, birthday_Col, gioitinh_Col, Address_Col, sdt_Col, maPhong_Col, maTang_Col, img_Col });
+            dataGridView.Dock = DockStyle.Fill;
             dataGridView.Location = new Point(0, 0);
             dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(1003, 513);
             dataGridView.TabIndex = 0;
             // 
-            // MaSV_Col
+            // msv_Col
             // 
-            MaSV_Col.DataPropertyName = "MaSV";
-            MaSV_Col.HeaderText = "Mã SV";
-            MaSV_Col.MinimumWidth = 6;
-            MaSV_Col.Name = "MaSV_Col";
-            MaSV_Col.Width = 125;
+            msv_Col.DataPropertyName = "MaSV";
+            msv_Col.HeaderText = "Mã sinh viên";
+            msv_Col.MinimumWidth = 6;
+            msv_Col.Name = "msv_Col";
+            msv_Col.Width = 120;
             // 
-            // Name_Col
+            // name_Col
             // 
-            Name_Col.DataPropertyName = "HoTen";
-            Name_Col.HeaderText = "Họ và tên";
-            Name_Col.MinimumWidth = 6;
-            Name_Col.Name = "Name_Col";
-            Name_Col.Width = 200;
+            name_Col.DataPropertyName = "HoTen";
+            name_Col.HeaderText = "Họ và tên";
+            name_Col.MinimumWidth = 6;
+            name_Col.Name = "name_Col";
+            name_Col.Width = 130;
             // 
-            // GioiTinh_Col
+            // birthday_Col
             // 
-            GioiTinh_Col.DataPropertyName = "GioiTinh";
-            GioiTinh_Col.HeaderText = "Giới tính";
-            GioiTinh_Col.MinimumWidth = 6;
-            GioiTinh_Col.Name = "GioiTinh_Col";
-            GioiTinh_Col.Width = 120;
+            birthday_Col.DataPropertyName = "NgaySinh";
+            birthday_Col.HeaderText = "Ngày sinh";
+            birthday_Col.MinimumWidth = 6;
+            birthday_Col.Name = "birthday_Col";
+            birthday_Col.Width = 105;
+            // 
+            // gioitinh_Col
+            // 
+            gioitinh_Col.DataPropertyName = "GioiTinh";
+            gioitinh_Col.HeaderText = "Giới tính";
+            gioitinh_Col.MinimumWidth = 6;
+            gioitinh_Col.Name = "gioitinh_Col";
+            gioitinh_Col.Width = 95;
             // 
             // Address_Col
             // 
@@ -406,41 +400,39 @@
             Address_Col.HeaderText = "Địa chỉ";
             Address_Col.MinimumWidth = 6;
             Address_Col.Name = "Address_Col";
-            Address_Col.Width = 200;
+            Address_Col.Width = 130;
             // 
-            // MaPhong_Col
+            // sdt_Col
             // 
-            MaPhong_Col.DataPropertyName = "MaPhong";
-            MaPhong_Col.HeaderText = "Mã Phòng";
-            MaPhong_Col.MinimumWidth = 6;
-            MaPhong_Col.Name = "MaPhong_Col";
-            MaPhong_Col.Width = 125;
+            sdt_Col.DataPropertyName = "SDT";
+            sdt_Col.HeaderText = "Số điện thoại";
+            sdt_Col.MinimumWidth = 6;
+            sdt_Col.Name = "sdt_Col";
+            sdt_Col.Width = 125;
             // 
-            // MaTang_Col
+            // maPhong_Col
             // 
-            MaTang_Col.DataPropertyName = "MaPhong";
-            MaTang_Col.HeaderText = "Mã Tầng";
-            MaTang_Col.MinimumWidth = 6;
-            MaTang_Col.Name = "MaTang_Col";
-            MaTang_Col.Width = 125;
+            maPhong_Col.DataPropertyName = "MaPhong";
+            maPhong_Col.HeaderText = "Phòng";
+            maPhong_Col.MinimumWidth = 6;
+            maPhong_Col.Name = "maPhong_Col";
+            maPhong_Col.Width = 65;
             // 
-            // SDT_Col
+            // maTang_Col
             // 
-            SDT_Col.DataPropertyName = "SDT";
-            SDT_Col.HeaderText = "Số điện thoại";
-            SDT_Col.MinimumWidth = 6;
-            SDT_Col.Name = "SDT_Col";
-            SDT_Col.Width = 130;
+            maTang_Col.DataPropertyName = "MaTang";
+            maTang_Col.HeaderText = "Tầng";
+            maTang_Col.MinimumWidth = 6;
+            maTang_Col.Name = "maTang_Col";
+            maTang_Col.Width = 65;
             // 
             // img_Col
             // 
             img_Col.DataPropertyName = "HinhAnh";
-            img_Col.HeaderText = "Ảnh";
-            img_Col.Image = (Image)resources.GetObject("img_Col.Image");
-            img_Col.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            img_Col.HeaderText = "Hình ảnh";
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
-            img_Col.Width = 225;
+            img_Col.Width = 165;
             // 
             // fQuanLySinhVien
             // 
@@ -497,13 +489,14 @@
         private Guna.UI2.WinForms.Guna2Button Delete_Btn;
         private Guna.UI2.WinForms.Guna2Button Edit_Btn;
         private DataGridView dataGridView;
-        private DataGridViewTextBoxColumn MaSV_Col;
-        private DataGridViewTextBoxColumn Name_Col;
-        private DataGridViewTextBoxColumn GioiTinh_Col;
+        private DataGridViewTextBoxColumn msv_Col;
+        private DataGridViewTextBoxColumn name_Col;
+        private DataGridViewTextBoxColumn birthday_Col;
+        private DataGridViewTextBoxColumn gioitinh_Col;
         private DataGridViewTextBoxColumn Address_Col;
-        private DataGridViewTextBoxColumn MaPhong_Col;
-        private DataGridViewTextBoxColumn MaTang_Col;
-        private DataGridViewTextBoxColumn SDT_Col;
+        private DataGridViewTextBoxColumn sdt_Col;
+        private DataGridViewTextBoxColumn maPhong_Col;
+        private DataGridViewTextBoxColumn maTang_Col;
         private DataGridViewImageColumn img_Col;
     }
 }

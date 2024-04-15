@@ -47,7 +47,6 @@ namespace Project_DBMS.DTO
             this.SDT = (string)row["SDT"];
             this.MaPhong = (string)row["MaPhong"];
             this.MaTang = (string)row["MaTang"];
-
         }
     }
 }

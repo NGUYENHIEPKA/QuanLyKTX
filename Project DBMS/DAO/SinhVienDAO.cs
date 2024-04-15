@@ -18,20 +18,12 @@ namespace Project_DBMS.DAO
             private set { instance = value; }
         }
         private SinhVienDAO() { }
-        public List<SinhVien> GetListSinhVien()
+        public DataTable GetListSinhVien()
         {
-            List<SinhVien> list = new List<SinhVien>();
-
             string query = "Select * from dbo.SinhVien";
 
             DataTable data = DataBase.Instance.Execute(query);
-
-            foreach (DataRow row in data.Rows)
-            {
-                SinhVien sinhvien = new SinhVien(row);
-                list.Add(sinhvien);
-            }
-            return list;
+            return data;
         }
     }
 }
