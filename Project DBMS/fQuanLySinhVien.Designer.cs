@@ -37,8 +37,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            panel9 = new Panel();
+            maPhong_tb = new TextBox();
+            phong_lb = new Label();
+            search_Btn = new Guna.UI2.WinForms.Guna2Button();
             Renew_Btn = new Guna.UI2.WinForms.Guna2Button();
             Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
             Edit_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -73,6 +79,7 @@
             maTang_Col = new DataGridViewTextBoxColumn();
             img_Col = new DataGridViewImageColumn();
             panel1.SuspendLayout();
+            panel9.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
@@ -85,6 +92,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(panel9);
+            panel1.Controls.Add(search_Btn);
             panel1.Controls.Add(Renew_Btn);
             panel1.Controls.Add(Delete_Btn);
             panel1.Controls.Add(Edit_Btn);
@@ -101,9 +110,55 @@
             panel1.Size = new Size(1003, 184);
             panel1.TabIndex = 0;
             // 
+            // panel9
+            // 
+            panel9.Controls.Add(maPhong_tb);
+            panel9.Controls.Add(phong_lb);
+            panel9.Location = new Point(737, 121);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(266, 57);
+            panel9.TabIndex = 3;
+            // 
+            // maPhong_tb
+            // 
+            maPhong_tb.Location = new Point(109, 11);
+            maPhong_tb.Name = "maPhong_tb";
+            maPhong_tb.Size = new Size(140, 27);
+            maPhong_tb.TabIndex = 1;
+            // 
+            // phong_lb
+            // 
+            phong_lb.AutoSize = true;
+            phong_lb.Location = new Point(12, 18);
+            phong_lb.Name = "phong_lb";
+            phong_lb.Size = new Size(51, 20);
+            phong_lb.TabIndex = 1;
+            phong_lb.Text = "Phòng";
+            // 
+            // search_Btn
+            // 
+            search_Btn.CustomizableEdges = customizableEdges1;
+            search_Btn.DisabledState.BorderColor = Color.DarkGray;
+            search_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            search_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            search_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            search_Btn.FillColor = Color.White;
+            search_Btn.Font = new Font("Segoe UI", 9F);
+            search_Btn.ForeColor = Color.Black;
+            search_Btn.Image = (Image)resources.GetObject("search_Btn.Image");
+            search_Btn.ImageAlign = HorizontalAlignment.Left;
+            search_Btn.Location = new Point(625, 126);
+            search_Btn.Name = "search_Btn";
+            search_Btn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            search_Btn.Size = new Size(123, 45);
+            search_Btn.TabIndex = 8;
+            search_Btn.Text = "Tìm kiếm";
+            search_Btn.TextOffset = new Point(9, 0);
+            search_Btn.Click += search_Btn_Click;
+            // 
             // Renew_Btn
             // 
-            Renew_Btn.CustomizableEdges = customizableEdges1;
+            Renew_Btn.CustomizableEdges = customizableEdges3;
             Renew_Btn.DisabledState.BorderColor = Color.DarkGray;
             Renew_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Renew_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -115,14 +170,14 @@
             Renew_Btn.ImageAlign = HorizontalAlignment.Left;
             Renew_Btn.Location = new Point(475, 126);
             Renew_Btn.Name = "Renew_Btn";
-            Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Renew_Btn.Size = new Size(123, 45);
             Renew_Btn.TabIndex = 7;
             Renew_Btn.Text = "Renew";
             // 
             // Delete_Btn
             // 
-            Delete_Btn.CustomizableEdges = customizableEdges3;
+            Delete_Btn.CustomizableEdges = customizableEdges5;
             Delete_Btn.DisabledState.BorderColor = Color.DarkGray;
             Delete_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Delete_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -134,14 +189,14 @@
             Delete_Btn.ImageAlign = HorizontalAlignment.Left;
             Delete_Btn.Location = new Point(325, 126);
             Delete_Btn.Name = "Delete_Btn";
-            Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Delete_Btn.Size = new Size(123, 45);
             Delete_Btn.TabIndex = 6;
             Delete_Btn.Text = "Xóa";
             // 
             // Edit_Btn
             // 
-            Edit_Btn.CustomizableEdges = customizableEdges5;
+            Edit_Btn.CustomizableEdges = customizableEdges7;
             Edit_Btn.DisabledState.BorderColor = Color.DarkGray;
             Edit_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Edit_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -153,14 +208,14 @@
             Edit_Btn.ImageAlign = HorizontalAlignment.Left;
             Edit_Btn.Location = new Point(175, 126);
             Edit_Btn.Name = "Edit_Btn";
-            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Edit_Btn.Size = new Size(123, 45);
             Edit_Btn.TabIndex = 5;
             Edit_Btn.Text = "Sửa";
             // 
             // Add_Btn
             // 
-            Add_Btn.CustomizableEdges = customizableEdges7;
+            Add_Btn.CustomizableEdges = customizableEdges9;
             Add_Btn.DisabledState.BorderColor = Color.DarkGray;
             Add_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Add_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -172,7 +227,7 @@
             Add_Btn.ImageAlign = HorizontalAlignment.Left;
             Add_Btn.Location = new Point(25, 126);
             Add_Btn.Name = "Add_Btn";
-            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 4;
             Add_Btn.Text = "Thêm";
@@ -358,6 +413,7 @@
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
+            dataGridView.RowTemplate.Height = 100;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(1003, 513);
             dataGridView.TabIndex = 0;
@@ -430,6 +486,8 @@
             // 
             img_Col.DataPropertyName = "HinhAnh";
             img_Col.HeaderText = "Hình ảnh";
+            img_Col.Image = (Image)resources.GetObject("img_Col.Image");
+            img_Col.ImageLayout = DataGridViewImageCellLayout.Zoom;
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
             img_Col.Width = 165;
@@ -445,6 +503,8 @@
             Name = "fQuanLySinhVien";
             Text = "fQuanLySinhVien";
             panel1.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel7.ResumeLayout(false);
@@ -489,6 +549,10 @@
         private Guna.UI2.WinForms.Guna2Button Delete_Btn;
         private Guna.UI2.WinForms.Guna2Button Edit_Btn;
         private DataGridView dataGridView;
+        private Guna.UI2.WinForms.Guna2Button search_Btn;
+        private Panel panel9;
+        private TextBox maPhong_tb;
+        private Label phong_lb;
         private DataGridViewTextBoxColumn msv_Col;
         private DataGridViewTextBoxColumn name_Col;
         private DataGridViewTextBoxColumn birthday_Col;

@@ -24,9 +24,11 @@ namespace Project_DBMS.DTO
         private string maPhong;
         public string MaPhong { get => maPhong; set => maPhong = value;}
         private string maTang;
-        public string MaTang { get => maTang; set => maPhong = value; }
+        public string MaTang { get => maTang; set => maTang = value; }
+        private Image hinhAnh;
+        public Image HinhAnh { get => hinhAnh; set => hinhAnh = value;}
 
-        public SinhVien (string maSV, string hoTen, DateTime ngaySinh, string diaChi, string gioiTinh, string sdt, string maPhong, string maTang)
+        public SinhVien (string maSV, string hoTen, DateTime ngaySinh, string diaChi, string gioiTinh, string sdt, string maPhong, string maTang, Image hinhAnh)
         {
             this.MaSV = maSV;
             this.HoTen = hoTen;
@@ -36,6 +38,7 @@ namespace Project_DBMS.DTO
             this.SDT = sdt;
             this.MaPhong = maPhong;
             this.MaTang = maTang;
+            this.HinhAnh = hinhAnh;
         }
         public SinhVien(DataRow row)
         {
@@ -47,6 +50,9 @@ namespace Project_DBMS.DTO
             this.SDT = (string)row["SDT"];
             this.MaPhong = (string)row["MaPhong"];
             this.MaTang = (string)row["MaTang"];
+            byte[] imgData = (byte[])row["HinhAnh"];
+            MemoryStream ms = new MemoryStream(imgData);
+            this.HinhAnh = Image.FromStream(ms);
         }
     }
 }
