@@ -20,7 +20,7 @@ namespace Project_DBMS.DAO
 
         private DataBase() { }
 
-        string connectionSTR = @"Data Source=DuyHao\DUYHAO;Initial Catalog=QuanLyKTX;Integrated Security=True;Encrypt=False";
+        string connectionSTR = @"Data Source=LAPTOP-4TT7LL7D\NGUYENHIEPKA;Initial Catalog=QuanLyKTX;Integrated Security=True;Encrypt=False";
         public DataTable Execute (string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -39,6 +39,8 @@ namespace Project_DBMS.DAO
                     {
                         if (s.Contains('@'))
                         {
+                            //Tham số đầu tiên trong mảng sẽ được ánh xạ đến
+                            //tham số đầu tiên được tìm thấy trong truy vấn
                             command.Parameters.AddWithValue(s, parameter[i]);
                             i++;
                         }
@@ -77,7 +79,7 @@ namespace Project_DBMS.DAO
                         }
                     }
                 }
-
+                //Thực thi trên csdl
                 data = command.ExecuteNonQuery();
 
                 connection.Close();

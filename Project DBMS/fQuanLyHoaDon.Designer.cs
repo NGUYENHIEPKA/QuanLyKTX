@@ -387,9 +387,11 @@
             dataGridView.RowHeadersWidth = 51;
             dataGridView.Size = new Size(1003, 513);
             dataGridView.TabIndex = 1;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
             // MaHoaDon_Col
             // 
+            MaHoaDon_Col.DataPropertyName = "MaHoaDon";
             MaHoaDon_Col.FillWeight = 75F;
             MaHoaDon_Col.HeaderText = "Mã hóa đơn";
             MaHoaDon_Col.MinimumWidth = 6;
@@ -398,6 +400,7 @@
             // 
             // MaPhong_Col
             // 
+            MaPhong_Col.DataPropertyName = "MaPhong";
             MaPhong_Col.FillWeight = 77.19445F;
             MaPhong_Col.HeaderText = "Mã phòng";
             MaPhong_Col.MinimumWidth = 6;
@@ -406,6 +409,7 @@
             // 
             // Pttt_Col
             // 
+            Pttt_Col.DataPropertyName = "PhuongThucThanhToan";
             Pttt_Col.FillWeight = 126.583336F;
             Pttt_Col.HeaderText = "Phương thức thanh toán";
             Pttt_Col.MinimumWidth = 6;
@@ -414,6 +418,7 @@
             // 
             // TypeHoaDon_Col
             // 
+            TypeHoaDon_Col.DataPropertyName = "LoaiHoaDon";
             TypeHoaDon_Col.FillWeight = 119.777786F;
             TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
             TypeHoaDon_Col.MinimumWidth = 6;
@@ -422,6 +427,7 @@
             // 
             // NgayTaoHoaDon_Col
             // 
+            NgayTaoHoaDon_Col.DataPropertyName = "NgayTaoHoaDon";
             NgayTaoHoaDon_Col.FillWeight = 85.75F;
             NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
             NgayTaoHoaDon_Col.MinimumWidth = 6;
@@ -430,6 +436,7 @@
             // 
             // img_Col
             // 
+            img_Col.DataPropertyName = "TrangThaiThanhToan";
             img_Col.FillWeight = 115.69445F;
             img_Col.HeaderText = "Trạng thái thanh toán";
             img_Col.MinimumWidth = 6;
