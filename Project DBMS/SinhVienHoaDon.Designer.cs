@@ -54,7 +54,11 @@
             TypeHoaDon_Col = new DataGridViewTextBoxColumn();
             NgayTaoHoaDon_Col = new DataGridViewTextBoxColumn();
             Pttt_Col = new DataGridViewTextBoxColumn();
-            img_Col = new DataGridViewTextBoxColumn();
+            Money = new DataGridViewTextBoxColumn();
+            img_Col = new DataGridViewCheckBoxColumn();
+            panel4 = new Panel();
+            MoneyTB = new TextBox();
+            MoneyLB = new Label();
             panel1.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
@@ -63,10 +67,12 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SinhVienListHoaDon).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel5);
@@ -243,7 +249,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             SinhVienListHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             SinhVienListHoaDon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            SinhVienListHoaDon.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, Pttt_Col, img_Col });
+            SinhVienListHoaDon.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, Pttt_Col, Money, img_Col });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -273,7 +279,7 @@
             MaHoaDon_Col.HeaderText = "Mã hóa đơn";
             MaHoaDon_Col.MinimumWidth = 6;
             MaHoaDon_Col.Name = "MaHoaDon_Col";
-            MaHoaDon_Col.Width = 160;
+            MaHoaDon_Col.Width = 130;
             // 
             // TypeHoaDon_Col
             // 
@@ -281,7 +287,7 @@
             TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
             TypeHoaDon_Col.MinimumWidth = 6;
             TypeHoaDon_Col.Name = "TypeHoaDon_Col";
-            TypeHoaDon_Col.Width = 220;
+            TypeHoaDon_Col.Width = 160;
             // 
             // NgayTaoHoaDon_Col
             // 
@@ -289,7 +295,7 @@
             NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
             NgayTaoHoaDon_Col.MinimumWidth = 6;
             NgayTaoHoaDon_Col.Name = "NgayTaoHoaDon_Col";
-            NgayTaoHoaDon_Col.Width = 190;
+            NgayTaoHoaDon_Col.Width = 165;
             // 
             // Pttt_Col
             // 
@@ -297,7 +303,14 @@
             Pttt_Col.HeaderText = "Phương thức thanh toán";
             Pttt_Col.MinimumWidth = 6;
             Pttt_Col.Name = "Pttt_Col";
-            Pttt_Col.Width = 230;
+            Pttt_Col.Width = 200;
+            // 
+            // Money
+            // 
+            Money.HeaderText = "Số Tiền";
+            Money.MinimumWidth = 6;
+            Money.Name = "Money";
+            Money.Width = 155;
             // 
             // img_Col
             // 
@@ -306,8 +319,33 @@
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
             img_Col.Resizable = DataGridViewTriState.True;
-            img_Col.SortMode = DataGridViewColumnSortMode.NotSortable;
-            img_Col.Width = 200;
+            img_Col.Width = 190;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(MoneyTB);
+            panel4.Controls.Add(MoneyLB);
+            panel4.Location = new Point(737, 62);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(266, 57);
+            panel4.TabIndex = 10;
+            // 
+            // MoneyTB
+            // 
+            MoneyTB.Location = new Point(88, 14);
+            MoneyTB.Name = "MoneyTB";
+            MoneyTB.ReadOnly = true;
+            MoneyTB.Size = new Size(166, 27);
+            MoneyTB.TabIndex = 2;
+            // 
+            // MoneyLB
+            // 
+            MoneyLB.AutoSize = true;
+            MoneyLB.Location = new Point(12, 18);
+            MoneyLB.Name = "MoneyLB";
+            MoneyLB.Size = new Size(55, 20);
+            MoneyLB.TabIndex = 1;
+            MoneyLB.Text = "Số tiền";
             // 
             // SinhVienHoaDon
             // 
@@ -332,6 +370,8 @@
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)SinhVienListHoaDon).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -355,10 +395,14 @@
         private TextBox NgayTao_tb;
         private DataGridView SinhVienListHoaDon;
         private Guna.UI2.WinForms.Guna2RadioButton thanhToan_check;
+        private Panel panel4;
+        private TextBox MoneyTB;
+        private Label MoneyLB;
         private DataGridViewTextBoxColumn MaHoaDon_Col;
         private DataGridViewTextBoxColumn TypeHoaDon_Col;
         private DataGridViewTextBoxColumn NgayTaoHoaDon_Col;
         private DataGridViewTextBoxColumn Pttt_Col;
-        private DataGridViewTextBoxColumn img_Col;
+        private DataGridViewTextBoxColumn Money;
+        private DataGridViewCheckBoxColumn img_Col;
     }
 }
