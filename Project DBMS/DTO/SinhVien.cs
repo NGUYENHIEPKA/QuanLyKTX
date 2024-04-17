@@ -13,8 +13,8 @@ namespace Project_DBMS.DTO
         public string MaSV { get =>  maSV; set => maSV = value;}
         private string hoTen;
         public string HoTen { get => hoTen; set => hoTen = value;}
-        private DateTime ngaySinh;
-        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value;}
+        private string ngaySinh;
+        public string NgaySinh { get => ngaySinh; set => ngaySinh = value;}
         private string diaChi;
         public string DiaChi { get => diaChi; set => diaChi = value; }
         private string gioiTinh;
@@ -28,7 +28,7 @@ namespace Project_DBMS.DTO
         private Image hinhAnh;
         public Image HinhAnh { get => hinhAnh; set => hinhAnh = value;}
 
-        public SinhVien (string maSV, string hoTen, DateTime ngaySinh, string diaChi, string gioiTinh, string sdt, string maPhong, string maTang, Image hinhAnh)
+        public SinhVien (string maSV, string hoTen, string ngaySinh, string diaChi, string gioiTinh, string sdt, string maPhong, string maTang, Image hinhAnh)
         {
             this.MaSV = maSV;
             this.HoTen = hoTen;
@@ -44,7 +44,7 @@ namespace Project_DBMS.DTO
         {
             this.MaSV = (string)row["MaSV"];
             this.HoTen = (string)row["HoTen"];
-            this.NgaySinh = (DateTime)row["NgaySinh"];
+            this.NgaySinh = (string)row["NgaySinh"];
             this.DiaChi = (string)row["DiaChi"];
             this.GioiTinh = (string)row["GioiTinh"];
             this.SDT = (string)row["SDT"];

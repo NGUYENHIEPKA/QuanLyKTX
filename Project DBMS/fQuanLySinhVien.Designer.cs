@@ -269,7 +269,8 @@
             // 
             // BirthDay_Date
             // 
-            BirthDay_Date.Format = DateTimePickerFormat.Short;
+            BirthDay_Date.CustomFormat = "yyyy-MM-dd";
+            BirthDay_Date.Format = DateTimePickerFormat.Custom;
             BirthDay_Date.Location = new Point(109, 10);
             BirthDay_Date.Name = "BirthDay_Date";
             BirthDay_Date.Size = new Size(140, 27);

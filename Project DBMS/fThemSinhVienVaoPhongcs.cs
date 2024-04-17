@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_DBMS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,10 @@ namespace Project_DBMS
 
         private void Add_Btn_Click(object sender, EventArgs e)
         {
-
+            string MSSV = MSSV_tb.Text;
+            string MaPhong = maPhong_tb.Text;
+            string MaTang = maTang_tb.Text;
+            SinhVienDAO.Instance.AddPhongSinhVien(MSSV, MaPhong, MaTang);
         }
     }
 }

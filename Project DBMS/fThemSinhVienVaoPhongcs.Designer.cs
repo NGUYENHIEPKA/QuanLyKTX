@@ -59,7 +59,7 @@
             maPhong_tb = new TextBox();
             phong_lb = new Label();
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            maTang_tb = new TextBox();
             label2 = new Label();
             Add_Btn = new Guna.UI2.WinForms.Guna2Button();
             Cancel_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -234,7 +234,8 @@
             // 
             // BirthDay_Date
             // 
-            BirthDay_Date.Format = DateTimePickerFormat.Short;
+            BirthDay_Date.CustomFormat = "yyyy-MM-dd";
+            BirthDay_Date.Format = DateTimePickerFormat.Custom;
             BirthDay_Date.Location = new Point(109, 10);
             BirthDay_Date.Name = "BirthDay_Date";
             BirthDay_Date.Size = new Size(140, 27);
@@ -276,19 +277,19 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(maTang_tb);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(293, 431);
             panel1.Name = "panel1";
             panel1.Size = new Size(266, 57);
             panel1.TabIndex = 9;
             // 
-            // textBox1
+            // maTang_tb
             // 
-            textBox1.Location = new Point(109, 11);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(140, 27);
-            textBox1.TabIndex = 1;
+            maTang_tb.Location = new Point(109, 11);
+            maTang_tb.Name = "maTang_tb";
+            maTang_tb.Size = new Size(140, 27);
+            maTang_tb.TabIndex = 1;
             // 
             // label2
             // 
@@ -404,7 +405,7 @@
         private TextBox maPhong_tb;
         private Label phong_lb;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox maTang_tb;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button Add_Btn;
         private Guna.UI2.WinForms.Guna2Button Cancel_Btn;
