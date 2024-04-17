@@ -24,6 +24,8 @@ CREATE TABLE SinhVien(
 )
 GO
 
+select * from SinhVien
+
 CREATE TABLE QuanLy(
 	MaQL NVARCHAR(8) PRIMARY KEY,
 	HoTen NVARCHAR(100) NOT NULL,
@@ -201,6 +203,7 @@ BEGIN
 			SELECT @MaQL = MaQL FROM QuanLy WHERE MaTangQL = @MaTang
 			PRINT(2)
 			INSERT INTO DatPhong (MaPhong, MaSV, MaNguoiQL, SoKy, NgayNhanPhong) VALUES (@MaPhong, @MaSV, @MaQL, @SoKy, GETDATE())
+			
 		END
 	END
 END
@@ -316,16 +319,35 @@ INSERT INTO QuanLy (MaQL, HoTen, MaTangQL) VALUES ('QL005', 'Pham Van E', 'T05')
 GO
 
 INSERT INTO Phong (MaPhong, MaTang, MaLoaiPhong, LoaiPhong, SoNguoi) 
-VALUES ('P001', 'T01', 'LP001', 'A', 2),
-       ('P002', 'T02', 'LP002', 'B', 1),
-       ('P003', 'T03', 'LP003', 'C', 3),
-       ('P004', 'T04', 'LP004', 'A', 2),
-       ('P005', 'T05', 'LP005', 'B', 1);
+VALUES ('A04', 'T01', 'L04', '4', 4),
+       ('E08', 'T02', 'L08', '8', 8)
 GO
 
+
+
 INSERT INTO SinhVien (MaSV, HoTen, NgaySinh, GioiTinh, DiaChi, SDT, MaPhong, MaTang, HinhAnh) 
-VALUES ('SV001', 'Nguyen Van A', '2000-01-01', 'Nam', '123 ABC Street', '0123456789', 'P001', 'T01', NULL),
-       ('SV002', 'Tran Thi B', '2001-02-02', 'Nu', '456 XYZ Street', '0987654321', 'P002', 'T02', NULL),
-       ('SV003', 'Le Van C', '1999-03-03', 'Nam', '789 QWE Street', '0369852471', 'P003', 'T03', NULL),
-       ('SV004', 'Pham Thi D', '1998-04-04', 'Nu', '147 RTY Street', '0957348612', 'P004', 'T04', NULL),
-       ('SV005', 'Hoang Van E', '2002-05-05', 'Nam', '258 UIO Street', '0738192546', 'P005', 'T05', NULL);
+VALUES ('SV001', 'Nguyen Van A', '2000-01-01', 'Nam', '123 ABC Street', '0123456789', 'A04', 'T01', NULL),
+       ('SV002', 'Tran Thi B', '2001-02-02', 'Nu', '456 XYZ Street', '0987654321', 'A04', 'T01', NULL),
+       ('SV003', 'Le Van C', '1999-03-03', 'Nam', '789 QWE Street', '0369852471', 'A04', 'T01', NULL),
+       ('SV004', 'Pham Thi D', '1998-04-04', 'Nu', '147 RTY Street', '0957348612', 'A04', 'T01', NULL),
+       ('SV005', 'Hoang Van E', '2002-05-05', 'Nam', '258 UIO Street', '0738192546', 'E08', 'T05', NULL);
+GO
+
+update SinhVien
+set HinhAnh = (Select BulkColumn from openrowset (bulk N'D:\ktx\Project DBMS\Resources\AnhSinhVienSV001.jpg', single_blob) as HinhAnh) where MaSV = 'SV001'
+
+update SinhVien
+set HinhAnh = (Select BulkColumn from openrowset (bulk N'D:\ktx\Project DBMS\Resources\AnhSinhVienSV002.jpg', single_blob) as HinhAnh) where MaSV = 'SV002'
+
+update SinhVien
+set HinhAnh = (Select BulkColumn from openrowset (bulk N'D:\ktx\Project DBMS\Resources\AnhSinhVienSV003.jpg', single_blob) as HinhAnh) where MaSV = 'SV003'
+
+update SinhVien
+set HinhAnh = (Select BulkColumn from openrowset (bulk N'D:\ktx\Project DBMS\Resources\AnhSinhVienSV004.jpg', single_blob) as HinhAnh) where MaSV = 'SV004'
+
+update SinhVien
+set HinhAnh = (Select BulkColumn from openrowset (bulk N'D:\ktx\Project DBMS\Resources\AnhSinhVienSV005.jpg', single_blob) as HinhAnh) where MaSV = 'SV005'
+
+INSERT INTO LoaiPhong (MaLoaiPhong, SoNguoiO, GiaTien) VALUES 
+('L04', 4, 360000),
+('L08', 8, 280000)

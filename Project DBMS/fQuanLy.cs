@@ -33,7 +33,7 @@ namespace Project_DBMS
         private void UserInformationBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Thông tin cá nhân";
-            //container(new fThongtinCaNhan());
+            container(new fThongTinCaNhanQL());
         }
 
         private void RoomBtn_Click(object sender, EventArgs e)
