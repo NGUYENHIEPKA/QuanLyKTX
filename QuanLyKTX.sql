@@ -115,24 +115,20 @@ ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong, NgayTaoHoaDon) REFERENCES dbo.T
 GO
 
 -- Trigger
-CREATE TRIGGER UTG_AddSinhVien ON SinhVien AFTER INSERT
+CREATE TRIGGER UTG_AddSinhVienVoPhong ON SinhVien AFTER UPDATE
 AS 
 BEGIN
 	DECLARE @MaSV CHAR(8), @MaPhong NVARCHAR(5)
 	SELECT @MaSV = MaSV, @MaPhong = MaPhong FROM INSERTED
-	INSERT INTO TaiKhoan VALUES (@MaSV, @MaSV, 0)
 	UPDATE Phong SET SoNguoi = SoNguoi + 1 WHERE @MaPhong = MaPhong
 END
 GO
 
-CREATE TRIGGER UTG_DeleteSinhVien ON SinhVien INSTEAD OF DELETE
+CREATE TRIGGER UTG_DeleteSinhVienKhoiPhong ON SinhVien AFTER UPDATE
 AS
 BEGIN
 	DECLARE @MaSV CHAR(8), @MaPhong NVARCHAR(5)
 	SELECT @MaSV = MaSV, @MaPhong = MaPhong FROM DELETED
-	DELETE FROM DatPhong WHERE MaSV = @MaSV
-	DELETE FROM SinhVien WHERE MaSV = @MaSV
-	DELETE FROM TaiKhoan WHERE TaiKhoan = @MaSV
 	UPDATE Phong SET SoNguoi = SoNguoi - 1 WHERE MaPhong = @MaPhong
 END
 GO
@@ -242,21 +238,19 @@ GO
 
 CREATE PROC UTP_CapNhatChoOSinhVien
 @MaSV CHAR(8),
-@HoTen NVARCHAR(100),
-@NgaySinh DATE,
-@GioiTinh NVARCHAR(3),
-@DiaChi NVARCHAR(100),
-@SDT CHAR(10),
 @MaPhong NVARCHAR(5),
 @MaTang NVARCHAR(5)
 AS
 BEGIN
 	DECLARE @Count1 INT, @Count2 INT
-	SELECT @Count1 = LoaiPhong.SoNguoiO, @Count2 = Phong.SoNguoi FROM Phong INNER JOIN LoaiPhong ON Phong.LoaiPhong = LoaiPhong.GiaTien
+	SELECT @Count1 = LoaiPhong.SoNguoiO, @Count2 = Phong.SoNguoi FROM Phong INNER JOIN LoaiPhong ON Phong.MaLoaiPhong = LoaiPhong.MaLoaiPhong
 	WHERE Phong.MaPhong = @MaPhong
 	IF(@Count2 < @Count1)
-		UPDATE SinhVien SET HoTen = @HoTen, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, SDT = @SDT,
-		MaPhong = @MaPhong, MaTang = @MaTang
+		UPDATE SinhVien SET MaPhong = @MaPhong, MaTang = @MaTang WHERE MaSV = @MaSV
+	ELSE
+	BEGIN
+		RAISERROR('Số lượng người trong phòng vượt quá số lượng tối đa.', 16, 1)
+	END
 END
 
 create proc UTP_ThemHoaDonDien
@@ -320,7 +314,7 @@ GO
 
 INSERT INTO Phong (MaPhong, MaTang, MaLoaiPhong, LoaiPhong, SoNguoi) 
 VALUES ('A04', 'T01', 'L04', '4', 4),
-       ('E08', 'T02', 'L08', '8', 8)
+       ('E08', 'T02', 'L08', '8', 1)
 GO
 
 
