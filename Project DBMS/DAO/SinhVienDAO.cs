@@ -25,5 +25,12 @@ namespace Project_DBMS.DAO
             DataTable data = DataBase.Instance.Execute(query);
             return data;
         }
+        public DataTable FindSinhVienByRoom(string MaPhong)
+        {
+            string query = "Select * from dbo.SinhVien Where MaPhong = '" + MaPhong + "'";
+
+            DataTable data = DataBase.Instance.Execute(query);
+            return data;
+        }
     }
 }
