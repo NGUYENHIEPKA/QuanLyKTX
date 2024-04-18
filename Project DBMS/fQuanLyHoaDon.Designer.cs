@@ -71,6 +71,7 @@
             Pttt_Col = new DataGridViewTextBoxColumn();
             TypeHoaDon_Col = new DataGridViewTextBoxColumn();
             NgayTaoHoaDon_Col = new DataGridViewTextBoxColumn();
+            Money = new DataGridViewTextBoxColumn();
             img_Col = new DataGridViewCheckBoxColumn();
             panel1.SuspendLayout();
             panel8.SuspendLayout();
@@ -364,7 +365,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, MaPhong_Col, Pttt_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, img_Col });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, MaPhong_Col, Pttt_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, Money, img_Col });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -385,57 +386,73 @@
             dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(1003, 513);
             dataGridView.TabIndex = 1;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
             // MaHoaDon_Col
             // 
+            MaHoaDon_Col.DataPropertyName = "MaHoaDon";
             MaHoaDon_Col.FillWeight = 75F;
             MaHoaDon_Col.HeaderText = "Mã hóa đơn";
             MaHoaDon_Col.MinimumWidth = 6;
             MaHoaDon_Col.Name = "MaHoaDon_Col";
-            MaHoaDon_Col.Width = 125;
+            MaHoaDon_Col.Width = 122;
             // 
             // MaPhong_Col
             // 
+            MaPhong_Col.DataPropertyName = "MaPhong";
             MaPhong_Col.FillWeight = 77.19445F;
             MaPhong_Col.HeaderText = "Mã phòng";
             MaPhong_Col.MinimumWidth = 6;
             MaPhong_Col.Name = "MaPhong_Col";
-            MaPhong_Col.Width = 129;
+            MaPhong_Col.Width = 115;
             // 
             // Pttt_Col
             // 
+            Pttt_Col.DataPropertyName = "PhuongThucThanhToan";
             Pttt_Col.FillWeight = 126.583336F;
             Pttt_Col.HeaderText = "Phương thức thanh toán";
             Pttt_Col.MinimumWidth = 6;
             Pttt_Col.Name = "Pttt_Col";
-            Pttt_Col.Width = 211;
+            Pttt_Col.Width = 178;
             // 
             // TypeHoaDon_Col
             // 
+            TypeHoaDon_Col.DataPropertyName = "LoaiHoaDon";
             TypeHoaDon_Col.FillWeight = 119.777786F;
             TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
             TypeHoaDon_Col.MinimumWidth = 6;
             TypeHoaDon_Col.Name = "TypeHoaDon_Col";
-            TypeHoaDon_Col.Width = 199;
+            TypeHoaDon_Col.Width = 150;
             // 
             // NgayTaoHoaDon_Col
             // 
+            NgayTaoHoaDon_Col.DataPropertyName = "NgayTaoHoaDon";
             NgayTaoHoaDon_Col.FillWeight = 85.75F;
             NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
             NgayTaoHoaDon_Col.MinimumWidth = 6;
             NgayTaoHoaDon_Col.Name = "NgayTaoHoaDon_Col";
-            NgayTaoHoaDon_Col.Width = 143;
+            NgayTaoHoaDon_Col.Width = 135;
+            // 
+            // Money
+            // 
+            Money.DataPropertyName = "SoTien";
+            Money.HeaderText = "Số tiền";
+            Money.MinimumWidth = 6;
+            Money.Name = "Money";
+            Money.Width = 120;
             // 
             // img_Col
             // 
+            img_Col.DataPropertyName = "TrangThai";
             img_Col.FillWeight = 115.69445F;
             img_Col.HeaderText = "Trạng thái thanh toán";
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
             img_Col.Resizable = DataGridViewTriState.True;
-            img_Col.Width = 193;
+            img_Col.Width = 180;
             // 
             // fQuanLyHoaDon
             // 
@@ -497,6 +514,7 @@
         private DataGridViewTextBoxColumn Pttt_Col;
         private DataGridViewTextBoxColumn TypeHoaDon_Col;
         private DataGridViewTextBoxColumn NgayTaoHoaDon_Col;
+        private DataGridViewTextBoxColumn Money;
         private DataGridViewCheckBoxColumn img_Col;
     }
 }
