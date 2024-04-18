@@ -33,6 +33,9 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            panel4 = new Panel();
+            MoneyTB = new TextBox();
+            MoneyLB = new Label();
             panel8 = new Panel();
             thanhToan_check = new Guna.UI2.WinForms.Guna2RadioButton();
             Status_Label = new Label();
@@ -56,10 +59,8 @@
             Pttt_Col = new DataGridViewTextBoxColumn();
             Money = new DataGridViewTextBoxColumn();
             img_Col = new DataGridViewCheckBoxColumn();
-            panel4 = new Panel();
-            MoneyTB = new TextBox();
-            MoneyLB = new Label();
             panel1.SuspendLayout();
+            panel4.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
@@ -67,7 +68,6 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SinhVienListHoaDon).BeginInit();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -83,6 +83,32 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1003, 122);
             panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(MoneyTB);
+            panel4.Controls.Add(MoneyLB);
+            panel4.Location = new Point(737, 62);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(266, 57);
+            panel4.TabIndex = 10;
+            // 
+            // MoneyTB
+            // 
+            MoneyTB.Location = new Point(88, 14);
+            MoneyTB.Name = "MoneyTB";
+            MoneyTB.ReadOnly = true;
+            MoneyTB.Size = new Size(166, 27);
+            MoneyTB.TabIndex = 2;
+            // 
+            // MoneyLB
+            // 
+            MoneyLB.AutoSize = true;
+            MoneyLB.Location = new Point(12, 18);
+            MoneyLB.Name = "MoneyLB";
+            MoneyLB.Size = new Size(55, 20);
+            MoneyLB.TabIndex = 1;
+            MoneyLB.Text = "Số tiền";
             // 
             // panel8
             // 
@@ -250,7 +276,7 @@
             SinhVienListHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             SinhVienListHoaDon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             SinhVienListHoaDon.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, Pttt_Col, Money, img_Col });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
@@ -258,7 +284,7 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             SinhVienListHoaDon.DefaultCellStyle = dataGridViewCellStyle3;
-            SinhVienListHoaDon.Location = new Point(0, 4);
+            SinhVienListHoaDon.Location = new Point(0, 0);
             SinhVienListHoaDon.Name = "SinhVienListHoaDon";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
@@ -270,11 +296,14 @@
             SinhVienListHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             SinhVienListHoaDon.RowHeadersVisible = false;
             SinhVienListHoaDon.RowHeadersWidth = 51;
-            SinhVienListHoaDon.Size = new Size(1003, 539);
-            SinhVienListHoaDon.TabIndex = 2;
+            SinhVienListHoaDon.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            SinhVienListHoaDon.Size = new Size(1003, 513);
+            SinhVienListHoaDon.TabIndex = 1;
+            SinhVienListHoaDon.CellContentClick += SinhVienListHoaDon_CellContentClick;
             // 
             // MaHoaDon_Col
             // 
+            MaHoaDon_Col.DataPropertyName = "MaHoaDon";
             MaHoaDon_Col.FillWeight = 75F;
             MaHoaDon_Col.HeaderText = "Mã hóa đơn";
             MaHoaDon_Col.MinimumWidth = 6;
@@ -283,6 +312,7 @@
             // 
             // TypeHoaDon_Col
             // 
+            TypeHoaDon_Col.DataPropertyName = "LoaiHoaDon";
             TypeHoaDon_Col.FillWeight = 119.777786F;
             TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
             TypeHoaDon_Col.MinimumWidth = 6;
@@ -291,6 +321,7 @@
             // 
             // NgayTaoHoaDon_Col
             // 
+            NgayTaoHoaDon_Col.DataPropertyName = "NgayTaoHoaDon";
             NgayTaoHoaDon_Col.FillWeight = 85.75F;
             NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
             NgayTaoHoaDon_Col.MinimumWidth = 6;
@@ -299,6 +330,7 @@
             // 
             // Pttt_Col
             // 
+            Pttt_Col.DataPropertyName = "PhuongThucThanhToan";
             Pttt_Col.FillWeight = 126.583336F;
             Pttt_Col.HeaderText = "Phương thức thanh toán";
             Pttt_Col.MinimumWidth = 6;
@@ -307,6 +339,7 @@
             // 
             // Money
             // 
+            Money.DataPropertyName = "SoTien";
             Money.HeaderText = "Số Tiền";
             Money.MinimumWidth = 6;
             Money.Name = "Money";
@@ -314,38 +347,13 @@
             // 
             // img_Col
             // 
+            img_Col.DataPropertyName = "TrangThai";
             img_Col.FillWeight = 115.69445F;
             img_Col.HeaderText = "Trạng thái thanh toán";
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
             img_Col.Resizable = DataGridViewTriState.True;
             img_Col.Width = 190;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(MoneyTB);
-            panel4.Controls.Add(MoneyLB);
-            panel4.Location = new Point(737, 62);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(266, 57);
-            panel4.TabIndex = 10;
-            // 
-            // MoneyTB
-            // 
-            MoneyTB.Location = new Point(88, 14);
-            MoneyTB.Name = "MoneyTB";
-            MoneyTB.ReadOnly = true;
-            MoneyTB.Size = new Size(166, 27);
-            MoneyTB.TabIndex = 2;
-            // 
-            // MoneyLB
-            // 
-            MoneyLB.AutoSize = true;
-            MoneyLB.Location = new Point(12, 18);
-            MoneyLB.Name = "MoneyLB";
-            MoneyLB.Size = new Size(55, 20);
-            MoneyLB.TabIndex = 1;
-            MoneyLB.Text = "Số tiền";
             // 
             // SinhVienHoaDon
             // 
@@ -358,6 +366,8 @@
             Name = "SinhVienHoaDon";
             Text = "SinhVienHoaDon";
             panel1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel7.ResumeLayout(false);
@@ -370,8 +380,6 @@
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)SinhVienListHoaDon).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ResumeLayout(false);
         }
 

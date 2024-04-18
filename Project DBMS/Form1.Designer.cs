@@ -154,6 +154,7 @@
             LoginBT.Size = new Size(123, 40);
             LoginBT.TabIndex = 4;
             LoginBT.Text = "Sign In";
+            LoginBT.Click += LoginBT_Click;
             // 
             // RememberCB
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_DBMS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace Project_DBMS
         public SinhVienHoaDon()
         {
             InitializeComponent();
+            ShowListHoaDon();
+        }
+        void ShowListHoaDon()
+        {
+            SinhVienListHoaDon.DataSource = SVHoaDonDAO.Instance.GetListHoaDonSV();
+        }
+
+        private void SinhVienListHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
