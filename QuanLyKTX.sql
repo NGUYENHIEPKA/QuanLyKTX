@@ -241,7 +241,14 @@ CREATE PROC UTP_XoaSinhVien
 @MaSV CHAR(8)
 AS
 BEGIN
-	DELETE FROM SinhVien WHERE MaSV = @MaSV
+	IF EXISTS (SELECT 1 FROM SinhVien WHERE MaSV = @MaSV)
+	BEGIN
+		DELETE FROM SinhVien WHERE MaSV = @MaSV
+	END
+	ELSE
+	BEGIN
+		RAISERROR('Không có sinh viên để xóa.', 16, 1)
+	END
 END
 GO
 
