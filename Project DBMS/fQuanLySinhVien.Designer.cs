@@ -37,8 +37,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel9 = new Panel();
@@ -47,8 +45,7 @@
             search_Btn = new Guna.UI2.WinForms.Guna2Button();
             Renew_Btn = new Guna.UI2.WinForms.Guna2Button();
             Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
-            Edit_Btn = new Guna.UI2.WinForms.Guna2Button();
-            Add_Btn = new Guna.UI2.WinForms.Guna2Button();
+            Update_Btn = new Guna.UI2.WinForms.Guna2Button();
             panel8 = new Panel();
             sdt_tb = new TextBox();
             PhoneNumer_Label = new Label();
@@ -68,6 +65,8 @@
             MSSV_tb = new TextBox();
             MaSV_Label = new Label();
             panel2 = new Panel();
+            tbMaTang = new TextBox();
+            tbMaPhong = new TextBox();
             dataGridView = new DataGridView();
             msv_Col = new DataGridViewTextBoxColumn();
             name_Col = new DataGridViewTextBoxColumn();
@@ -96,8 +95,7 @@
             panel1.Controls.Add(search_Btn);
             panel1.Controls.Add(Renew_Btn);
             panel1.Controls.Add(Delete_Btn);
-            panel1.Controls.Add(Edit_Btn);
-            panel1.Controls.Add(Add_Btn);
+            panel1.Controls.Add(Update_Btn);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel6);
@@ -147,7 +145,7 @@
             search_Btn.ForeColor = Color.Black;
             search_Btn.Image = (Image)resources.GetObject("search_Btn.Image");
             search_Btn.ImageAlign = HorizontalAlignment.Left;
-            search_Btn.Location = new Point(625, 126);
+            search_Btn.Location = new Point(608, 126);
             search_Btn.Name = "search_Btn";
             search_Btn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             search_Btn.Size = new Size(123, 45);
@@ -168,12 +166,13 @@
             Renew_Btn.ForeColor = Color.Black;
             Renew_Btn.Image = (Image)resources.GetObject("Renew_Btn.Image");
             Renew_Btn.ImageAlign = HorizontalAlignment.Left;
-            Renew_Btn.Location = new Point(475, 126);
+            Renew_Btn.Location = new Point(404, 126);
             Renew_Btn.Name = "Renew_Btn";
             Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Renew_Btn.Size = new Size(123, 45);
             Renew_Btn.TabIndex = 7;
             Renew_Btn.Text = "Renew";
+            Renew_Btn.Click += Renew_Btn_Click;
             // 
             // Delete_Btn
             // 
@@ -187,51 +186,33 @@
             Delete_Btn.ForeColor = Color.Black;
             Delete_Btn.Image = (Image)resources.GetObject("Delete_Btn.Image");
             Delete_Btn.ImageAlign = HorizontalAlignment.Left;
-            Delete_Btn.Location = new Point(325, 126);
+            Delete_Btn.Location = new Point(238, 126);
             Delete_Btn.Name = "Delete_Btn";
             Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Delete_Btn.Size = new Size(123, 45);
             Delete_Btn.TabIndex = 6;
             Delete_Btn.Text = "Xóa";
             // 
-            // Edit_Btn
+            // Update_Btn
             // 
-            Edit_Btn.CustomizableEdges = customizableEdges7;
-            Edit_Btn.DisabledState.BorderColor = Color.DarkGray;
-            Edit_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            Edit_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Edit_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Edit_Btn.FillColor = Color.White;
-            Edit_Btn.Font = new Font("Segoe UI", 9F);
-            Edit_Btn.ForeColor = Color.Black;
-            Edit_Btn.Image = (Image)resources.GetObject("Edit_Btn.Image");
-            Edit_Btn.ImageAlign = HorizontalAlignment.Left;
-            Edit_Btn.Location = new Point(175, 126);
-            Edit_Btn.Name = "Edit_Btn";
-            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            Edit_Btn.Size = new Size(123, 45);
-            Edit_Btn.TabIndex = 5;
-            Edit_Btn.Text = "Sửa";
-            // 
-            // Add_Btn
-            // 
-            Add_Btn.CustomizableEdges = customizableEdges9;
-            Add_Btn.DisabledState.BorderColor = Color.DarkGray;
-            Add_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            Add_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Add_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Add_Btn.FillColor = Color.White;
-            Add_Btn.Font = new Font("Segoe UI", 9F);
-            Add_Btn.ForeColor = Color.Black;
-            Add_Btn.Image = (Image)resources.GetObject("Add_Btn.Image");
-            Add_Btn.ImageAlign = HorizontalAlignment.Left;
-            Add_Btn.Location = new Point(25, 126);
-            Add_Btn.Name = "Add_Btn";
-            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            Add_Btn.Size = new Size(123, 45);
-            Add_Btn.TabIndex = 4;
-            Add_Btn.Text = "Thêm";
-            Add_Btn.Click += Add_Btn_Click;
+            Update_Btn.CustomizableEdges = customizableEdges7;
+            Update_Btn.DisabledState.BorderColor = Color.DarkGray;
+            Update_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            Update_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Update_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Update_Btn.FillColor = Color.White;
+            Update_Btn.Font = new Font("Segoe UI", 9F);
+            Update_Btn.ForeColor = Color.Black;
+            Update_Btn.Image = (Image)resources.GetObject("Update_Btn.Image");
+            Update_Btn.ImageAlign = HorizontalAlignment.Left;
+            Update_Btn.Location = new Point(45, 126);
+            Update_Btn.Name = "Update_Btn";
+            Update_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Update_Btn.Size = new Size(123, 45);
+            Update_Btn.TabIndex = 4;
+            Update_Btn.Text = "Cập nhật";
+            Update_Btn.TextOffset = new Point(6, 0);
+            Update_Btn.Click += Add_Btn_Click;
             // 
             // panel8
             // 
@@ -390,11 +371,29 @@
             // panel2
             // 
             panel2.Controls.Add(dataGridView);
+            panel2.Controls.Add(tbMaPhong);
+            panel2.Controls.Add(tbMaTang);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 184);
             panel2.Name = "panel2";
             panel2.Size = new Size(1003, 513);
             panel2.TabIndex = 1;
+            // 
+            // tbMaTang
+            // 
+            tbMaTang.Location = new Point(760, 191);
+            tbMaTang.Name = "tbMaTang";
+            tbMaTang.Size = new Size(140, 27);
+            tbMaTang.TabIndex = 3;
+            tbMaTang.Visible = false;
+            // 
+            // tbMaPhong
+            // 
+            tbMaPhong.Location = new Point(760, 139);
+            tbMaPhong.Name = "tbMaPhong";
+            tbMaPhong.Size = new Size(140, 27);
+            tbMaPhong.TabIndex = 2;
+            tbMaPhong.Visible = false;
             // 
             // dataGridView
             // 
@@ -519,6 +518,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
@@ -545,10 +545,9 @@
         private Panel panel7;
         private DateTimePicker BirthDay_Date;
         private Label BirthDay_Label;
-        private Guna.UI2.WinForms.Guna2Button Add_Btn;
+        private Guna.UI2.WinForms.Guna2Button Update_Btn;
         private Guna.UI2.WinForms.Guna2Button Renew_Btn;
         private Guna.UI2.WinForms.Guna2Button Delete_Btn;
-        private Guna.UI2.WinForms.Guna2Button Edit_Btn;
         private DataGridView dataGridView;
         private Guna.UI2.WinForms.Guna2Button search_Btn;
         private Panel panel9;
@@ -563,5 +562,7 @@
         private DataGridViewTextBoxColumn maPhong_Col;
         private DataGridViewTextBoxColumn maTang_Col;
         private DataGridViewImageColumn img_Col;
+        private TextBox tbMaTang;
+        private TextBox tbMaPhong;
     }
 }

@@ -35,6 +35,15 @@ namespace Project_DBMS
             sdt_tb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "SDT", true, DataSourceUpdateMode.Never));
 
         }
+        void ClearSinhVienBinding()
+        {
+            MSSV_tb.DataBindings.Clear();
+            Name_tb.DataBindings.Clear();
+            BirthDay_Date.DataBindings.Clear();
+            GioiTinhcb.DataBindings.Clear();
+            Address_tb.DataBindings.Clear();
+            sdt_tb.DataBindings.Clear();
+        }
         private void Add_Btn_Click(object sender, EventArgs e)
         {
             string MSSV = MSSV_tb.Text;
@@ -43,11 +52,18 @@ namespace Project_DBMS
             string NgaySinh = BirthDay_Date.Text;
             string DiaChi = Address_tb.Text;
             string SDT = sdt_tb.Text;
-            fThemSinhVienVaoPhongcs themSV = new fThemSinhVienVaoPhongcs(MSSV, Name, GioiTinh, NgaySinh, DiaChi, SDT);
+            string MaPhong = tbMaPhong.Text;
+            string MaTang = tbMaTang.Text;
+            fThemSinhVienVaoPhongcs themSV = new fThemSinhVienVaoPhongcs(MSSV, Name, GioiTinh, NgaySinh, DiaChi, SDT, MaPhong, MaTang);
+            themSV.FormClosed += ThemSV_FormClosed;
             themSV.Show();
-
         }
-
+        private void ThemSV_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ClearSinhVienBinding();
+            ShowListSinhVien();
+            AddSinhVienBinding();
+        }
         private void search_Btn_Click(object sender, EventArgs e)
         {
             string MaPhong = maPhong_tb.Text;
@@ -59,6 +75,13 @@ namespace Project_DBMS
             {
                 dataGridView.DataSource = SinhVienDAO.Instance.FindSinhVienByRoom(MaPhong);
             }
+        }
+
+        private void Renew_Btn_Click(object sender, EventArgs e)
+        {
+            ClearSinhVienBinding();
+            ShowListSinhVien();
+            AddSinhVienBinding();
         }
     }
 }

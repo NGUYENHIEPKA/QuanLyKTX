@@ -1,4 +1,5 @@
-﻿using Project_DBMS.DAO;
+﻿using Guna.UI2.WinForms.Enums;
+using Project_DBMS.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,9 @@ namespace Project_DBMS
         string NgaySinh;
         string DiaChi;
         string SDT;
-        public fThemSinhVienVaoPhongcs(string MSSV, string Name, string GioiTinh, string NgaySinh, string DiaChi, string SDT)
+        string MaPhong;
+        string MaTang;
+        public fThemSinhVienVaoPhongcs(string MSSV, string Name, string GioiTinh, string NgaySinh, string DiaChi, string SDT, string MaPhong, string MaTang)
         {
             InitializeComponent();
             this.MSSV = MSSV;
@@ -28,6 +31,8 @@ namespace Project_DBMS
             this.NgaySinh = NgaySinh;
             this.DiaChi = DiaChi;
             this.SDT = SDT;
+            this.MaPhong = MaPhong;
+            this.MaTang = MaTang;
             Load();
         }
         private void Load()
@@ -43,9 +48,23 @@ namespace Project_DBMS
         private void Add_Btn_Click(object sender, EventArgs e)
         {
             string MSSV = MSSV_tb.Text;
+            string GioiTinh = GioiTinhcb.Text;
+            string Name = Name_tb.Text;
+            string DiaChi = Address_tb.Text;
+            string SDT = sdt_tb.Text;
+            string NgaySinh = BirthDay_Date.Text;
             string MaPhong = maPhong_tb.Text;
             string MaTang = maTang_tb.Text;
-            SinhVienDAO.Instance.AddPhongSinhVien(MSSV, MaPhong, MaTang);
+            if (MaPhong == "" && MaTang == "")
+            {
+                SinhVienDAO.Instance.UpdateThongTinSinhVien(MSSV, Name, NgaySinh, GioiTinh, DiaChi, SDT);
+            }
+            else
+            {
+                SinhVienDAO.Instance.AddPhongSinhVien(MSSV, MaPhong, MaTang);
+            }
+            MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
+            this.Close();
         }
     }
 }

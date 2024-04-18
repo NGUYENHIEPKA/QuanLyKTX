@@ -79,7 +79,7 @@
             panel3.Controls.Add(MaSV_Label);
             panel3.Location = new Point(21, 53);
             panel3.Name = "panel3";
-            panel3.Size = new Size(556, 57);
+            panel3.Size = new Size(266, 57);
             panel3.TabIndex = 1;
             // 
             // MSSV_tb
@@ -105,9 +105,9 @@
             label1.ForeColor = SystemColors.Highlight;
             label1.Location = new Point(21, 9);
             label1.Name = "label1";
-            label1.Size = new Size(237, 25);
+            label1.Size = new Size(177, 25);
             label1.TabIndex = 2;
-            label1.Text = "Thêm sinh viên vào phòng";
+            label1.Text = "Chỉnh sửa sinh viên";
             // 
             // guna2ControlBox1
             // 
@@ -115,7 +115,7 @@
             guna2ControlBox1.CustomizableEdges = customizableEdges1;
             guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(533, 0);
+            guna2ControlBox1.Location = new Point(521, 0);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2ControlBox1.Size = new Size(56, 36);
@@ -127,14 +127,14 @@
             panel5.Controls.Add(Name_Label);
             panel5.Location = new Point(21, 116);
             panel5.Name = "panel5";
-            panel5.Size = new Size(556, 57);
+            panel5.Size = new Size(538, 57);
             panel5.TabIndex = 4;
             // 
             // Name_tb
             // 
-            Name_tb.Location = new Point(132, 12);
+            Name_tb.Location = new Point(109, 12);
             Name_tb.Name = "Name_tb";
-            Name_tb.Size = new Size(297, 27);
+            Name_tb.Size = new Size(412, 27);
             Name_tb.TabIndex = 1;
             // 
             // Name_Label
@@ -150,9 +150,9 @@
             // 
             panel4.Controls.Add(GioiTinhcb);
             panel4.Controls.Add(GioiTinh_Label);
-            panel4.Location = new Point(21, 179);
+            panel4.Location = new Point(293, 53);
             panel4.Name = "panel4";
-            panel4.Size = new Size(556, 57);
+            panel4.Size = new Size(266, 57);
             panel4.TabIndex = 3;
             // 
             // GioiTinhcb
@@ -177,16 +177,16 @@
             // 
             panel6.Controls.Add(Address_tb);
             panel6.Controls.Add(Address_Label);
-            panel6.Location = new Point(21, 305);
+            panel6.Location = new Point(21, 179);
             panel6.Name = "panel6";
-            panel6.Size = new Size(441, 57);
+            panel6.Size = new Size(538, 57);
             panel6.TabIndex = 5;
             // 
             // Address_tb
             // 
-            Address_tb.Location = new Point(132, 12);
+            Address_tb.Location = new Point(109, 12);
             Address_tb.Name = "Address_tb";
-            Address_tb.Size = new Size(297, 27);
+            Address_tb.Size = new Size(412, 27);
             Address_tb.TabIndex = 1;
             // 
             // Address_Label
@@ -202,7 +202,7 @@
             // 
             panel8.Controls.Add(sdt_tb);
             panel8.Controls.Add(PhoneNumer_Label);
-            panel8.Location = new Point(21, 368);
+            panel8.Location = new Point(293, 242);
             panel8.Name = "panel8";
             panel8.Size = new Size(266, 57);
             panel8.TabIndex = 6;
@@ -229,14 +229,14 @@
             panel7.Controls.Add(BirthDay_Label);
             panel7.Location = new Point(21, 242);
             panel7.Name = "panel7";
-            panel7.Size = new Size(556, 57);
+            panel7.Size = new Size(266, 57);
             panel7.TabIndex = 7;
             // 
             // BirthDay_Date
             // 
             BirthDay_Date.CustomFormat = "yyyy-MM-dd";
             BirthDay_Date.Format = DateTimePickerFormat.Custom;
-            BirthDay_Date.Location = new Point(109, 10);
+            BirthDay_Date.Location = new Point(109, 18);
             BirthDay_Date.Name = "BirthDay_Date";
             BirthDay_Date.Size = new Size(140, 27);
             BirthDay_Date.TabIndex = 4;
@@ -254,7 +254,7 @@
             // 
             panel9.Controls.Add(maPhong_tb);
             panel9.Controls.Add(phong_lb);
-            panel9.Location = new Point(21, 431);
+            panel9.Location = new Point(21, 305);
             panel9.Name = "panel9";
             panel9.Size = new Size(266, 57);
             panel9.TabIndex = 8;
@@ -279,7 +279,7 @@
             // 
             panel1.Controls.Add(maTang_tb);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(293, 431);
+            panel1.Location = new Point(293, 305);
             panel1.Name = "panel1";
             panel1.Size = new Size(266, 57);
             panel1.TabIndex = 9;
@@ -312,12 +312,13 @@
             Add_Btn.ForeColor = Color.Black;
             Add_Btn.Image = (Image)resources.GetObject("Add_Btn.Image");
             Add_Btn.ImageAlign = HorizontalAlignment.Left;
-            Add_Btn.Location = new Point(21, 521);
+            Add_Btn.Location = new Point(21, 387);
             Add_Btn.Name = "Add_Btn";
             Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 10;
-            Add_Btn.Text = "Thêm";
+            Add_Btn.Text = "Cập nhật";
+            Add_Btn.TextOffset = new Point(6, 0);
             Add_Btn.Click += Add_Btn_Click;
             // 
             // Cancel_Btn
@@ -332,7 +333,7 @@
             Cancel_Btn.ForeColor = Color.Black;
             Cancel_Btn.Image = (Image)resources.GetObject("Cancel_Btn.Image");
             Cancel_Btn.ImageAlign = HorizontalAlignment.Left;
-            Cancel_Btn.Location = new Point(402, 521);
+            Cancel_Btn.Location = new Point(436, 387);
             Cancel_Btn.Name = "Cancel_Btn";
             Cancel_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Cancel_Btn.Size = new Size(123, 45);
@@ -343,7 +344,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(589, 638);
+            ClientSize = new Size(577, 454);
             Controls.Add(Cancel_Btn);
             Controls.Add(Add_Btn);
             Controls.Add(panel1);
@@ -358,6 +359,7 @@
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fThemSinhVienVaoPhongcs";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "fThemSinhVienVaoPhongcs";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();

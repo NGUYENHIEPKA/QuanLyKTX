@@ -46,5 +46,19 @@ namespace Project_DBMS.DAO
             }
             
         }
+        public void UpdateThongTinSinhVien (string MSSV, string Name, string NgaySinh, string GioiTinh, string DiaChi, string SDT)
+        {
+            string query = string.Format("UTP_CapNhatThongTinSinhVien @MaSV , @HoTen , @NgaySinh , @GioiTinh , @DiaChi , @SDT ");
+
+            try
+            {
+                DataBase.Instance.ExecuteNonQuery(query, new object[] { MSSV, Name, NgaySinh, GioiTinh, DiaChi, SDT });
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error :" + ex.Message, "Message");
+            }
+        }
     }
 }
