@@ -37,21 +37,20 @@ namespace Project_DBMS
         {
             string Taikhoan = UserTB.Text;
             string Matkhau = PassTB.Text;
-            if(AccountDAO.Instance.Login(Taikhoan, Matkhau))
+            if(AccountDAO.Instance.Login(Taikhoan, Matkhau)== true)
             {
                 if(Ktra(Taikhoan)=="QL")
                 {
                     fQuanLy fQuanLy = new fQuanLy();
                     this.Hide();
-                    fQuanLy.Show();
+                    fQuanLy.ShowDialog();
                     this.Show();
-                    
                 }
                 else if(Ktra(Taikhoan)=="SV")
                 {
-                    fSinhVien fSinhVien = new fSinhVien();
+                    fSinhVien fSinhVien = new fSinhVien(Taikhoan);
                     this.Hide();
-                    fSinhVien.Show();
+                    fSinhVien.ShowDialog();
                     this.Show();
                 }
             }

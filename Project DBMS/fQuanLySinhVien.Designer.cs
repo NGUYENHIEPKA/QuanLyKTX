@@ -65,8 +65,6 @@
             MSSV_tb = new TextBox();
             MaSV_Label = new Label();
             panel2 = new Panel();
-            tbMaTang = new TextBox();
-            tbMaPhong = new TextBox();
             dataGridView = new DataGridView();
             msv_Col = new DataGridViewTextBoxColumn();
             name_Col = new DataGridViewTextBoxColumn();
@@ -77,6 +75,8 @@
             maPhong_Col = new DataGridViewTextBoxColumn();
             maTang_Col = new DataGridViewTextBoxColumn();
             img_Col = new DataGridViewImageColumn();
+            tbMaPhong = new TextBox();
+            tbMaTang = new TextBox();
             panel1.SuspendLayout();
             panel9.SuspendLayout();
             panel8.SuspendLayout();
@@ -192,6 +192,7 @@
             Delete_Btn.Size = new Size(123, 45);
             Delete_Btn.TabIndex = 6;
             Delete_Btn.Text = "Xóa";
+            Delete_Btn.Click += Delete_Btn_Click;
             // 
             // Update_Btn
             // 
@@ -379,22 +380,6 @@
             panel2.Size = new Size(1003, 513);
             panel2.TabIndex = 1;
             // 
-            // tbMaTang
-            // 
-            tbMaTang.Location = new Point(760, 191);
-            tbMaTang.Name = "tbMaTang";
-            tbMaTang.Size = new Size(140, 27);
-            tbMaTang.TabIndex = 3;
-            tbMaTang.Visible = false;
-            // 
-            // tbMaPhong
-            // 
-            tbMaPhong.Location = new Point(760, 139);
-            tbMaPhong.Name = "tbMaPhong";
-            tbMaPhong.Size = new Size(140, 27);
-            tbMaPhong.TabIndex = 2;
-            tbMaPhong.Visible = false;
-            // 
             // dataGridView
             // 
             dataGridView.BackgroundColor = SystemColors.Control;
@@ -491,6 +476,22 @@
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
             img_Col.Width = 165;
+            // 
+            // tbMaPhong
+            // 
+            tbMaPhong.Location = new Point(760, 139);
+            tbMaPhong.Name = "tbMaPhong";
+            tbMaPhong.Size = new Size(140, 27);
+            tbMaPhong.TabIndex = 2;
+            tbMaPhong.Visible = false;
+            // 
+            // tbMaTang
+            // 
+            tbMaTang.Location = new Point(760, 191);
+            tbMaTang.Name = "tbMaTang";
+            tbMaTang.Size = new Size(140, 27);
+            tbMaTang.TabIndex = 3;
+            tbMaTang.Visible = false;
             // 
             // fQuanLySinhVien
             // 

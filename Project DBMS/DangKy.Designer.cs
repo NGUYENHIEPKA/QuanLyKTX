@@ -176,7 +176,7 @@
             CreateBT.ShadowDecoration.CustomizableEdges = customizableEdges10;
             CreateBT.Size = new Size(144, 40);
             CreateBT.TabIndex = 6;
-            CreateBT.Text = "Create Account";
+            CreateBT.Text = "Đăng ký ";
             // 
             // guna2DragControl1
             // 

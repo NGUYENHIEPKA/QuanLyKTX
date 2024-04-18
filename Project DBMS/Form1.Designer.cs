@@ -40,19 +40,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             UserTB = new Guna.UI2.WinForms.Guna2TextBox();
             PassTB = new Guna.UI2.WinForms.Guna2TextBox();
             LoginBT = new Guna.UI2.WinForms.Guna2Button();
-            RememberCB = new Guna.UI2.WinForms.Guna2CustomCheckBox();
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             RegisterBT = new Guna.UI2.WinForms.Guna2Button();
@@ -153,37 +149,8 @@
             LoginBT.ShadowDecoration.CustomizableEdges = customizableEdges8;
             LoginBT.Size = new Size(123, 40);
             LoginBT.TabIndex = 4;
-            LoginBT.Text = "Sign In";
+            LoginBT.Text = "Đăng Nhập";
             LoginBT.Click += LoginBT_Click;
-            // 
-            // RememberCB
-            // 
-            RememberCB.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            RememberCB.CheckedState.BorderRadius = 2;
-            RememberCB.CheckedState.BorderThickness = 0;
-            RememberCB.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            RememberCB.CustomizableEdges = customizableEdges9;
-            RememberCB.Location = new Point(610, 236);
-            RememberCB.Name = "RememberCB";
-            RememberCB.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            RememberCB.Size = new Size(14, 14);
-            RememberCB.TabIndex = 5;
-            RememberCB.Text = "guna2CustomCheckBox1";
-            RememberCB.UncheckedState.BorderColor = Color.FromArgb(193, 200, 207);
-            RememberCB.UncheckedState.BorderRadius = 2;
-            RememberCB.UncheckedState.BorderThickness = 1;
-            RememberCB.UncheckedState.FillColor = Color.Transparent;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Montserrat ExtraBold", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(630, 233);
-            label1.Name = "label1";
-            label1.Size = new Size(103, 17);
-            label1.TabIndex = 6;
-            label1.Text = "REMEMBER ME";
             // 
             // label2
             // 
@@ -210,7 +177,7 @@
             // 
             RegisterBT.AutoRoundedCorners = true;
             RegisterBT.BorderRadius = 19;
-            RegisterBT.CustomizableEdges = customizableEdges11;
+            RegisterBT.CustomizableEdges = customizableEdges9;
             RegisterBT.DisabledState.BorderColor = Color.DarkGray;
             RegisterBT.DisabledState.CustomBorderColor = Color.DarkGray;
             RegisterBT.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -220,10 +187,10 @@
             RegisterBT.ForeColor = Color.White;
             RegisterBT.Location = new Point(773, 278);
             RegisterBT.Name = "RegisterBT";
-            RegisterBT.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            RegisterBT.ShadowDecoration.CustomizableEdges = customizableEdges10;
             RegisterBT.Size = new Size(123, 40);
             RegisterBT.TabIndex = 9;
-            RegisterBT.Text = "Register";
+            RegisterBT.Text = "Đăng Ký";
             RegisterBT.Click += RegisterBT_Click;
             // 
             // Forget
@@ -233,10 +200,10 @@
             Forget.LinkColor = SystemColors.ControlText;
             Forget.Location = new Point(781, 233);
             Forget.Name = "Forget";
-            Forget.Size = new Size(123, 17);
+            Forget.Size = new Size(113, 17);
             Forget.TabIndex = 10;
             Forget.TabStop = true;
-            Forget.Text = "Forget Password?";
+            Forget.Text = "Quên mật khẩu?";
             Forget.LinkClicked += Forget_LinkClicked;
             // 
             // label4
@@ -276,12 +243,12 @@
             // guna2ControlBox1
             // 
             guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.CustomizableEdges = customizableEdges15;
+            guna2ControlBox1.CustomizableEdges = customizableEdges13;
             guna2ControlBox1.FillColor = Color.Transparent;
             guna2ControlBox1.IconColor = Color.Gray;
             guna2ControlBox1.Location = new Point(924, 0);
             guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2ControlBox1.Size = new Size(26, 27);
             guna2ControlBox1.TabIndex = 13;
             // 
@@ -289,12 +256,12 @@
             // 
             guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            guna2ControlBox2.CustomizableEdges = customizableEdges13;
+            guna2ControlBox2.CustomizableEdges = customizableEdges11;
             guna2ControlBox2.FillColor = Color.Transparent;
             guna2ControlBox2.IconColor = Color.Gray;
             guna2ControlBox2.Location = new Point(892, 0);
             guna2ControlBox2.Name = "guna2ControlBox2";
-            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2ControlBox2.Size = new Size(26, 27);
             guna2ControlBox2.TabIndex = 14;
             // 
@@ -312,8 +279,6 @@
             Controls.Add(RegisterBT);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(RememberCB);
             Controls.Add(LoginBT);
             Controls.Add(PassTB);
             Controls.Add(UserTB);
@@ -334,8 +299,6 @@
         private Guna.UI2.WinForms.Guna2TextBox UserTB;
         private Guna.UI2.WinForms.Guna2TextBox PassTB;
         private Guna.UI2.WinForms.Guna2Button LoginBT;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox RememberCB;
-        private Label label1;
         private Label label2;
         private Label label3;
         private Guna.UI2.WinForms.Guna2Button RegisterBT;
