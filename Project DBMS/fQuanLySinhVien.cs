@@ -83,5 +83,14 @@ namespace Project_DBMS
             ShowListSinhVien();
             AddSinhVienBinding();
         }
+
+        private void Delete_Btn_Click(object sender, EventArgs e)
+        {
+            string MSSV = MSSV_tb.Text;
+            SinhVienDAO.Instance.XoaSinhVien(MSSV);
+            ClearSinhVienBinding();
+            ShowListSinhVien();
+            AddSinhVienBinding();
+        }
     }
 }

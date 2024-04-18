@@ -60,5 +60,18 @@ namespace Project_DBMS.DAO
                 MessageBox.Show("Error :" + ex.Message, "Message");
             }
         }
+        public void XoaSinhVien (string MSSV)
+        {
+            string query = "UTP_XoaSinhVien @MaSV ";
+            try
+            {
+                DataBase.Instance.ExecuteNonQuery(query, new object[] { MSSV });
+                MessageBox.Show("Xóa sinh viên thành công!", "Thông báo", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
+            }
+        }
     }
 }
