@@ -252,6 +252,25 @@ BEGIN
 		RAISERROR('Số lượng người trong phòng vượt quá số lượng tối đa.', 16, 1)
 	END
 END
+GO
+
+CREATE PROC UTP_CapNhatThongTinSinhVien
+@MaSV CHAR(8),
+@HoTen NVARCHAR(100),
+@NgaySinh DATE,
+@GioiTinh NVARCHAR(3),
+@DiaChi NVARCHAR(100),
+@SDT CHAR(10)
+AS
+BEGIN
+	IF (@HoTen = Null OR @NgaySinh = NULL OR @GioiTinh = NULL OR @DiaChi = NULL OR @SDT = NULL )
+		RAISERROR('Vui lòng nhập đủ thông tin.', 16, 1)		
+	ELSE
+	BEGIN
+		UPDATE SinhVien SET HoTen = @HoTen, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, DiaChi = @DiaChi, SDT = @SDT WHERE MaSV = @MaSV
+	END
+END
+GO
 
 create proc UTP_ThemHoaDonDien
 	@Maphong nvarchar(5),
