@@ -345,3 +345,13 @@ set HinhAnh = (Select BulkColumn from openrowset (bulk N'D:\ktx\Project DBMS\Res
 INSERT INTO LoaiPhong (MaLoaiPhong, SoNguoiO, GiaTien) VALUES 
 ('L04', 4, 360000),
 ('L08', 8, 280000)
+INSERT INTO TaiKhoan(TaiKhoan, MatKhau, loai) VALUES
+('QL001','QL001',0),
+('QL002','QL002',0),
+('QL003','QL003',0),
+('QL004','QL004',0),
+('QL005','QL005',0),
+('SV002','SV002',1),
+('SV003','SV003',1),
+('SV004','SV004',1),
+('SV005','SV005',1)
