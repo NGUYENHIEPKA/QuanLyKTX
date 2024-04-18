@@ -48,7 +48,7 @@ namespace Project_DBMS
                 }
                 else if(Ktra(Taikhoan)=="SV")
                 {
-                    fSinhVien fSinhVien = new fSinhVien();
+                    fSinhVien fSinhVien = new fSinhVien(Taikhoan);
                     this.Hide();
                     fSinhVien.ShowDialog();
                     this.Show();
