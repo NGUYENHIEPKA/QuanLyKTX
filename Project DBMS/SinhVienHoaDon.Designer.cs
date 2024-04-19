@@ -54,6 +54,7 @@
             panel2 = new Panel();
             SinhVienListHoaDon = new DataGridView();
             MaHoaDon_Col = new DataGridViewTextBoxColumn();
+            ID = new DataGridViewTextBoxColumn();
             TypeHoaDon_Col = new DataGridViewTextBoxColumn();
             NgayTaoHoaDon_Col = new DataGridViewTextBoxColumn();
             Pttt_Col = new DataGridViewTextBoxColumn();
@@ -275,7 +276,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             SinhVienListHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             SinhVienListHoaDon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            SinhVienListHoaDon.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, Pttt_Col, Money, img_Col });
+            SinhVienListHoaDon.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, ID, TypeHoaDon_Col, NgayTaoHoaDon_Col, Pttt_Col, Money, img_Col });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -309,6 +310,14 @@
             MaHoaDon_Col.MinimumWidth = 6;
             MaHoaDon_Col.Name = "MaHoaDon_Col";
             MaHoaDon_Col.Width = 130;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "MaPhong";
+            ID.HeaderText = "Mã phòng";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            ID.Width = 125;
             // 
             // TypeHoaDon_Col
             // 
@@ -407,6 +416,7 @@
         private TextBox MoneyTB;
         private Label MoneyLB;
         private DataGridViewTextBoxColumn MaHoaDon_Col;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn TypeHoaDon_Col;
         private DataGridViewTextBoxColumn NgayTaoHoaDon_Col;
         private DataGridViewTextBoxColumn Pttt_Col;

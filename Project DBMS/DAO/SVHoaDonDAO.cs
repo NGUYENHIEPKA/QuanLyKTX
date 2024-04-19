@@ -17,11 +17,9 @@ namespace Project_DBMS.DAO
             private set { instance = value; }
         }
         private SVHoaDonDAO() { }
-        public DataTable GetListHoaDonSV()
+        public DataTable GetListHoaDonSV(string TaiKhoan)
         {
-            string query = "SELECT MaHoaDon, LoaiHoaDon, NgayTaoHoaDon, PhuongThucThanhToan, SoTien, TrangThai " +
-                            "FROM HoaDon WHERE MaPhong = 'A04';";
-
+            string query = "select MaHoaDon,HoaDon.MaPhong,SoTien,PhuongThucThanhToan,LoaiHoaDon,TrangThai,NgayTaoHoaDon from HoaDon,SinhVien where SinhVien.MaSV = '" + TaiKhoan + "'and SinhVien.MaPhong = HoaDon.MaPhong";
             DataTable data = DataBase.Instance.Execute(query);
             return data;
         }
