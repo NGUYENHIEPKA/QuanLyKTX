@@ -20,7 +20,7 @@ namespace Project_DBMS.DAO
         private SinhVienDAO() { }
         public DataTable GetListSinhVien()
         {
-            string query = "Select * from dbo.SinhVien";
+            string query = "Select * from XemDanhSachSinhVien()";
 
             DataTable data = DataBase.Instance.Execute(query);
             return data;
@@ -32,6 +32,8 @@ namespace Project_DBMS.DAO
             DataTable data = DataBase.Instance.Execute(query);
             return data;
         }
+
+
         public void AddPhongSinhVien(string MSSV, string MaPhong, string MaTang)
         {
             string query = string.Format("UTP_CapNhatChoOSinhVien @MaSV , @MaPhong , @MaTang ");
@@ -60,6 +62,7 @@ namespace Project_DBMS.DAO
                 MessageBox.Show("Error :" + ex.Message, "Message");
             }
         }
+
         public void XoaSinhVien (string MSSV)
         {
             string query = "UTP_XoaSinhVien @MaSV ";
