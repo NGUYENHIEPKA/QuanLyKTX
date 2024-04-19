@@ -13,17 +13,15 @@ namespace Project_DBMS
 {
     public partial class fSinhVien : Form
     {
-        private string TaiKhoan;
-        public fSinhVien(string TaiKhoan)
+        public fSinhVien()
         {
             InitializeComponent();
-            this.TaiKhoan = TaiKhoan;
         }
-
+        public string TextBoxValue { get; set; }
         private void UserInformationBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Thông tin cá nhân";
-            Thongtincanhan(new Information(this.TaiKhoan));
+            Thongtincanhan(new Information(this.TextBoxValue));
         }
 
         private void HoaDonBtn_Click(object sender, EventArgs e)

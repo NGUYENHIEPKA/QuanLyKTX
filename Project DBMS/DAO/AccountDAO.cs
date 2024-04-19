@@ -20,7 +20,7 @@ namespace Project_DBMS.DAO
         private AccountDAO() { }
         public bool Login(string TaiKhoan, string MatKhau)
         {
-            string query = "SELECT tk.TaiKhoan FROM TaiKhoan tk INNER JOIN SinhVien sv ON tk.TaiKhoan = sv.MaSV WHERE tk.TaiKhoan = '" + TaiKhoan + "' AND tk.MatKhau = '" + MatKhau + "'";
+            string query = "SELECT * from TaiKhoan WHERE TaiKhoan='" + TaiKhoan + "'AND MatKhau='" + MatKhau + "'";
             DataTable data = DataBase.Instance.Execute(query);
             return data.Rows.Count > 0;
         }
