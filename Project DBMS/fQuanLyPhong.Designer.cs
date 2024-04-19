@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing, base.GetV());
+            base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
