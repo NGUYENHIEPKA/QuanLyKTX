@@ -106,6 +106,7 @@ ALTER TABLE dbo.Tang ADD FOREIGN KEY (MaNguoiQL) REFERENCES dbo.QuanLy(MaQL)
 ALTER TABLE dbo.DatPhong ADD FOREIGN KEY (MaNguoiQL) REFERENCES dbo.QuanLy(MaQL)
 ALTER TABLE dbo.DatPhong ADD FOREIGN KEY (MaSV) REFERENCES dbo.SinhVien(MaSV)
 ALTER TABLE dbo.Phong ADD FOREIGN KEY (MaTang) REFERENCES dbo.Tang(MaTang)
+ALTER TABLE dbo.Phong ADD FOREIGN KEY (MaLoaiPhong) REFERENCES dbo.LoaiPhong(MaLoaiPhong)
 ALTER TABLE dbo.TienDien ADD FOREIGN KEY (MaPhong) REFERENCES dbo.Phong(MaPhong)
 ALTER TABLE dbo.TienNuoc ADD FOREIGN KEY (MaPhong) REFERENCES dbo.Phong(MaPhong)
 ALTER TABLE dbo.HoaDon ADD FOREIGN KEY (MaPhong) REFERENCES dbo.Phong(MaPhong)
@@ -168,7 +169,7 @@ GO
 CREATE FUNCTION XemDanhSachSinhVien() RETURNS TABLE
 AS 
 RETURN(
-	SELECT * FROM SinhVien
+    SELECT MaSV, HoTen, NgaySinh, GioiTinh, DiaChi, SDT, MaPhong, MaTang, HinhAnh FROM SinhVien
 )
 GO
 
