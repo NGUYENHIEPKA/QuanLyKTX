@@ -19,7 +19,7 @@ namespace Project_DBMS.DAO
         private QLHoaDonDAO() { }
         public DataTable GetListHoaDon()
         {
-            string query = "Select * from dbo.HoaDon";
+            string query = "SELECT * FROM XemListHoaDon();";
 
             DataTable data = DataBase.Instance.Execute(query);
             return data;

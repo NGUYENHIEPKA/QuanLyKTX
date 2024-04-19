@@ -13,7 +13,7 @@ namespace Project_DBMS
 {
     public partial class Information : Form
     {
-        private string TaiKhoan;
+        string TaiKhoan;
         public Information(string TaiKhoan)
         {
             InitializeComponent();
