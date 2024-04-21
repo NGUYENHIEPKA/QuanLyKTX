@@ -288,6 +288,37 @@ BEGIN
 END
 GO
 
+CREATE PROC UTP_DoiMatKhau
+@TaiKhoan NVARCHAR(100),
+@MatKhauCu NVARCHAR(100),
+@MatKhauMoi1 NVARCHAR(100),
+@MatKhauMoi2 NVARCHAR(100)
+AS
+BEGIN
+    IF @MatKhauCu = '' OR @MatKhauMoi1 = '' OR @MatKhauMoi2 = ''
+    BEGIN
+        RAISERROR ('Vui lòng nhập đầy đủ', 16, 1)
+        RETURN;
+    END
+	IF NOT EXISTS (SELECT 1 FROM TaiKhoan WHERE TaiKhoan = @TaiKhoan AND MatKhau = @MatKhauCu)
+	BEGIN
+		RAISERROR ('Nhập sai mật khẩu cũ', 16, 1)
+		RETURN;
+	END
+    IF @MatKhauMoi1 <> @MatKhauMoi2
+    BEGIN
+        RAISERROR ('Hai mật khẩu mới không trùng nhau', 16, 1)
+        RETURN;
+    END
+	IF @MatKhauCu = @MatKhauMoi1
+	BEGIN
+        RAISERROR ('Hai mật khẩu mới và cũ trùng nhau', 16, 1)
+		RETURN;
+	END
+
+    UPDATE TaiKhoan SET MatKhau = @MatKhauMoi1 WHERE TaiKhoan = @TaiKhoan;
+END
+	
 create proc UTP_ThemHoaDonDien
 	@Maphong nvarchar(5),
 	@Thang int , 
