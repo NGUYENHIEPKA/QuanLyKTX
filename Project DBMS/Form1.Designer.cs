@@ -77,10 +77,10 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Montserrat Black", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(599, 33);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(305, 34);
+            guna2HtmlLabel1.Size = new Size(296, 31);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "ĐĂNG NHẬP TÀI KHOẢN";
             // 
@@ -155,17 +155,17 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(558, 381);
             label2.Name = "label2";
-            label2.Size = new Size(171, 21);
+            label2.Size = new Size(171, 18);
             label2.TabIndex = 7;
             label2.Text = "✔User: MSSV/MAGV";
             // 
             // label3
             // 
-            label3.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlText;
             label3.Location = new Point(558, 418);
             label3.Name = "label3";
@@ -196,11 +196,11 @@
             // Forget
             // 
             Forget.AutoSize = true;
-            Forget.Font = new Font("Montserrat ExtraBold", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Forget.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Forget.LinkColor = SystemColors.ControlText;
             Forget.Location = new Point(781, 233);
             Forget.Name = "Forget";
-            Forget.Size = new Size(113, 17);
+            Forget.Size = new Size(112, 15);
             Forget.TabIndex = 10;
             Forget.TabStop = true;
             Forget.Text = "Quên mật khẩu?";
@@ -209,11 +209,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ControlText;
             label4.Location = new Point(562, 339);
             label4.Name = "label4";
-            label4.Size = new Size(378, 21);
+            label4.Size = new Size(366, 18);
             label4.TabIndex = 11;
             label4.Text = "    Hướng dẫn đăng nhập trang tra cứu thông tin:";
             // 
@@ -286,6 +286,7 @@
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);

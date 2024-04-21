@@ -112,6 +112,6 @@ namespace Project_DBMS
         private void Add_Btn_Click(object sender, EventArgs e)
         {
              
-        }
+        }*/
     }
 }

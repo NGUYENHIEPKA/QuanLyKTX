@@ -64,10 +64,10 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Montserrat Black", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(233, 22);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(217, 34);
+            guna2HtmlLabel1.Size = new Size(214, 31);
             guna2HtmlLabel1.TabIndex = 15;
             guna2HtmlLabel1.Text = "QUÊN MẬT KHẨU";
             // 
@@ -171,6 +171,7 @@
             Controls.Add(guna2ControlBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ForgetPassword";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ForgetPassword";
             ResumeLayout(false);
             PerformLayout();

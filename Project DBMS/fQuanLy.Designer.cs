@@ -32,12 +32,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLy));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLy));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -126,7 +126,6 @@
             ElectricBill_Btn.HoverState.BorderColor = Color.Navy;
             ElectricBill_Btn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             ElectricBill_Btn.HoverState.ForeColor = Color.White;
-            ElectricBill_Btn.HoverState.Image = (Image)resources.GetObject("resource.Image");
             ElectricBill_Btn.ImageAlign = HorizontalAlignment.Left;
             ElectricBill_Btn.ImageOffset = new Point(8, 0);
             ElectricBill_Btn.Location = new Point(0, 112);
@@ -153,7 +152,6 @@
             WaterBill_Btn.HoverState.BorderColor = Color.Navy;
             WaterBill_Btn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             WaterBill_Btn.HoverState.ForeColor = Color.White;
-            WaterBill_Btn.HoverState.Image = (Image)resources.GetObject("resource.Image1");
             WaterBill_Btn.ImageAlign = HorizontalAlignment.Left;
             WaterBill_Btn.ImageOffset = new Point(8, 0);
             WaterBill_Btn.Location = new Point(0, 56);
@@ -180,7 +178,6 @@
             SumBill_Btn.HoverState.BorderColor = Color.Navy;
             SumBill_Btn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             SumBill_Btn.HoverState.ForeColor = Color.White;
-            SumBill_Btn.HoverState.Image = (Image)resources.GetObject("resource.Image2");
             SumBill_Btn.ImageAlign = HorizontalAlignment.Left;
             SumBill_Btn.ImageOffset = new Point(8, 0);
             SumBill_Btn.Location = new Point(0, 0);
@@ -220,7 +217,7 @@
             LogOutBtn.HoverState.BorderColor = Color.Navy;
             LogOutBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             LogOutBtn.HoverState.ForeColor = Color.White;
-            LogOutBtn.HoverState.Image = (Image)resources.GetObject("resource.Image3");
+            LogOutBtn.HoverState.Image = (Image)resources.GetObject("resource.Image");
             LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
             LogOutBtn.ImageAlign = HorizontalAlignment.Left;
             LogOutBtn.ImageOffset = new Point(8, 0);
@@ -247,7 +244,7 @@
             BillBtn.HoverState.BorderColor = Color.Navy;
             BillBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             BillBtn.HoverState.ForeColor = Color.White;
-            BillBtn.HoverState.Image = (Image)resources.GetObject("resource.Image4");
+            BillBtn.HoverState.Image = (Image)resources.GetObject("resource.Image1");
             BillBtn.Image = (Image)resources.GetObject("BillBtn.Image");
             BillBtn.ImageAlign = HorizontalAlignment.Left;
             BillBtn.ImageOffset = new Point(8, 0);
@@ -275,7 +272,7 @@
             StudentBtn.HoverState.BorderColor = Color.Navy;
             StudentBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             StudentBtn.HoverState.ForeColor = Color.White;
-            StudentBtn.HoverState.Image = (Image)resources.GetObject("resource.Image5");
+            StudentBtn.HoverState.Image = (Image)resources.GetObject("resource.Image2");
             StudentBtn.Image = (Image)resources.GetObject("StudentBtn.Image");
             StudentBtn.ImageAlign = HorizontalAlignment.Left;
             StudentBtn.ImageOffset = new Point(8, 0);
@@ -303,7 +300,7 @@
             RoomBtn.HoverState.BorderColor = Color.Navy;
             RoomBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             RoomBtn.HoverState.ForeColor = Color.White;
-            RoomBtn.HoverState.Image = (Image)resources.GetObject("resource.Image6");
+            RoomBtn.HoverState.Image = (Image)resources.GetObject("resource.Image3");
             RoomBtn.Image = (Image)resources.GetObject("RoomBtn.Image");
             RoomBtn.ImageAlign = HorizontalAlignment.Left;
             RoomBtn.ImageOffset = new Point(8, 0);
@@ -331,7 +328,7 @@
             UserInformationBtn.HoverState.BorderColor = Color.Navy;
             UserInformationBtn.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             UserInformationBtn.HoverState.ForeColor = Color.White;
-            UserInformationBtn.HoverState.Image = (Image)resources.GetObject("resource.Image7");
+            UserInformationBtn.HoverState.Image = (Image)resources.GetObject("resource.Image4");
             UserInformationBtn.Image = (Image)resources.GetObject("UserInformationBtn.Image");
             UserInformationBtn.ImageAlign = HorizontalAlignment.Left;
             UserInformationBtn.ImageOffset = new Point(8, 0);

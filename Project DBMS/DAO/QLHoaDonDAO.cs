@@ -24,5 +24,19 @@ namespace Project_DBMS.DAO
             DataTable data = DataBase.Instance.Execute(query);
             return data;
         }
+        public DataTable GetListHoaDonNuoc()
+        {
+            string query = "Select * FROM XemListHoaDonNuoc();";
+
+            DataTable data = DataBase.Instance.Execute(query);
+            return data;
+        }
+        public DataTable GetListHoaDonDien()
+        {
+            string query = "Select * from XemListHoaDonDien();";
+
+            DataTable data = DataBase.Instance.Execute(query);
+            return data;
+        }
     }
 }

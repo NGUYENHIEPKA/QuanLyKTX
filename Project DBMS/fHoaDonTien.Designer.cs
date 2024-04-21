@@ -1,6 +1,6 @@
 ﻿namespace Project_DBMS
 {
-    partial class fQuanLyHoaDon
+    partial class fHoaDonDien
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyHoaDon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHoaDonDien));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -42,65 +42,133 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            panel6 = new Panel();
+            money_tb = new TextBox();
+            label3 = new Label();
+            panel5 = new Panel();
+            newNum_tb = new TextBox();
+            label2 = new Label();
+            panel3 = new Panel();
+            oldNum_tb = new TextBox();
+            label1 = new Label();
             Renew_Btn = new Guna.UI2.WinForms.Guna2Button();
             Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
             Edit_Btn = new Guna.UI2.WinForms.Guna2Button();
             Add_Btn = new Guna.UI2.WinForms.Guna2Button();
-            panel8 = new Panel();
-            thanhToan_check = new Guna.UI2.WinForms.Guna2RadioButton();
-            Status_Label = new Label();
             panel7 = new Panel();
-            BirthDay_Date = new DateTimePicker();
+            CreateDay_Date = new DateTimePicker();
             NgayTaoHoaDon_Label = new Label();
-            panel6 = new Panel();
-            Address_tb = new TextBox();
-            LoaiHoaDon_Label = new Label();
-            panel5 = new Panel();
-            Name_tb = new TextBox();
-            pttt_Label = new Label();
             panel4 = new Panel();
-            textBox1 = new TextBox();
+            MaPhong_tb = new TextBox();
             MaPhong_Label = new Label();
-            panel3 = new Panel();
-            MSSV_tb = new TextBox();
-            MaHoaDon_Label = new Label();
             panel2 = new Panel();
             dataGridView = new DataGridView();
-            MaHoaDon_Col = new DataGridViewTextBoxColumn();
             MaPhong_Col = new DataGridViewTextBoxColumn();
-            Pttt_Col = new DataGridViewTextBoxColumn();
-            TypeHoaDon_Col = new DataGridViewTextBoxColumn();
             NgayTaoHoaDon_Col = new DataGridViewTextBoxColumn();
+            SoDienCu = new DataGridViewTextBoxColumn();
+            SoDienMoi = new DataGridViewTextBoxColumn();
             Money = new DataGridViewTextBoxColumn();
-            img_Col = new DataGridViewCheckBoxColumn();
             panel1.SuspendLayout();
-            panel8.SuspendLayout();
-            panel7.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
-            panel4.SuspendLayout();
             panel3.SuspendLayout();
+            panel7.SuspendLayout();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(Renew_Btn);
             panel1.Controls.Add(Delete_Btn);
             panel1.Controls.Add(Edit_Btn);
             panel1.Controls.Add(Add_Btn);
-            panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
-            panel1.Controls.Add(panel6);
-            panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel4);
-            panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1003, 187);
-            panel1.TabIndex = 1;
+            panel1.Size = new Size(1003, 143);
+            panel1.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(money_tb);
+            panel6.Controls.Add(label3);
+            panel6.Location = new Point(544, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(266, 57);
+            panel6.TabIndex = 4;
+            // 
+            // money_tb
+            // 
+            money_tb.Location = new Point(109, 11);
+            money_tb.Name = "money_tb";
+            money_tb.Size = new Size(140, 27);
+            money_tb.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 18);
+            label3.Name = "label3";
+            label3.Size = new Size(55, 20);
+            label3.TabIndex = 1;
+            label3.Text = "Số tiền";
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(newNum_tb);
+            panel5.Controls.Add(label2);
+            panel5.Location = new Point(272, 58);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(266, 57);
+            panel5.TabIndex = 4;
+            // 
+            // newNum_tb
+            // 
+            newNum_tb.Location = new Point(109, 11);
+            newNum_tb.Name = "newNum_tb";
+            newNum_tb.Size = new Size(140, 27);
+            newNum_tb.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 18);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Số điện mới";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(oldNum_tb);
+            panel3.Controls.Add(label1);
+            panel3.Location = new Point(272, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(266, 57);
+            panel3.TabIndex = 3;
+            // 
+            // oldNum_tb
+            // 
+            oldNum_tb.Location = new Point(109, 11);
+            oldNum_tb.Name = "oldNum_tb";
+            oldNum_tb.Size = new Size(140, 27);
+            oldNum_tb.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Số điện cũ";
             // 
             // Renew_Btn
             // 
@@ -114,7 +182,7 @@
             Renew_Btn.ForeColor = Color.Black;
             Renew_Btn.Image = (Image)resources.GetObject("Renew_Btn.Image");
             Renew_Btn.ImageAlign = HorizontalAlignment.Left;
-            Renew_Btn.Location = new Point(475, 126);
+            Renew_Btn.Location = new Point(844, 69);
             Renew_Btn.Name = "Renew_Btn";
             Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             Renew_Btn.Size = new Size(123, 45);
@@ -133,7 +201,7 @@
             Delete_Btn.ForeColor = Color.Black;
             Delete_Btn.Image = (Image)resources.GetObject("Delete_Btn.Image");
             Delete_Btn.ImageAlign = HorizontalAlignment.Left;
-            Delete_Btn.Location = new Point(325, 126);
+            Delete_Btn.Location = new Point(844, 3);
             Delete_Btn.Name = "Delete_Btn";
             Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Delete_Btn.Size = new Size(123, 45);
@@ -152,7 +220,7 @@
             Edit_Btn.ForeColor = Color.Black;
             Edit_Btn.Image = (Image)resources.GetObject("Edit_Btn.Image");
             Edit_Btn.ImageAlign = HorizontalAlignment.Left;
-            Edit_Btn.Location = new Point(175, 126);
+            Edit_Btn.Location = new Point(687, 70);
             Edit_Btn.Name = "Edit_Btn";
             Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Edit_Btn.Size = new Size(123, 45);
@@ -171,67 +239,29 @@
             Add_Btn.ForeColor = Color.Black;
             Add_Btn.Image = (Image)resources.GetObject("Add_Btn.Image");
             Add_Btn.ImageAlign = HorizontalAlignment.Left;
-            Add_Btn.Location = new Point(25, 126);
+            Add_Btn.Location = new Point(544, 69);
             Add_Btn.Name = "Add_Btn";
             Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 4;
             Add_Btn.Text = "Thêm";
             // 
-            // panel8
-            // 
-            panel8.Controls.Add(thanhToan_check);
-            panel8.Controls.Add(Status_Label);
-            panel8.Location = new Point(737, 58);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(266, 57);
-            panel8.TabIndex = 2;
-            // 
-            // thanhToan_check
-            // 
-            thanhToan_check.AutoSize = true;
-            thanhToan_check.Checked = true;
-            thanhToan_check.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            thanhToan_check.CheckedState.BorderThickness = 0;
-            thanhToan_check.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            thanhToan_check.CheckedState.InnerColor = Color.White;
-            thanhToan_check.CheckedState.InnerOffset = -4;
-            thanhToan_check.Location = new Point(109, 14);
-            thanhToan_check.Name = "thanhToan_check";
-            thanhToan_check.Size = new Size(124, 24);
-            thanhToan_check.TabIndex = 2;
-            thanhToan_check.TabStop = true;
-            thanhToan_check.Text = "Đã thanh toán";
-            thanhToan_check.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            thanhToan_check.UncheckedState.BorderThickness = 2;
-            thanhToan_check.UncheckedState.FillColor = Color.Transparent;
-            thanhToan_check.UncheckedState.InnerColor = Color.Transparent;
-            // 
-            // Status_Label
-            // 
-            Status_Label.AutoSize = true;
-            Status_Label.Location = new Point(12, 18);
-            Status_Label.Name = "Status_Label";
-            Status_Label.Size = new Size(75, 20);
-            Status_Label.TabIndex = 1;
-            Status_Label.Text = "Trạng thái";
-            // 
             // panel7
             // 
-            panel7.Controls.Add(BirthDay_Date);
+            panel7.Controls.Add(CreateDay_Date);
             panel7.Controls.Add(NgayTaoHoaDon_Label);
-            panel7.Location = new Point(737, 0);
+            panel7.Location = new Point(0, 58);
             panel7.Name = "panel7";
             panel7.Size = new Size(266, 57);
             panel7.TabIndex = 2;
             // 
-            // BirthDay_Date
+            // CreateDay_Date
             // 
-            BirthDay_Date.Format = DateTimePickerFormat.Short;
-            BirthDay_Date.Location = new Point(109, 10);
-            BirthDay_Date.Name = "BirthDay_Date";
-            BirthDay_Date.Size = new Size(145, 27);
-            BirthDay_Date.TabIndex = 4;
+            CreateDay_Date.Format = DateTimePickerFormat.Short;
+            CreateDay_Date.Location = new Point(109, 10);
+            CreateDay_Date.Name = "CreateDay_Date";
+            CreateDay_Date.Size = new Size(145, 27);
+            CreateDay_Date.TabIndex = 4;
             // 
             // NgayTaoHoaDon_Label
             // 
@@ -242,71 +272,21 @@
             NgayTaoHoaDon_Label.TabIndex = 1;
             NgayTaoHoaDon_Label.Text = "Ngày tạo";
             // 
-            // panel6
-            // 
-            panel6.Controls.Add(Address_tb);
-            panel6.Controls.Add(LoaiHoaDon_Label);
-            panel6.Location = new Point(272, 58);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(459, 57);
-            panel6.TabIndex = 3;
-            // 
-            // Address_tb
-            // 
-            Address_tb.Location = new Point(184, 12);
-            Address_tb.Name = "Address_tb";
-            Address_tb.Size = new Size(245, 27);
-            Address_tb.TabIndex = 1;
-            // 
-            // LoaiHoaDon_Label
-            // 
-            LoaiHoaDon_Label.AutoSize = true;
-            LoaiHoaDon_Label.Location = new Point(10, 19);
-            LoaiHoaDon_Label.Name = "LoaiHoaDon_Label";
-            LoaiHoaDon_Label.Size = new Size(96, 20);
-            LoaiHoaDon_Label.TabIndex = 1;
-            LoaiHoaDon_Label.Text = "Loại hóa đơn";
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(Name_tb);
-            panel5.Controls.Add(pttt_Label);
-            panel5.Location = new Point(272, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(459, 57);
-            panel5.TabIndex = 2;
-            // 
-            // Name_tb
-            // 
-            Name_tb.Location = new Point(184, 12);
-            Name_tb.Name = "Name_tb";
-            Name_tb.Size = new Size(245, 27);
-            Name_tb.TabIndex = 1;
-            // 
-            // pttt_Label
-            // 
-            pttt_Label.AutoSize = true;
-            pttt_Label.Location = new Point(10, 19);
-            pttt_Label.Name = "pttt_Label";
-            pttt_Label.Size = new Size(168, 20);
-            pttt_Label.TabIndex = 1;
-            pttt_Label.Text = "Phương thức thanh toán";
-            // 
             // panel4
             // 
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(MaPhong_tb);
             panel4.Controls.Add(MaPhong_Label);
-            panel4.Location = new Point(0, 58);
+            panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(266, 57);
             panel4.TabIndex = 2;
             // 
-            // textBox1
+            // MaPhong_tb
             // 
-            textBox1.Location = new Point(109, 11);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(140, 27);
-            textBox1.TabIndex = 2;
+            MaPhong_tb.Location = new Point(109, 11);
+            MaPhong_tb.Name = "MaPhong_tb";
+            MaPhong_tb.Size = new Size(140, 27);
+            MaPhong_tb.TabIndex = 2;
             // 
             // MaPhong_Label
             // 
@@ -317,44 +297,20 @@
             MaPhong_Label.TabIndex = 1;
             MaPhong_Label.Text = "Mã phòng";
             // 
-            // panel3
-            // 
-            panel3.Controls.Add(MSSV_tb);
-            panel3.Controls.Add(MaHoaDon_Label);
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(266, 57);
-            panel3.TabIndex = 0;
-            // 
-            // MSSV_tb
-            // 
-            MSSV_tb.Location = new Point(109, 12);
-            MSSV_tb.Name = "MSSV_tb";
-            MSSV_tb.Size = new Size(140, 27);
-            MSSV_tb.TabIndex = 1;
-            // 
-            // MaHoaDon_Label
-            // 
-            MaHoaDon_Label.AutoSize = true;
-            MaHoaDon_Label.Location = new Point(12, 18);
-            MaHoaDon_Label.Name = "MaHoaDon_Label";
-            MaHoaDon_Label.Size = new Size(89, 20);
-            MaHoaDon_Label.TabIndex = 1;
-            MaHoaDon_Label.Text = "Mã hóa đơn";
-            // 
             // panel2
             // 
             panel2.Controls.Add(dataGridView);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 187);
+            panel2.Location = new Point(0, 143);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1003, 510);
-            panel2.TabIndex = 2;
+            panel2.Size = new Size(1003, 554);
+            panel2.TabIndex = 4;
             // 
             // dataGridView
             // 
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -365,7 +321,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, MaPhong_Col, Pttt_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, Money, img_Col });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaPhong_Col, NgayTaoHoaDon_Col, SoDienCu, SoDienMoi, Money });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -387,17 +343,8 @@
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView.Size = new Size(1003, 513);
-            dataGridView.TabIndex = 1;
-            // 
-            // MaHoaDon_Col
-            // 
-            MaHoaDon_Col.DataPropertyName = "MaHoaDon";
-            MaHoaDon_Col.FillWeight = 75F;
-            MaHoaDon_Col.HeaderText = "Mã hóa đơn";
-            MaHoaDon_Col.MinimumWidth = 6;
-            MaHoaDon_Col.Name = "MaHoaDon_Col";
-            MaHoaDon_Col.Width = 122;
+            dataGridView.Size = new Size(1003, 554);
+            dataGridView.TabIndex = 3;
             // 
             // MaPhong_Col
             // 
@@ -406,54 +353,37 @@
             MaPhong_Col.HeaderText = "Mã phòng";
             MaPhong_Col.MinimumWidth = 6;
             MaPhong_Col.Name = "MaPhong_Col";
-            MaPhong_Col.Width = 115;
-            // 
-            // Pttt_Col
-            // 
-            Pttt_Col.DataPropertyName = "PhuongThucThanhToan";
-            Pttt_Col.FillWeight = 126.583336F;
-            Pttt_Col.HeaderText = "Phương thức thanh toán";
-            Pttt_Col.MinimumWidth = 6;
-            Pttt_Col.Name = "Pttt_Col";
-            Pttt_Col.Width = 178;
-            // 
-            // TypeHoaDon_Col
-            // 
-            TypeHoaDon_Col.DataPropertyName = "LoaiHoaDon";
-            TypeHoaDon_Col.FillWeight = 119.777786F;
-            TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
-            TypeHoaDon_Col.MinimumWidth = 6;
-            TypeHoaDon_Col.Name = "TypeHoaDon_Col";
-            TypeHoaDon_Col.Width = 150;
             // 
             // NgayTaoHoaDon_Col
             // 
-            NgayTaoHoaDon_Col.DataPropertyName = "NgayTaoHoaDon";
+            NgayTaoHoaDon_Col.DataPropertyName = "NgayLapBieu";
             NgayTaoHoaDon_Col.FillWeight = 85.75F;
             NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
             NgayTaoHoaDon_Col.MinimumWidth = 6;
             NgayTaoHoaDon_Col.Name = "NgayTaoHoaDon_Col";
-            NgayTaoHoaDon_Col.Width = 135;
+            // 
+            // SoDienCu
+            // 
+            SoDienCu.DataPropertyName = "SoDienCu";
+            SoDienCu.HeaderText = "Số điện cũ";
+            SoDienCu.MinimumWidth = 6;
+            SoDienCu.Name = "SoDienCu";
+            // 
+            // SoDienMoi
+            // 
+            SoDienMoi.DataPropertyName = "SoDienMoi";
+            SoDienMoi.HeaderText = "Số điện mới";
+            SoDienMoi.MinimumWidth = 6;
+            SoDienMoi.Name = "SoDienMoi";
             // 
             // Money
             // 
-            Money.DataPropertyName = "SoTien";
+            Money.DataPropertyName = "TienDien";
             Money.HeaderText = "Số tiền";
             Money.MinimumWidth = 6;
             Money.Name = "Money";
-            Money.Width = 120;
             // 
-            // img_Col
-            // 
-            img_Col.DataPropertyName = "TrangThai";
-            img_Col.FillWeight = 115.69445F;
-            img_Col.HeaderText = "Trạng thái thanh toán";
-            img_Col.MinimumWidth = 6;
-            img_Col.Name = "img_Col";
-            img_Col.Resizable = DataGridViewTriState.True;
-            img_Col.Width = 180;
-            // 
-            // fQuanLyHoaDon
+            // fHoaDonDien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -461,21 +391,19 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "fQuanLyHoaDon";
-            Text = "fQuanLyHoaDon";
+            Name = "fHoaDonDien";
+            Text = "fHoaDonDien";
             panel1.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
@@ -484,36 +412,31 @@
         #endregion
 
         private Panel panel1;
+        private Panel panel6;
+        private TextBox money_tb;
+        private Label label3;
+        private Panel panel5;
+        private TextBox newNum_tb;
+        private Label label2;
+        private Panel panel3;
+        private TextBox oldNum_tb;
+        private Label label1;
         private Guna.UI2.WinForms.Guna2Button Renew_Btn;
         private Guna.UI2.WinForms.Guna2Button Delete_Btn;
         private Guna.UI2.WinForms.Guna2Button Edit_Btn;
         private Guna.UI2.WinForms.Guna2Button Add_Btn;
-        private Panel panel8;
-        private Label Status_Label;
         private Panel panel7;
-        private DateTimePicker BirthDay_Date;
+        private DateTimePicker CreateDay_Date;
         private Label NgayTaoHoaDon_Label;
-        private Panel panel6;
-        private TextBox Address_tb;
-        private Label LoaiHoaDon_Label;
-        private Panel panel5;
-        private TextBox Name_tb;
-        private Label pttt_Label;
         private Panel panel4;
+        private TextBox MaPhong_tb;
         private Label MaPhong_Label;
-        private Panel panel3;
-        private TextBox MSSV_tb;
-        private Label MaHoaDon_Label;
-        private Guna.UI2.WinForms.Guna2RadioButton thanhToan_check;
-        private TextBox textBox1;
         private Panel panel2;
         private DataGridView dataGridView;
-        private DataGridViewTextBoxColumn MaHoaDon_Col;
         private DataGridViewTextBoxColumn MaPhong_Col;
-        private DataGridViewTextBoxColumn Pttt_Col;
-        private DataGridViewTextBoxColumn TypeHoaDon_Col;
         private DataGridViewTextBoxColumn NgayTaoHoaDon_Col;
+        private DataGridViewTextBoxColumn SoDienCu;
+        private DataGridViewTextBoxColumn SoDienMoi;
         private DataGridViewTextBoxColumn Money;
-        private DataGridViewCheckBoxColumn img_Col;
     }
 }

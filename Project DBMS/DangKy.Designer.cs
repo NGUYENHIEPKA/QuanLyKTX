@@ -80,10 +80,10 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Montserrat Black", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(617, 12);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(267, 34);
+            guna2HtmlLabel1.Size = new Size(260, 31);
             guna2HtmlLabel1.TabIndex = 2;
             guna2HtmlLabel1.Text = "ĐĂNG KÝ TÀI KHOẢN";
             // 
@@ -306,6 +306,7 @@
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "DangKy";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKy";
             ResumeLayout(false);
             PerformLayout();

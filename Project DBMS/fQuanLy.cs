@@ -87,11 +87,13 @@ namespace Project_DBMS
 
         private void WaterBill_Btn_Click(object sender, EventArgs e)
         {
+            container(new fHoaDonNuoc());
             hideware();
         }
 
         private void ElectricBill_Btn_Click(object sender, EventArgs e)
         {
+            container(new fHoaDonDien());
             hideware();
         }
     }
