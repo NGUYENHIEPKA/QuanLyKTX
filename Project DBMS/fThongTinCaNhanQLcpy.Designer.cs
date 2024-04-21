@@ -275,6 +275,7 @@ namespace Project_DBMS
             guna2GroupBox1.Size = new Size(685, 260);
             guna2GroupBox1.TabIndex = 9;
             guna2GroupBox1.Text = "Thông Tin Cá Nhân";
+            guna2GroupBox1.Click += guna2GroupBox1_Click;
             // 
             // panel2
             // 
@@ -362,6 +363,7 @@ namespace Project_DBMS
             guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges15;
             guna2CustomGradientPanel2.Size = new Size(303, 697);
             guna2CustomGradientPanel2.TabIndex = 2;
+            guna2CustomGradientPanel2.Paint += guna2CustomGradientPanel2_Paint;
             // 
             // ChangeImg_btn
             // 
@@ -407,7 +409,6 @@ namespace Project_DBMS
             FormBorderStyle = FormBorderStyle.None;
             Name = "fThongTinCaNhanQLcpy";
             Text = "fThongTinCaNhanQL";
-            Load += fThongTinCaNhanQLcpy_Load;
             guna2CustomGradientPanel1.ResumeLayout(false);
             guna2GroupBox2.ResumeLayout(false);
             panel8.ResumeLayout(false);
@@ -430,11 +431,6 @@ namespace Project_DBMS
             guna2CustomGradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ImgQL_ptbox).EndInit();
             ResumeLayout(false);
-        }
-
-        private void fThongTinCaNhanQLcpy_Load(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         //#endregion

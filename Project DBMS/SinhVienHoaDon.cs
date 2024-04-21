@@ -13,15 +13,17 @@ namespace Project_DBMS
 {
     public partial class SinhVienHoaDon : Form
     {
-        public SinhVienHoaDon()
+        string TaiKhoan;
+        public SinhVienHoaDon(string TaiKhoan)
         {
             InitializeComponent();
+            this.TaiKhoan = TaiKhoan;
             ShowListHoaDon();
             AddHoaDonSVBinding();
         }
         void ShowListHoaDon()
         {
-            SinhVienListHoaDon.DataSource = SVHoaDonDAO.Instance.GetListHoaDonSV();
+            SinhVienListHoaDon.DataSource = SVHoaDonDAO.Instance.GetListHoaDonSV(this.TaiKhoan);
         }
         void AddHoaDonSVBinding()
         {

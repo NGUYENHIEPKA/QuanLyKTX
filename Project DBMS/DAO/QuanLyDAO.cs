@@ -17,12 +17,9 @@ namespace Project_DBMS.DAO
             private set { instance = value; }
         }
         private QuanLyDAO() { }
-        public DataTable GetListQuanLy()
+        public DataTable GetQuanLy(string TaiKhoan)
         {
-            string query = "SELECT QuanLy.*, TaiKhoan.TaiKhoan\r\n" +
-                "From QuanLy\r\n" +
-                "JOIN TaiKhoan ON QuanLy.MaQL = TaiKhoan.TaiKhoan;\r\n";
-
+            string query = "Select MaQL, HoTen, MaTangQL,TaiKhoan, MatKhau  from dbo.QuanLy, dbo.TaiKhoan where QuanLy.MaQL ='" + TaiKhoan + "' and QuanLy.MaQL = TaiKhoan.TaiKhoan";
             DataTable data = DataBase.Instance.Execute(query);
             return data;
         }

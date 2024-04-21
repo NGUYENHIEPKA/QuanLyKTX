@@ -27,7 +27,7 @@ namespace Project_DBMS
         private void HoaDonBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Hóa đơn";
-            Hienthihoadon(new SinhVienHoaDon());
+            Hienthihoadon(new SinhVienHoaDon(this.TextBoxValue));
         }
 
         private void NoiQuyBtn_Click(object sender, EventArgs e)

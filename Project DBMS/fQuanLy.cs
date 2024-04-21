@@ -21,6 +21,7 @@ namespace Project_DBMS
         {
             panelbill.Visible = false;
         }
+        public string TextBoxValue { get; set; }
         private void container(object _form)
         {
             if (guna2Panel_container.Controls.Count >= 0)
@@ -57,7 +58,7 @@ namespace Project_DBMS
         private void UserInformationBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Thông tin cá nhân";
-            container(new fThongTinCaNhanQL());
+            container(new fThongTinCaNhanQLcpy(this.TextBoxValue));
         }
 
         private void RoomBtn_Click(object sender, EventArgs e)

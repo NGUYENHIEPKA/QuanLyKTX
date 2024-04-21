@@ -42,6 +42,7 @@ namespace Project_DBMS
                 if(Ktra(Taikhoan)=="QL")
                 {
                     fQuanLy fQuanLy = new fQuanLy();
+                    fQuanLy.TextBoxValue = UserTB.Text;
                     this.Hide();
                     fQuanLy.ShowDialog();
                     this.Show();

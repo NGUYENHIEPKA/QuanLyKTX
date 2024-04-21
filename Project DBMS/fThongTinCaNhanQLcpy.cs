@@ -14,41 +14,30 @@ namespace Project_DBMS
 {
     public partial class fThongTinCaNhanQLcpy : Form
     {
-        public fThongTinCaNhanQLcpy()
+        string TaiKhoan;
+        public fThongTinCaNhanQLcpy(string TaiKhoan)
         {
             InitializeComponent();
-            LoadData();
+            this.TaiKhoan = TaiKhoan;
+            DisplayStudentInfo();
+
         }
-        public void LoadData()
+        private void DisplayStudentInfo()
         {
-            // Lấy tên tài khoản từ TextBox tentk_tb
-            string tentk = tentk_tb.Text;
-
-            // Kiểm tra điều kiện tentk có trống hay không
-            if (string.IsNullOrEmpty(tentk))
+            DataTable dt = QuanLyDAO.Instance.GetQuanLy(this.TaiKhoan);
+            if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Vui lòng nhập tên tài khoản để kiểm tra.");
-                return;
-            }
-
-            // Lấy danh sách quản lý từ QuanLyDAO dựa trên tên tài khoản
-            DataTable quanLyData = QuanLyDAO.Instance.GetListQuanLy();
-
-            // Kiểm tra xem có dữ liệu trong bảng hay không
-            if (quanLyData.Rows.Count > 0)
-            {
-                // Lấy hàng dữ liệu đầu tiên
-                DataRow row = quanLyData.Rows[0];
-
-                // Gán dữ liệu vào TextBox
+                DataRow row = dt.Rows[0];
                 maQL_tb.Text = row["MaQL"].ToString();
                 tenQL_tb.Text = row["HoTen"].ToString();
                 matangQL_tb.Text = row["MaTangQL"].ToString();
+                tentk_tb.Text = row["TaiKhoan"].ToString();
+                mkQL_tb.Text = row["MatKhau"].ToString();
+
             }
             else
             {
-                // Xử lý khi không có dữ liệu trong bảng QuanLy
-                MessageBox.Show("Không tìm thấy dữ liệu phù hợp cho tên tài khoản này.");
+                MessageBox.Show("Không tìm thấy thông tin quản lý.");
             }
         }
 
@@ -86,6 +75,7 @@ namespace Project_DBMS
             }
             else
             {
+                guna2ImageRadioButton1.Checked = false;
                 mkQL_tb.PasswordChar = '*';
                 newMK1_tb.PasswordChar = '*';
                 newMK2_tb.PasswordChar = '*';
@@ -109,6 +99,16 @@ namespace Project_DBMS
             {
                 MessageBox.Show("Mật khẩu mới và xác nhận mật khẩu không khớp. Vui lòng thử lại.");
             }
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

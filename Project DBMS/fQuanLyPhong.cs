@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Project_DBMS
 {
@@ -17,8 +18,8 @@ namespace Project_DBMS
         {
             InitializeComponent();
             ShowListPhong();
-            AddPhongnBinding();
-        }
+            AddPhongnBinding();          
+        }       
 
         void ShowListPhong()
         {
@@ -29,7 +30,7 @@ namespace Project_DBMS
             Matang_tb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "MaTang", true, DataSourceUpdateMode.Never));
             MaPhong_tb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "MaPhong", true, DataSourceUpdateMode.Never));
             MaLoaiPhong_tb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "MaLoaiPhong", true, DataSourceUpdateMode.Never));
-            LoaiPhongcb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "LoaiPhong", true, DataSourceUpdateMode.Never));
+            LoaiPhong_cb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "LoaiPhong", true, DataSourceUpdateMode.Never));
             SVHT_tb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "SoNguoi", true, DataSourceUpdateMode.Never));
             GiaPhong_tb.DataBindings.Add(new Binding("Text", dataGridView.DataSource, "GiaTien", true, DataSourceUpdateMode.Never));
 
@@ -39,40 +40,37 @@ namespace Project_DBMS
             Matang_tb.DataBindings.Clear();
             MaPhong_tb.DataBindings.Clear();
             MaLoaiPhong_tb.DataBindings.Clear();
-            LoaiPhongcb.DataBindings.Clear();
+            LoaiPhong_cb.DataBindings.Clear();
             SVHT_tb.DataBindings.Clear();
             GiaPhong_tb.DataBindings.Clear();
         }
 
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Add_Btn_Click(object sender, EventArgs e)
         {
-            if (dataGridView.SelectedRows.Count > 0)
-            {
-                DataGridViewRow row = dataGridView.SelectedRows[0];
-                // Lấy dữ liệu từ các ô trong hàng được chọn
-                string maTang = row.Cells["MaTang"].Value.ToString();
-                string maPhong = row.Cells["MaPhong"].Value.ToString();
-                string maLoaiPhong = row.Cells["MaLoaiPhong"].Value.ToString();
-                string loaiPhong = row.Cells["LoaiPhong"].Value.ToString();
-                string soNguoi = row.Cells["SoNguoi"].Value.ToString();
-                string giaTien = row.Cells["GiaTien"].Value.ToString();
+            // Thu thập dữ liệu từ các điều khiển giao diện người dùng
+            string maPhong = MaPhong_tb.Text;
+            string maTang = Matang_tb.Text;
+            string maLoaiPhong = MaLoaiPhong_tb.Text;
+            string loaiPhong = LoaiPhong_cb.Text;
+            int soNguoi = int.Parse(SVHT_tb.Text);
+            //int giaTien = int.Parse(GiaPhong_tb.Text);
 
-                // Hiển thị dữ liệu lên các TextBox tương ứng
-                Matang_tb.Text = maTang;
-                MaPhong_tb.Text = maPhong;
-                MaLoaiPhong_tb.Text = maLoaiPhong;
-                LoaiPhongcb.Text = loaiPhong;
-                SVHT_tb.Text = soNguoi;
-                GiaPhong_tb.Text = giaTien;
-            }
+            // Gọi phương thức AddPhong từ PhongDAO
+            /*bool success =*/ PhongDAO.Instance.AddPhong(maPhong, maTang, maLoaiPhong, loaiPhong, soNguoi);
+
+            // Nếu thêm thành công, làm mới danh sách và thông báo cho người dùng
+            ClearPhongBinding();
+            ShowListPhong(); // Làm mới danh sách phòng
+
         }
+
 
         private void Update_Btn_Click(object sender, EventArgs e)
         {
             string MaTang = Matang_tb.Text;
             string MaPhong = MaPhong_tb.Text;
             string MaloaiPhong = MaLoaiPhong_tb.Text;
-            string LoaiPhong = LoaiPhongcb.Text;
+            string LoaiPhong = LoaiPhong_cb.Text;
             string SoNguoi = SVHT_tb.Text;
             string GiaPhong = GiaPhong_tb.Text;
         }
@@ -109,7 +107,7 @@ namespace Project_DBMS
                 // Nếu TextBox trống, hiển thị tất cả dữ liệu
                 dataGridView.DataSource = PhongDAO.Instance.GetListPhong(); // yourOriginalDataSource là nguồn dữ liệu ban đầu của DataGridView
             }
-        }*/
+        }
 
         private void Add_Btn_Click(object sender, EventArgs e)
         {
