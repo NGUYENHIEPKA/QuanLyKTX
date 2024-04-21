@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,13 +41,12 @@ namespace Project_DBMS.DAO
             try
             {
                 DataBase.Instance.ExecuteNonQuery(query, new object[] { MSSV, MaPhong, MaTang });
-
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show("Error :" + ex.Message, "Message");
             }
-            
         }
         public void UpdateThongTinSinhVien (string MSSV, string Name, string NgaySinh, string GioiTinh, string DiaChi, string SDT)
         {
@@ -55,9 +55,9 @@ namespace Project_DBMS.DAO
             try
             {
                 DataBase.Instance.ExecuteNonQuery(query, new object[] { MSSV, Name, NgaySinh, GioiTinh, DiaChi, SDT });
-
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show("Error :" + ex.Message, "Message");
             }
@@ -71,7 +71,7 @@ namespace Project_DBMS.DAO
                 DataBase.Instance.ExecuteNonQuery(query, new object[] { MSSV });
                 MessageBox.Show("Xóa sinh viên thành công!", "Thông báo", MessageBoxButtons.OK);
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
             }

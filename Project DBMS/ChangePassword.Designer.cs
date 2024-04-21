@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             OldPassTB = new Guna.UI2.WinForms.Guna2TextBox();
             OldPassLB = new Label();
@@ -67,7 +67,7 @@
             // 
             // OldPassTB
             // 
-            OldPassTB.CustomizableEdges = customizableEdges9;
+            OldPassTB.CustomizableEdges = customizableEdges1;
             OldPassTB.DefaultText = "";
             OldPassTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             OldPassTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -82,7 +82,7 @@
             OldPassTB.PasswordChar = '•';
             OldPassTB.PlaceholderText = "";
             OldPassTB.SelectedText = "";
-            OldPassTB.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            OldPassTB.ShadowDecoration.CustomizableEdges = customizableEdges2;
             OldPassTB.Size = new Size(286, 30);
             OldPassTB.TabIndex = 1;
             // 
@@ -107,7 +107,7 @@
             // 
             // NewPassAgTB
             // 
-            NewPassAgTB.CustomizableEdges = customizableEdges11;
+            NewPassAgTB.CustomizableEdges = customizableEdges3;
             NewPassAgTB.DefaultText = "";
             NewPassAgTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             NewPassAgTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -122,7 +122,7 @@
             NewPassAgTB.PasswordChar = '•';
             NewPassAgTB.PlaceholderText = "";
             NewPassAgTB.SelectedText = "";
-            NewPassAgTB.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            NewPassAgTB.ShadowDecoration.CustomizableEdges = customizableEdges4;
             NewPassAgTB.Size = new Size(286, 30);
             NewPassAgTB.TabIndex = 1;
             // 
@@ -147,7 +147,7 @@
             // 
             // NewPassTB
             // 
-            NewPassTB.CustomizableEdges = customizableEdges13;
+            NewPassTB.CustomizableEdges = customizableEdges5;
             NewPassTB.DefaultText = "";
             NewPassTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             NewPassTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -162,7 +162,7 @@
             NewPassTB.PasswordChar = '•';
             NewPassTB.PlaceholderText = "";
             NewPassTB.SelectedText = "";
-            NewPassTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            NewPassTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
             NewPassTB.Size = new Size(286, 30);
             NewPassTB.TabIndex = 1;
             // 
@@ -206,7 +206,7 @@
             // 
             // DoiPassBT
             // 
-            DoiPassBT.CustomizableEdges = customizableEdges15;
+            DoiPassBT.CustomizableEdges = customizableEdges7;
             DoiPassBT.DisabledState.BorderColor = Color.DarkGray;
             DoiPassBT.DisabledState.CustomBorderColor = Color.DarkGray;
             DoiPassBT.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -216,10 +216,11 @@
             DoiPassBT.ForeColor = Color.White;
             DoiPassBT.Location = new Point(63, 22);
             DoiPassBT.Name = "DoiPassBT";
-            DoiPassBT.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            DoiPassBT.ShadowDecoration.CustomizableEdges = customizableEdges8;
             DoiPassBT.Size = new Size(185, 44);
             DoiPassBT.TabIndex = 0;
             DoiPassBT.Text = "Đổi mật khẩu";
+            DoiPassBT.Click += DoiPassBT_Click;
             // 
             // ChangePassword
             // 

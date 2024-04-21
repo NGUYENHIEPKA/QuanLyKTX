@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_DBMS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,12 @@ namespace Project_DBMS
 {
     public partial class ChangePassword : Form
     {
-        public ChangePassword()
+        public ChangePassword(string id)
         {
             InitializeComponent();
+            this.id = id;
         }
-
+        string id;
         private void ShowPassCB_CheckedChanged(object sender, EventArgs e)
         {
             if (ShowPassCB.Checked)
@@ -33,6 +35,15 @@ namespace Project_DBMS
 
 
             }
+        }
+
+        private void DoiPassBT_Click(object sender, EventArgs e)
+        {
+            string tk = id;
+            string passcu = OldPassTB.Text;
+            string passmoi = NewPassTB.Text;
+            string passsmoi1 = NewPassAgTB.Text;
+            AccountDAO.Instance.sua(tk, passcu, passmoi, passsmoi1);
         }
     }
 }

@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing, base.GetV());
+            base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -172,7 +172,7 @@
             MaPhong_tb.Name = "MaPhong_tb";
             MaPhong_tb.Size = new Size(140, 27);
             MaPhong_tb.TabIndex = 1;
-            MaPhong_tb.TextChanged += MaPhong_tb_TextChanged;
+            //MaPhong_tb.TextChanged += MaPhong_tb_TextChanged;
             // 
             // MaPhong_Label
             // 

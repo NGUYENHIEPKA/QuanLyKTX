@@ -94,7 +94,7 @@ namespace Project_DBMS
 
         }
 
-        private void MaPhong_tb_TextChanged(object sender, EventArgs e)
+        /*private void MaPhong_tb_TextChanged(object sender, EventArgs e)
         {
             string searchText = MaPhong_tb.Text.Trim();
             if (!string.IsNullOrEmpty(searchText))
@@ -109,7 +109,7 @@ namespace Project_DBMS
                 // Nếu TextBox trống, hiển thị tất cả dữ liệu
                 dataGridView.DataSource = PhongDAO.Instance.GetListPhong(); // yourOriginalDataSource là nguồn dữ liệu ban đầu của DataGridView
             }
-        }
+        }*/
 
         private void Add_Btn_Click(object sender, EventArgs e)
         {

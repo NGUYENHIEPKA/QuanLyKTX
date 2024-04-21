@@ -63,7 +63,6 @@ namespace Project_DBMS
             {
                 SinhVienDAO.Instance.AddPhongSinhVien(MSSV, MaPhong, MaTang);
             }
-            MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
             this.Close();
         }
     }

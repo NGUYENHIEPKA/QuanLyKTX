@@ -44,7 +44,7 @@ namespace Project_DBMS
         private void DoiPassBtn_Click(object sender, EventArgs e)
         {
             label_value.Text = "Đổi mật khẩu";
-            HienDoiPass(new ChangePassword());
+            HienDoiPass(new ChangePassword(TextBoxValue));
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
