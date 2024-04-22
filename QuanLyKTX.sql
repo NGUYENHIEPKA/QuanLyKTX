@@ -381,7 +381,72 @@ begin
 		
 end
 
+	
+CREATE PROCEDURE UTP_ThemPhong (
+    @MaPhong NVARCHAR(5),
+    @MaTang NVARCHAR(5),
+    @MaLoaiPhong NVARCHAR(5),
+    @LoaiPhong NVARCHAR(2),
+    @SoNguoi INT
+)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Phong WHERE MaPhong = @MaPhong)
+    BEGIN
+        RAISERROR('Phòng đã tồn tại.', 16, 1)
+        RETURN;
+    END
 
+    INSERT INTO Phong (MaPhong, MaTang, MaLoaiPhong, LoaiPhong, SoNguoi)
+    VALUES (@MaPhong, @MaTang, @MaLoaiPhong, @LoaiPhong, @SoNguoi);
+
+    PRINT 'Thêm phòng thành công.';
+END
+
+CREATE PROCEDURE UTP_SuaPhong (
+    @MaPhong NVARCHAR(5),
+    @MaTang NVARCHAR(5),
+    @MaLoaiPhong NVARCHAR(5),
+    @LoaiPhong NVARCHAR(2),
+    @SoNguoi INT
+)
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Phong WHERE MaPhong = @MaPhong)
+    BEGIN
+        RAISERROR('Phòng không tồn tại.', 16, 1)
+        RETURN;
+    END
+
+    UPDATE Phong
+    SET MaTang = @MaTang, MaLoaiPhong = @MaLoaiPhong, LoaiPhong = @LoaiPhong, SoNguoi = @SoNguoi
+    WHERE MaPhong = @MaPhong;
+
+    PRINT 'Sửa phòng thành công.';
+END
+
+
+CREATE PROCEDURE UTP_XoaPhong (
+    @MaPhong NVARCHAR(5)
+)
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Phong WHERE MaPhong = @MaPhong)
+    BEGIN
+        RAISERROR('Phòng không tồn tại.', 16, 1)
+        RETURN;
+    END
+
+    IF EXISTS (SELECT 1 FROM SinhVien WHERE MaPhong = @MaPhong)
+    BEGIN
+        RAISERROR('Phòng có sinh viên đang ở, không thể xóa.', 16, 1)
+        RETURN;
+    END
+
+    DELETE FROM Phong WHERE MaPhong = @MaPhong;
+
+    PRINT 'Xóa phòng thành công.';
+END
 
 
 -- Insert dữ liệu
