@@ -22,5 +22,10 @@ namespace Project_DBMS
         {
             dataGridView.DataSource = QLHoaDonDAO.Instance.GetListHoaDon();
         }
+
+        private void Add_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

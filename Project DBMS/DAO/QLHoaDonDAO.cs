@@ -38,5 +38,17 @@ namespace Project_DBMS.DAO
             DataTable data = DataBase.Instance.Execute(query);
             return data;
         }
+        public void InsertHoaDonNuoc(string MaPhong, string NgayTaoHoaDon, string SoNuocCu, string SoNuocMoi)
+        {
+            string query = "InsertTienNuoc @MaPhong , @NgayTaoHoaDon , @SoNuocDauThang , @SoNuocCuoiThang";
+
+            DataBase.Instance.ExecuteNonQuery(query, new object[] { MaPhong, NgayTaoHoaDon, SoNuocCu, SoNuocMoi });
+        }
+        public void InsertHoaDonDien(string MaPhong, string NgayTaoHoaDon, string SoDienCu, string SoDienMoi)
+        {
+            string query = "InsertTienDien @MaPhong , @NgayTaoHoaDon , @SoDienDauThang , @SoDienCuoiThang";
+
+            DataBase.Instance.ExecuteNonQuery(query, new object[] { MaPhong, NgayTaoHoaDon, SoDienCu, SoDienMoi });
+        }
     }
 }

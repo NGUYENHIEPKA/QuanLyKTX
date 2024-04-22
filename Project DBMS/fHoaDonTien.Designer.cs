@@ -245,6 +245,7 @@
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 4;
             Add_Btn.Text = "Thêm";
+            Add_Btn.Click += Add_Btn_Click;
             // 
             // panel7
             // 

@@ -177,6 +177,7 @@
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 4;
             Add_Btn.Text = "Thêm";
+            Add_Btn.Click += Add_Btn_Click;
             // 
             // panel8
             // 
@@ -376,6 +377,7 @@
             dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.Location = new Point(0, 0);
             dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -397,6 +399,7 @@
             MaHoaDon_Col.HeaderText = "Mã hóa đơn";
             MaHoaDon_Col.MinimumWidth = 6;
             MaHoaDon_Col.Name = "MaHoaDon_Col";
+            MaHoaDon_Col.ReadOnly = true;
             MaHoaDon_Col.Width = 122;
             // 
             // MaPhong_Col
@@ -406,6 +409,7 @@
             MaPhong_Col.HeaderText = "Mã phòng";
             MaPhong_Col.MinimumWidth = 6;
             MaPhong_Col.Name = "MaPhong_Col";
+            MaPhong_Col.ReadOnly = true;
             MaPhong_Col.Width = 115;
             // 
             // Pttt_Col
@@ -415,6 +419,7 @@
             Pttt_Col.HeaderText = "Phương thức thanh toán";
             Pttt_Col.MinimumWidth = 6;
             Pttt_Col.Name = "Pttt_Col";
+            Pttt_Col.ReadOnly = true;
             Pttt_Col.Width = 178;
             // 
             // TypeHoaDon_Col
@@ -424,6 +429,7 @@
             TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
             TypeHoaDon_Col.MinimumWidth = 6;
             TypeHoaDon_Col.Name = "TypeHoaDon_Col";
+            TypeHoaDon_Col.ReadOnly = true;
             TypeHoaDon_Col.Width = 150;
             // 
             // NgayTaoHoaDon_Col
@@ -433,6 +439,7 @@
             NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
             NgayTaoHoaDon_Col.MinimumWidth = 6;
             NgayTaoHoaDon_Col.Name = "NgayTaoHoaDon_Col";
+            NgayTaoHoaDon_Col.ReadOnly = true;
             NgayTaoHoaDon_Col.Width = 135;
             // 
             // Money
@@ -441,6 +448,7 @@
             Money.HeaderText = "Số tiền";
             Money.MinimumWidth = 6;
             Money.Name = "Money";
+            Money.ReadOnly = true;
             Money.Width = 120;
             // 
             // img_Col
@@ -450,6 +458,7 @@
             img_Col.HeaderText = "Trạng thái thanh toán";
             img_Col.MinimumWidth = 6;
             img_Col.Name = "img_Col";
+            img_Col.ReadOnly = true;
             img_Col.Resizable = DataGridViewTriState.True;
             img_Col.Width = 180;
             // 

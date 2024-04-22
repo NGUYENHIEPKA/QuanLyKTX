@@ -40,5 +40,11 @@ namespace Project_DBMS
             newNum_tb.DataBindings.Clear();
             money_tb.DataBindings.Clear();
         }
+
+        private void Add_Btn_Click(object sender, EventArgs e)
+        {
+            fThemHoaDonDien form = new fThemHoaDonDien();
+            form.Show();
+        }
     }
 }
