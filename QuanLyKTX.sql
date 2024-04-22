@@ -160,8 +160,8 @@ BEGIN
 	SELECT @MaPhong = MaPhong, @NgayTaoHoaDon = NgayTaoHoaDon FROM INSERTED
 	SELECT @TienDien = TienDien FROM TienDien WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
 	SELECT @TienNuoc = TienNuoc FROM TienNuoc WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
-	DECLARE @TongNuoc FLOAT = @TienDien + @TienNuoc
-	UPDATE HoaDon SET SoTien = @TongNuoc WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
+	DECLARE @TongTien FLOAT = @TienDien + @TienNuoc
+	UPDATE HoaDon SET SoTien = @TongTien WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
 END
 GO
 
@@ -340,46 +340,62 @@ BEGIN
     UPDATE TaiKhoan SET MatKhau = @MatKhauMoi1 WHERE TaiKhoan = @TaiKhoan;
 END
 	
-create proc UTP_ThemHoaDonDien
-	@Maphong nvarchar(5),
-	@Thang int , 
-	@SoDienDauThang int , 
-	@SoDienCuoiThang int
-as 
-begin 
-	declare @TongDien float = (@SoDienCuoiThang - @SoDienDauThang)
+create trigger UTP_ThemHoaDonDien on TienDien AFTER INSERT
+AS
+BEGIN
+	DECLARE	@Maphong nvarchar(5), @NgayTaoHoaDon DATE , @SoDienDauThang int , @SoDienCuoiThang int, @TongDien float
+	SELECT @Maphong = MaPhong, @NgayTaoHoaDon = NgayLapBieu, @SoDienDauThang = SoDienCu, @SoDienCuoiThang = SoDienMoi FROM INSERTED
+	SET @TongDien = (@SoDienCuoiThang - @SoDienDauThang)
 	if (@TongDien <= 50)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,@TongDien * 1806)
+		UPDATE TienDien SET TienDien = @TongDien * 1806 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
 	else if (@TongDien > 50 and @TongDien <= 100)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-50)*1866 + 50* 1806)
-		else if (@TongDien > 100 and @TongDien <= 200)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-100)*2167 + 50* 1806 +50*1866)
-		else if (@TongDien > 200 and @TongDien <= 300)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-200)*2739 + 50* 1806 +50*1866 +100*2167 )
-		else if (@TongDien > 300 and @TongDien <= 400)
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-300)*3050 + 50* 1806+ 50*1866 +100*2167 + 100*2739)
-		else if (@TongDien > 400 )
-		insert into TienDien values (@Maphong,@Thang,@SodienDauThang,@SodienCuoiThang,(@TongDien-400)*3151 + 50* 1806 + 50*1866 +100*2167 + 100*2739 +100*3050)
+		UPDATE TienDien SET TienDien = (@TongDien-50)*1866 + 50* 1806 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+	else if (@TongDien > 100 and @TongDien <= 200)
+		UPDATE TienDien SET TienDien = (@TongDien-100)*2167 + 50* 1806 +50*1866 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+	else if (@TongDien > 200 and @TongDien <= 300)
+		UPDATE TienDien SET TienDien = (@TongDien-200)*2739 + 50* 1806 +50*1866 +100*2167 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+	else if (@TongDien > 300 and @TongDien <= 400)
+		UPDATE TienDien SET TienDien = (@TongDien-300)*3050 + 50* 1806+ 50*1866 +100*2167 + 100*2739 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+	else if (@TongDien > 400 )
+		UPDATE TienDien SET TienDien = (@TongDien-400)*3151 + 50* 1806 + 50*1866 +100*2167 + 100*2739 +100*3050 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+end
+GO
+
+create trigger UTP_ThemHoaDonNuoc on TienNuoc AFTER INSERT
+AS
+BEGIN
+	DECLARE @Maphong nvarchar(5), @NgayTaoHoaDon DATE , @SoNuocDauThang int , @SoNuocCuoiThang int, @TongNuoc float
+	SELECT @Maphong = MaPhong, @NgayTaoHoaDon = NgayLapBieu, @SoNuocDauThang = SoNuocCu, @SoNuocCuoiThang = SoNuocMoi FROM INSERTED
+	SET @TongNuoc = (@SoNuocCuoiThang - @SoNuocDauThang)
+	if (@TongNuoc <= 10)
+		UPDATE TienNuoc SET TienNuoc = @TongNuoc * 5973 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+	else if (@TongNuoc >10 and @TongNuoc <= 20)
+		UPDATE TienNuoc SET TienNuoc = (@TongNuoc-10)*7052 + 10* 5973 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+	else if (@TongNuoc > 20 and @TongNuoc <= 30)
+		UPDATE TienNuoc SET TienNuoc = (@TongNuoc-20)*8669 + 10*7052 +10* 5973 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
+	else if (@TongNuoc > 30 )
+		UPDATE TienNuoc SET TienNuoc = (@TongNuoc-3)*15925 +20*8669 + 10*7052 +10* 5973 WHERE @Maphong = MaPhong AND @NgayTaoHoaDon = NgayLapBieu
 end
 
-create proc UTP_ThemHoaDonNuoc
-	@Maphong nvarchar(5),
-	@Thang int , 
-	@SoNuocDauThang int , 
-	@SoNnuocCuoiThang int
-as 
-begin 
-	declare @TongNuoc float = (@SoNnuocCuoiThang - @SoNuocDauThang)
-	if (@TongNuoc <= 10)
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,@TongNuoc * 5973)
-	else if (@TongNuoc >10 and @TongNuoc <= 20)
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongNuoc-10)*7052 + 10* 5973)
-	else if (@TongNuoc > 20 and @TongNuoc <= 30)
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongNuoc-20)*8669 + 10*7052 +10* 5973)
-	else if (@TongNuoc > 30 )
-		insert into TienDien values (@Maphong,@Thang,@SoNuocDauThang,@SoNnuocCuoiThang,(@TongNuoc-3)*15925 +20*8669 + 10*7052 +10* 5973 )
-		
-end
+create proc InsertTienNuoc
+@MaPhong nvarchar(5),
+@NgayTaoHoaDon DATE,
+@SoNuocDauThang int,
+@SoNuocCuoiThang int
+AS
+BEGIN
+	insert into TienNuoc (MaPhong, NgayLapBieu, SoNuocCu, SoNuocMoi, TienNuoc) VALUES (@MaPhong, @NgayTaoHoaDon, @SoNuocDauThang, @SoNuocCuoiThang, '')
+END
+
+create proc InsertTienDien
+@MaPhong nvarchar(5),
+@NgayTaoHoaDon DATE,
+@SoDienDauThang int,
+@SoDienCuoiThang int
+AS
+BEGIN
+	insert into TienDien (MaPhong, NgayLapBieu, SoDienCu, SoDienMoi, TienDien) VALUES (@MaPhong, @NgayTaoHoaDon, @SoDienDauThang, @SoDienCuoiThang, '')
+END
 
 	
 CREATE PROCEDURE UTP_ThemPhong (
