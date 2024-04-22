@@ -1,4 +1,5 @@
 ﻿using Project_DBMS.DAO;
+using Project_DBMS.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,8 @@ namespace Project_DBMS
         {
             InitializeComponent();
             ShowListPhong();
-            AddPhongnBinding();          
-        }       
+            AddPhongnBinding();
+        }
 
         void ShowListPhong()
         {
@@ -47,37 +48,40 @@ namespace Project_DBMS
 
         private void Add_Btn_Click(object sender, EventArgs e)
         {
-            // Thu thập dữ liệu từ các điều khiển giao diện người dùng
             string maPhong = MaPhong_tb.Text;
             string maTang = Matang_tb.Text;
             string maLoaiPhong = MaLoaiPhong_tb.Text;
             string loaiPhong = LoaiPhong_cb.Text;
             int soNguoi = int.Parse(SVHT_tb.Text);
-            //int giaTien = int.Parse(GiaPhong_tb.Text);
+            PhongDAO.Instance.AddPhong(maPhong, maTang, maLoaiPhong, loaiPhong, soNguoi);
 
-            // Gọi phương thức AddPhong từ PhongDAO
-            /*bool success =*/ PhongDAO.Instance.AddPhong(maPhong, maTang, maLoaiPhong, loaiPhong, soNguoi);
-
-            // Nếu thêm thành công, làm mới danh sách và thông báo cho người dùng
             ClearPhongBinding();
-            ShowListPhong(); // Làm mới danh sách phòng
-
+            ShowListPhong();
+            AddPhongnBinding();
         }
 
-
-        private void Update_Btn_Click(object sender, EventArgs e)
+        private void Edit_Btn_Click(object sender, EventArgs e)
         {
-            string MaTang = Matang_tb.Text;
-            string MaPhong = MaPhong_tb.Text;
-            string MaloaiPhong = MaLoaiPhong_tb.Text;
-            string LoaiPhong = LoaiPhong_cb.Text;
-            string SoNguoi = SVHT_tb.Text;
-            string GiaPhong = GiaPhong_tb.Text;
+            string maPhong = MaPhong_tb.Text;
+            string maTang = Matang_tb.Text;
+            string maLoaiPhong = MaLoaiPhong_tb.Text;
+            string loaiPhong = LoaiPhong_cb.Text;
+            int soNguoi = int.Parse(SVHT_tb.Text);
+            PhongDAO.Instance.UpdatePhong(maPhong, maTang, maLoaiPhong, loaiPhong, soNguoi);
+
+            ClearPhongBinding();
+            ShowListPhong();
+            AddPhongnBinding();
         }
 
         private void Delete_Btn_Click(object sender, EventArgs e)
         {
+            string maPhong = MaPhong_tb.Text;
+            PhongDAO.Instance.DeletePhong(maPhong);
 
+            ClearPhongBinding();
+            ShowListPhong();
+            AddPhongnBinding();
         }
 
         private void Renew_Btn_Click(object sender, EventArgs e)
@@ -92,26 +96,12 @@ namespace Project_DBMS
 
         }
 
-        /*private void MaPhong_tb_TextChanged(object sender, EventArgs e)
+        private void search_Btn_Click(object sender, EventArgs e)
         {
-            string searchText = MaPhong_tb.Text.Trim();
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                // Lọc dữ liệu trong DataGridView dựa trên nội dung của TextBox
-                DataView dv = new DataView(dataGridView.DataSource as DataTable);
-                dv.RowFilter = string.Format("MaPhong LIKE '%{0}%'", searchText);
-                dataGridView.DataSource = dv;
-            }
-            else
-            {
-                // Nếu TextBox trống, hiển thị tất cả dữ liệu
-                dataGridView.DataSource = PhongDAO.Instance.GetListPhong(); // yourOriginalDataSource là nguồn dữ liệu ban đầu của DataGridView
-            }
-        }
+            string MaPhong = MaPhong_tb.Text;
+            DataTable data = PhongDAO.Instance.FindRoom(MaPhong);
 
-        private void Add_Btn_Click(object sender, EventArgs e)
-        {
-             
-        }*/
+            dataGridView.DataSource = data;
+        }
     }
 }

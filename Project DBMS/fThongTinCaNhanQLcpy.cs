@@ -51,7 +51,7 @@ namespace Project_DBMS
                 openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG;)|*.BMP;*.JPG;*.GIF;*.PNG;";
                 openFileDialog.Title = "Chọn ảnh";
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK) //Chưa cập nhật hình ảnh vào lại  database
+                if (openFileDialog.ShowDialog() == DialogResult.OK) //Chưa cập nhật hình ảnh vào lại database
                 {
                     try
                     {
@@ -67,38 +67,16 @@ namespace Project_DBMS
 
         private void guna2ImageRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2ImageRadioButton1.Checked)
-            {
-                mkQL_tb.PasswordChar = '\0';
-                newMK1_tb.PasswordChar = '\0';
-                newMK2_tb.PasswordChar = '\0';
-            }
-            else
-            {
-                guna2ImageRadioButton1.Checked = false;
-                mkQL_tb.PasswordChar = '*';
-                newMK1_tb.PasswordChar = '*';
-                newMK2_tb.PasswordChar = '*';
-            }
+
         }
 
         private void ChangePassword_Btn_Click(object sender, EventArgs e)
-        {
-            // Thieu dieu kien kiem tra mat khau hien tai co giong voi mk luu trong database chua
-
+        {           
+            string taiKhoan = tentk_tb.Text;
+            string matKhau = mkQL_tb.Text;
             string newPassword = newMK1_tb.Text;
             string confirmPassword = newMK2_tb.Text;
-
-            if (newPassword == confirmPassword)
-            {
-                //Thay doi mat khau va thuc hien luu vao database, chua lam!
-
-                MessageBox.Show("Thay đổi mật khẩu thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu mới và xác nhận mật khẩu không khớp. Vui lòng thử lại.");
-            }
+            AccountDAO.Instance.sua(taiKhoan, matKhau, newPassword, confirmPassword);            
         }
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
@@ -109,6 +87,22 @@ namespace Project_DBMS
         private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2ImageCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2ImageCheckBox1.Checked)
+            {
+                mkQL_tb.PasswordChar = '\0';
+                newMK1_tb.PasswordChar = '\0';
+                newMK2_tb.PasswordChar = '\0';
+            }
+            else
+            {
+                mkQL_tb.PasswordChar = '*';
+                newMK1_tb.PasswordChar = '*';
+                newMK2_tb.PasswordChar = '*';
+            }
         }
     }
 }

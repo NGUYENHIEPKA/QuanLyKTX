@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyPhong));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dataGridView = new DataGridView();
             MaTang = new DataGridViewTextBoxColumn();
             MaPhong_Col = new DataGridViewTextBoxColumn();
@@ -64,9 +64,9 @@
             panel8 = new Panel();
             panel5 = new Panel();
             panel1 = new Panel();
+            search_Btn = new Guna.UI2.WinForms.Guna2Button();
             Edit_Btn = new Guna.UI2.WinForms.Guna2Button();
             Add_Btn = new Guna.UI2.WinForms.Guna2Button();
-            Update_Btn = new Guna.UI2.WinForms.Guna2Button();
             panel7 = new Panel();
             MaLoaiPhong_tb = new TextBox();
             label2 = new Label();
@@ -88,26 +88,26 @@
             // 
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.MediumTurquoise;
-            dataGridViewCellStyle3.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.MediumTurquoise;
+            dataGridViewCellStyle1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeight = 40;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaTang, MaPhong_Col, MaLoaiPhong, LoaiPhong_Col, SVHT_Col, GiaPhong_Col });
             dataGridView.Location = new Point(0, 0);
             dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -171,7 +171,6 @@
             MaPhong_tb.Name = "MaPhong_tb";
             MaPhong_tb.Size = new Size(140, 27);
             MaPhong_tb.TabIndex = 1;
-            //MaPhong_tb.TextChanged += MaPhong_tb_TextChanged;
             // 
             // MaPhong_Label
             // 
@@ -194,6 +193,7 @@
             // LoaiPhong_cb
             // 
             LoaiPhong_cb.FormattingEnabled = true;
+            LoaiPhong_cb.Items.AddRange(new object[] { "4", "8" });
             LoaiPhong_cb.Location = new Point(101, 15);
             LoaiPhong_cb.Name = "LoaiPhong_cb";
             LoaiPhong_cb.Size = new Size(140, 28);
@@ -251,7 +251,7 @@
             // 
             // Renew_Btn
             // 
-            Renew_Btn.CustomizableEdges = customizableEdges11;
+            Renew_Btn.CustomizableEdges = customizableEdges1;
             Renew_Btn.DisabledState.BorderColor = Color.DarkGray;
             Renew_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Renew_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -263,7 +263,7 @@
             Renew_Btn.ImageAlign = HorizontalAlignment.Left;
             Renew_Btn.Location = new Point(263, 70);
             Renew_Btn.Name = "Renew_Btn";
-            Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             Renew_Btn.Size = new Size(123, 45);
             Renew_Btn.TabIndex = 7;
             Renew_Btn.Text = "Renew";
@@ -271,7 +271,7 @@
             // 
             // Delete_Btn
             // 
-            Delete_Btn.CustomizableEdges = customizableEdges13;
+            Delete_Btn.CustomizableEdges = customizableEdges3;
             Delete_Btn.DisabledState.BorderColor = Color.DarkGray;
             Delete_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Delete_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -283,7 +283,7 @@
             Delete_Btn.ImageAlign = HorizontalAlignment.Left;
             Delete_Btn.Location = new Point(263, 133);
             Delete_Btn.Name = "Delete_Btn";
-            Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Delete_Btn.Size = new Size(123, 45);
             Delete_Btn.TabIndex = 6;
             Delete_Btn.Text = "Xóa";
@@ -309,9 +309,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(search_Btn);
             panel1.Controls.Add(Edit_Btn);
             panel1.Controls.Add(Add_Btn);
-            panel1.Controls.Add(Update_Btn);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(Renew_Btn);
@@ -326,9 +326,30 @@
             panel1.Size = new Size(1003, 200);
             panel1.TabIndex = 2;
             // 
+            // search_Btn
+            // 
+            search_Btn.CustomizableEdges = customizableEdges5;
+            search_Btn.DisabledState.BorderColor = Color.DarkGray;
+            search_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            search_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            search_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            search_Btn.FillColor = Color.White;
+            search_Btn.Font = new Font("Segoe UI", 9F);
+            search_Btn.ForeColor = Color.Black;
+            search_Btn.Image = (Image)resources.GetObject("search_Btn.Image");
+            search_Btn.ImageAlign = HorizontalAlignment.Left;
+            search_Btn.Location = new Point(504, 133);
+            search_Btn.Name = "search_Btn";
+            search_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            search_Btn.Size = new Size(123, 45);
+            search_Btn.TabIndex = 13;
+            search_Btn.Text = "Tìm kiếm";
+            search_Btn.TextOffset = new Point(9, 0);
+            search_Btn.Click += search_Btn_Click;
+            // 
             // Edit_Btn
             // 
-            Edit_Btn.CustomizableEdges = customizableEdges15;
+            Edit_Btn.CustomizableEdges = customizableEdges7;
             Edit_Btn.DisabledState.BorderColor = Color.DarkGray;
             Edit_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Edit_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -340,14 +361,15 @@
             Edit_Btn.ImageAlign = HorizontalAlignment.Left;
             Edit_Btn.Location = new Point(85, 133);
             Edit_Btn.Name = "Edit_Btn";
-            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Edit_Btn.Size = new Size(123, 45);
             Edit_Btn.TabIndex = 12;
             Edit_Btn.Text = "Sửa";
+            Edit_Btn.Click += Edit_Btn_Click;
             // 
             // Add_Btn
             // 
-            Add_Btn.CustomizableEdges = customizableEdges17;
+            Add_Btn.CustomizableEdges = customizableEdges9;
             Add_Btn.DisabledState.BorderColor = Color.DarkGray;
             Add_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Add_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -359,32 +381,11 @@
             Add_Btn.ImageAlign = HorizontalAlignment.Left;
             Add_Btn.Location = new Point(85, 70);
             Add_Btn.Name = "Add_Btn";
-            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 11;
             Add_Btn.Text = "Thêm";
             Add_Btn.Click += Add_Btn_Click;
-            // 
-            // Update_Btn
-            // 
-            Update_Btn.CustomizableEdges = customizableEdges19;
-            Update_Btn.DisabledState.BorderColor = Color.DarkGray;
-            Update_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            Update_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Update_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Update_Btn.FillColor = Color.White;
-            Update_Btn.Font = new Font("Segoe UI", 9F);
-            Update_Btn.ForeColor = Color.Black;
-            Update_Btn.Image = (Image)resources.GetObject("Update_Btn.Image");
-            Update_Btn.ImageAlign = HorizontalAlignment.Left;
-            Update_Btn.Location = new Point(542, 136);
-            Update_Btn.Name = "Update_Btn";
-            Update_Btn.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            Update_Btn.Size = new Size(123, 45);
-            Update_Btn.TabIndex = 10;
-            Update_Btn.Text = "Cập nhật";
-            Update_Btn.TextOffset = new Point(6, 0);
-            Update_Btn.Click += Update_Btn_Click;
             // 
             // panel7
             // 
@@ -490,7 +491,6 @@
         private Panel panel6;
         private TextBox Matang_tb;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2Button Update_Btn;
         private DataGridViewTextBoxColumn MaTang;
         private DataGridViewTextBoxColumn MaPhong_Col;
         private DataGridViewTextBoxColumn MaLoaiPhong;
@@ -499,5 +499,6 @@
         private DataGridViewTextBoxColumn GiaPhong_Col;
         private Guna.UI2.WinForms.Guna2Button Edit_Btn;
         private Guna.UI2.WinForms.Guna2Button Add_Btn;
+        private Guna.UI2.WinForms.Guna2Button search_Btn;
     }
 }

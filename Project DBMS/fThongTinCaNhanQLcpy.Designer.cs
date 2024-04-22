@@ -23,7 +23,7 @@ namespace Project_DBMS
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            guna2ImageRadioButton1 = new Guna.UI2.WinForms.Guna2ImageRadioButton();
+            guna2ImageCheckBox1 = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             panel8 = new Panel();
             newMK2_tb = new TextBox();
             label3 = new Label();
@@ -82,7 +82,7 @@ namespace Project_DBMS
             // 
             // guna2GroupBox2
             // 
-            guna2GroupBox2.Controls.Add(guna2ImageRadioButton1);
+            guna2GroupBox2.Controls.Add(guna2ImageCheckBox1);
             guna2GroupBox2.Controls.Add(panel8);
             guna2GroupBox2.Controls.Add(panel6);
             guna2GroupBox2.Controls.Add(panel3);
@@ -98,18 +98,19 @@ namespace Project_DBMS
             guna2GroupBox2.TabIndex = 10;
             guna2GroupBox2.Text = "Tài Khoản";
             // 
-            // guna2ImageRadioButton1
+            // guna2ImageCheckBox1
             // 
-            guna2ImageRadioButton1.CheckedState.Image = (Image)resources.GetObject("resource.Image");
-            guna2ImageRadioButton1.Image = (Image)resources.GetObject("guna2ImageRadioButton1.Image");
-            guna2ImageRadioButton1.ImageOffset = new Point(0, 0);
-            guna2ImageRadioButton1.ImageRotate = 0F;
-            guna2ImageRadioButton1.Location = new Point(632, 75);
-            guna2ImageRadioButton1.Name = "guna2ImageRadioButton1";
-            guna2ImageRadioButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2ImageRadioButton1.Size = new Size(30, 30);
-            guna2ImageRadioButton1.TabIndex = 11;
-            guna2ImageRadioButton1.CheckedChanged += guna2ImageRadioButton1_CheckedChanged;
+            guna2ImageCheckBox1.BackColor = Color.Transparent;
+            guna2ImageCheckBox1.CheckedState.Image = (Image)resources.GetObject("resource.Image");
+            guna2ImageCheckBox1.Image = (Image)resources.GetObject("guna2ImageCheckBox1.Image");
+            guna2ImageCheckBox1.ImageOffset = new Point(0, 0);
+            guna2ImageCheckBox1.ImageRotate = 0F;
+            guna2ImageCheckBox1.Location = new Point(632, 75);
+            guna2ImageCheckBox1.Name = "guna2ImageCheckBox1";
+            guna2ImageCheckBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2ImageCheckBox1.Size = new Size(30, 30);
+            guna2ImageCheckBox1.TabIndex = 12;
+            guna2ImageCheckBox1.CheckedChanged += guna2ImageCheckBox1_CheckedChanged;
             // 
             // panel8
             // 
@@ -466,6 +467,6 @@ namespace Project_DBMS
         private Label label2;
         private TextBox newMK1_tb;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2ImageRadioButton guna2ImageRadioButton1;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox guna2ImageCheckBox1;
     }
 }

@@ -31,34 +31,71 @@ namespace Project_DBMS.DAO
             return data;
         }
 
-        public void AddPhong(string maPhong, string maTang, string maLoaiPhong, string loaiPhong, int soNguoi)
+        public void AddPhong(string MaPhong, string MaTang, string MaLoaiPhong, string LoaiPhong, int SoNguoi)
         {
-            string query = "INSERT INTO Phong (MaPhong, MaTang, MaLoaiPhong, LoaiPhong, SoNguoi) " +
-                           "VALUES (@MaPhong, @MaTang, @MaLoaiPhong, @LoaiPhong, @SoNguoi)";
-
-            // Danh sách tham số cho truy vấn
-            object[] parameters = new object[]
-            {
-                maPhong,
-                maTang,
-                maLoaiPhong,
-                loaiPhong,
-                soNguoi
-            };
-
+            string query = string.Format("UTP_ThemPhong @MaPhong , @MaTang , @MaLoaiPhong , @LoaiPhong , @SoNguoi ");
             try
             {
-                DataBase.Instance.ExecuteNonQuery(query, parameters);
-                MessageBox.Show("Phòng đã được thêm thành công.");
+                DataBase.Instance.ExecuteNonQuery(query, new object[] { MaPhong, MaTang, MaLoaiPhong, LoaiPhong, SoNguoi });
+                MessageBox.Show("Thêm phòng thành công", "Thông báo", MessageBoxButtons.OK);
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Có lỗi xảy ra khi thêm phòng.");
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
+                MessageBox.Show("Error :" + ex.Message, "Message");
             }
         }
 
+        public void UpdatePhong(string MaPhong, string MaTang, string MaLoaiPhong, string LoaiPhong, int SoNguoi)
+        {
+            string query = string.Format("UTP_SuaPhong @MaPhong , @MaTang , @MaLoaiPhong , @LoaiPhong , @SoNguoi ");
 
+            try
+            {
+                DataBase.Instance.ExecuteNonQuery(query, new object[] { MaPhong, MaTang, MaLoaiPhong, LoaiPhong, SoNguoi });
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error :" + ex.Message, "Message");
+            }
+        }
+        public void DeletePhong(string maPhong)
+        {
+            string query = string.Format("UTP_XoaPhong @MaPhong ");
+            try
+            {
+                DataBase.Instance.ExecuteNonQuery(query, new object[] { maPhong });
+                MessageBox.Show("Xóa phòng thành công", "Thông báo", MessageBoxButtons.OK);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error :" + ex.Message, "Message");
+            }
+        }
+
+        public DataTable FindRoom(string MaPhong)
+        {
+            if(MaPhong == "")
+            {
+                string query = "Select * from dbo.Phong";
+
+                DataTable data = DataBase.Instance.Execute(query);
+                return data;
+            }
+            else if( MaPhong != "")
+            {
+                string query = "Select * from dbo.Phong Where MaPhong = '" + MaPhong + "'";
+
+                DataTable data = DataBase.Instance.Execute(query);
+                return data;
+            }
+            else
+            {
+                return new DataTable();
+            }
+
+            
+        }
 
     }
 }
