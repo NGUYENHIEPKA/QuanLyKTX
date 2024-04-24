@@ -24,8 +24,6 @@ CREATE TABLE SinhVien(
 )
 GO
 
-select * from SinhVien
-
 CREATE TABLE QuanLy(
 	MaQL NVARCHAR(8) PRIMARY KEY,
 	HoTen NVARCHAR(100) NOT NULL,
@@ -90,7 +88,7 @@ CREATE TABLE TienNuoc(
 GO
 
 CREATE TABLE HoaDon(
-	MaHoaDon INT PRIMARY KEY,
+	MaHoaDon NVARCHAR(5) PRIMARY KEY,
 	MaPhong NVARCHAR(5) NOT NULL,
 	SoTien FLOAT NOT NULL CHECK (SoTien >= 0),
 	PhuongThucThanhToan NVARCHAR(100) NOT NULL,
@@ -164,6 +162,19 @@ BEGIN
 	UPDATE HoaDon SET SoTien = @TongTien WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
 END
 GO
+
+create proc InsertTongHoaDon
+@MaHoaDon NVARCHAR(5),
+@MaPhong NVARCHAR(5),
+@PhuongThucThanhToan NVARCHAR(100),
+@LoaiHoaDon NVARCHAR(100),
+@NgayTaoHoaDon DATE
+AS
+BEGIN
+	insert into HoaDon (MaHoaDon, MaPhong, SoTien, PhuongThucThanhToan, LoaiHoaDon, TrangThai , NgayTaoHoaDon)
+	values
+	(@MaHoaDon, @MaPhong, '', @PhuongThucThanhToan, @LoaiHoaDon, 0, @NgayTaoHoaDon)
+END
 
 -- Hàm
 CREATE FUNCTION XemDanhSachSinhVien() RETURNS TABLE
@@ -384,7 +395,14 @@ create proc InsertTienNuoc
 @SoNuocCuoiThang int
 AS
 BEGIN
-	insert into TienNuoc (MaPhong, NgayLapBieu, SoNuocCu, SoNuocMoi, TienNuoc) VALUES (@MaPhong, @NgayTaoHoaDon, @SoNuocDauThang, @SoNuocCuoiThang, '')
+	IF (@SoNuocDauThang > @SoNuocCuoiThang)
+	BEGIN
+        RAISERROR ('Số cũ không được lớn hơn số mới', 16, 1)
+	END
+	ELSE
+	BEGIN
+		insert into TienNuoc (MaPhong, NgayLapBieu, SoNuocCu, SoNuocMoi, TienNuoc) VALUES (@MaPhong, @NgayTaoHoaDon, @SoNuocDauThang, @SoNuocCuoiThang, '')
+	END
 END
 
 create proc InsertTienDien
@@ -394,9 +412,37 @@ create proc InsertTienDien
 @SoDienCuoiThang int
 AS
 BEGIN
-	insert into TienDien (MaPhong, NgayLapBieu, SoDienCu, SoDienMoi, TienDien) VALUES (@MaPhong, @NgayTaoHoaDon, @SoDienDauThang, @SoDienCuoiThang, '')
+	IF (@SoDienDauThang > @SoDienCuoiThang)
+	BEGIN
+        RAISERROR ('Số cũ không được lớn hơn số mới', 16, 1)
+	END
+	BEGIN
+		insert into TienDien (MaPhong, NgayLapBieu, SoDienCu, SoDienMoi, TienDien) VALUES (@MaPhong, @NgayTaoHoaDon, @SoDienDauThang, @SoDienCuoiThang, '')
+	END
 END
 
+
+create proc UpdateHoaDon
+@MaHoaDon nvarchar(5),
+@TrangThai bit
+AS
+BEGIN
+	update HoaDon set TrangThai = @TrangThai where @MaHoaDon = @MaHoaDon
+END
+
+create proc DeleteHoaDon
+@MaHoaDon nvarchar(5)
+as
+begin
+	IF EXISTS (SELECT 1 FROM HoaDon WHERE MaHoaDon = @MaHoaDon)
+	BEGIN
+		delete from HoaDon where MaHoaDon = @MaHoaDon
+	END
+	ELSE
+	BEGIN 
+        RAISERROR('Không có hóa đơn để xóa.', 16, 1)
+	END
+end
 	
 CREATE PROCEDURE UTP_ThemPhong (
     @MaPhong NVARCHAR(5),
