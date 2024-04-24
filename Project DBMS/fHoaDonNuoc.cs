@@ -44,7 +44,19 @@ namespace Project_DBMS
         private void Add_Btn_Click(object sender, EventArgs e)
         {
             fThemHoaDonNuoc form = new fThemHoaDonNuoc();
+            form.FormClosed += form_FormClosed;
             form.Show();
+        }
+        private void form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Load();
+            Binding();
+        }
+
+        private void Renew_Btn_Click(object sender, EventArgs e)
+        {
+            Load();
+            Binding();
         }
     }
 }

@@ -188,6 +188,7 @@
             Renew_Btn.Size = new Size(123, 45);
             Renew_Btn.TabIndex = 7;
             Renew_Btn.Text = "Renew";
+            Renew_Btn.Click += Renew_Btn_Click;
             // 
             // Delete_Btn
             // 

@@ -35,21 +35,21 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            maHoaDon_tb = new TextBox();
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
-            textBox2 = new TextBox();
+            maPhong_tb = new TextBox();
             label3 = new Label();
             panel3 = new Panel();
-            textBox3 = new TextBox();
+            phuongThucThanhToan_tb = new TextBox();
             label4 = new Label();
             panel4 = new Panel();
-            textBox4 = new TextBox();
+            loaiHoaDon_tb = new TextBox();
             label5 = new Label();
             panel5 = new Panel();
+            dateTimePicker = new DateTimePicker();
             label6 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             Add_Btn = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -72,19 +72,19 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(maHoaDon_tb);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(42, 60);
             panel1.Name = "panel1";
             panel1.Size = new Size(450, 57);
             panel1.TabIndex = 1;
             // 
-            // textBox1
+            // maHoaDon_tb
             // 
-            textBox1.Location = new Point(219, 10);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(228, 27);
-            textBox1.TabIndex = 1;
+            maHoaDon_tb.Location = new Point(219, 10);
+            maHoaDon_tb.Name = "maHoaDon_tb";
+            maHoaDon_tb.Size = new Size(228, 27);
+            maHoaDon_tb.TabIndex = 1;
             // 
             // label1
             // 
@@ -108,19 +108,19 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(maPhong_tb);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(42, 123);
             panel2.Name = "panel2";
             panel2.Size = new Size(450, 57);
             panel2.TabIndex = 2;
             // 
-            // textBox2
+            // maPhong_tb
             // 
-            textBox2.Location = new Point(219, 10);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(228, 27);
-            textBox2.TabIndex = 1;
+            maPhong_tb.Location = new Point(219, 10);
+            maPhong_tb.Name = "maPhong_tb";
+            maPhong_tb.Size = new Size(228, 27);
+            maPhong_tb.TabIndex = 1;
             // 
             // label3
             // 
@@ -133,19 +133,19 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(textBox3);
+            panel3.Controls.Add(phuongThucThanhToan_tb);
             panel3.Controls.Add(label4);
             panel3.Location = new Point(42, 312);
             panel3.Name = "panel3";
             panel3.Size = new Size(447, 57);
             panel3.TabIndex = 3;
             // 
-            // textBox3
+            // phuongThucThanhToan_tb
             // 
-            textBox3.Location = new Point(219, 10);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(228, 27);
-            textBox3.TabIndex = 1;
+            phuongThucThanhToan_tb.Location = new Point(219, 10);
+            phuongThucThanhToan_tb.Name = "phuongThucThanhToan_tb";
+            phuongThucThanhToan_tb.Size = new Size(228, 27);
+            phuongThucThanhToan_tb.TabIndex = 1;
             // 
             // label4
             // 
@@ -158,19 +158,19 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(textBox4);
+            panel4.Controls.Add(loaiHoaDon_tb);
             panel4.Controls.Add(label5);
             panel4.Location = new Point(42, 249);
             panel4.Name = "panel4";
             panel4.Size = new Size(450, 57);
             panel4.TabIndex = 4;
             // 
-            // textBox4
+            // loaiHoaDon_tb
             // 
-            textBox4.Location = new Point(219, 10);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(228, 27);
-            textBox4.TabIndex = 1;
+            loaiHoaDon_tb.Location = new Point(219, 10);
+            loaiHoaDon_tb.Name = "loaiHoaDon_tb";
+            loaiHoaDon_tb.Size = new Size(228, 27);
+            loaiHoaDon_tb.TabIndex = 1;
             // 
             // label5
             // 
@@ -183,12 +183,21 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(dateTimePicker1);
+            panel5.Controls.Add(dateTimePicker);
             panel5.Controls.Add(label6);
             panel5.Location = new Point(42, 186);
             panel5.Name = "panel5";
             panel5.Size = new Size(450, 57);
             panel5.TabIndex = 3;
+            // 
+            // dateTimePicker
+            // 
+            dateTimePicker.CustomFormat = "yyyy-MM-dd";
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.Location = new Point(219, 12);
+            dateTimePicker.Name = "dateTimePicker";
+            dateTimePicker.Size = new Size(228, 27);
+            dateTimePicker.TabIndex = 1;
             // 
             // label6
             // 
@@ -198,14 +207,6 @@
             label6.Size = new Size(129, 20);
             label6.TabIndex = 0;
             label6.Text = "Ngày tạo hóa đơn";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(219, 12);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(228, 27);
-            dateTimePicker1.TabIndex = 1;
             // 
             // Add_Btn
             // 
@@ -225,6 +226,7 @@
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 5;
             Add_Btn.Text = "Thêm";
+            Add_Btn.Click += Add_Btn_Click;
             // 
             // fThemHoaDon
             // 
@@ -261,20 +263,20 @@
 
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox maHoaDon_tb;
         private Label label1;
         private Label label2;
         private Panel panel2;
-        private TextBox textBox2;
+        private TextBox maPhong_tb;
         private Label label3;
         private Panel panel3;
-        private TextBox textBox3;
+        private TextBox phuongThucThanhToan_tb;
         private Label label4;
         private Panel panel4;
-        private TextBox textBox4;
+        private TextBox loaiHoaDon_tb;
         private Label label5;
         private Panel panel5;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker;
         private Label label6;
         private Guna.UI2.WinForms.Guna2Button Add_Btn;
     }

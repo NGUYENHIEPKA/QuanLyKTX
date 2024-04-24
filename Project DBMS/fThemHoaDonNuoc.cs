@@ -32,6 +32,7 @@ namespace Project_DBMS
             {
                 QLHoaDonDAO.Instance.InsertHoaDonNuoc(MaPhong, NgayTaoHoaDon, SoNuocCu, SoNuocMoi);
             }
+            this.Close();
         }
     }
 }

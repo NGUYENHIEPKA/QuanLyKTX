@@ -42,6 +42,9 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            panel9 = new Panel();
+            money_tb = new TextBox();
+            label1 = new Label();
             Renew_Btn = new Guna.UI2.WinForms.Guna2Button();
             Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
             Edit_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -50,30 +53,31 @@
             thanhToan_check = new Guna.UI2.WinForms.Guna2RadioButton();
             Status_Label = new Label();
             panel7 = new Panel();
-            BirthDay_Date = new DateTimePicker();
+            NgayTao_Date = new DateTimePicker();
             NgayTaoHoaDon_Label = new Label();
             panel6 = new Panel();
-            Address_tb = new TextBox();
+            loaiHoaDon_tb = new TextBox();
             LoaiHoaDon_Label = new Label();
             panel5 = new Panel();
-            Name_tb = new TextBox();
+            phuongThucThanhToan_tb = new TextBox();
             pttt_Label = new Label();
             panel4 = new Panel();
-            textBox1 = new TextBox();
+            maPhong_tb = new TextBox();
             MaPhong_Label = new Label();
             panel3 = new Panel();
-            MSSV_tb = new TextBox();
+            maHoaDon_tb = new TextBox();
             MaHoaDon_Label = new Label();
             panel2 = new Panel();
             dataGridView = new DataGridView();
             MaHoaDon_Col = new DataGridViewTextBoxColumn();
             MaPhong_Col = new DataGridViewTextBoxColumn();
-            Pttt_Col = new DataGridViewTextBoxColumn();
-            TypeHoaDon_Col = new DataGridViewTextBoxColumn();
-            NgayTaoHoaDon_Col = new DataGridViewTextBoxColumn();
-            Money = new DataGridViewTextBoxColumn();
-            img_Col = new DataGridViewCheckBoxColumn();
+            PhuongThucThanhToan_Col = new DataGridViewTextBoxColumn();
+            LoaiHoaDon_Col = new DataGridViewTextBoxColumn();
+            SoTien_Col = new DataGridViewTextBoxColumn();
+            NgayTao_Col = new DataGridViewTextBoxColumn();
+            TrangThai_Col = new DataGridViewCheckBoxColumn();
             panel1.SuspendLayout();
+            panel9.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
@@ -86,6 +90,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(panel9);
             panel1.Controls.Add(Renew_Btn);
             panel1.Controls.Add(Delete_Btn);
             panel1.Controls.Add(Edit_Btn);
@@ -101,6 +106,31 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1003, 187);
             panel1.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            panel9.Controls.Add(money_tb);
+            panel9.Controls.Add(label1);
+            panel9.Location = new Point(530, 58);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(201, 57);
+            panel9.TabIndex = 3;
+            // 
+            // money_tb
+            // 
+            money_tb.Location = new Point(86, 12);
+            money_tb.Name = "money_tb";
+            money_tb.Size = new Size(106, 27);
+            money_tb.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(5, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Số tiền";
             // 
             // Renew_Btn
             // 
@@ -120,6 +150,7 @@
             Renew_Btn.Size = new Size(123, 45);
             Renew_Btn.TabIndex = 7;
             Renew_Btn.Text = "Renew";
+            Renew_Btn.Click += Renew_Btn_Click;
             // 
             // Delete_Btn
             // 
@@ -139,6 +170,7 @@
             Delete_Btn.Size = new Size(123, 45);
             Delete_Btn.TabIndex = 6;
             Delete_Btn.Text = "Xóa";
+            Delete_Btn.Click += Delete_Btn_Click;
             // 
             // Edit_Btn
             // 
@@ -158,6 +190,7 @@
             Edit_Btn.Size = new Size(123, 45);
             Edit_Btn.TabIndex = 5;
             Edit_Btn.Text = "Sửa";
+            Edit_Btn.Click += Edit_Btn_Click;
             // 
             // Add_Btn
             // 
@@ -191,7 +224,6 @@
             // thanhToan_check
             // 
             thanhToan_check.AutoSize = true;
-            thanhToan_check.Checked = true;
             thanhToan_check.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
             thanhToan_check.CheckedState.BorderThickness = 0;
             thanhToan_check.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
@@ -201,7 +233,6 @@
             thanhToan_check.Name = "thanhToan_check";
             thanhToan_check.Size = new Size(124, 24);
             thanhToan_check.TabIndex = 2;
-            thanhToan_check.TabStop = true;
             thanhToan_check.Text = "Đã thanh toán";
             thanhToan_check.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
             thanhToan_check.UncheckedState.BorderThickness = 2;
@@ -219,20 +250,20 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(BirthDay_Date);
+            panel7.Controls.Add(NgayTao_Date);
             panel7.Controls.Add(NgayTaoHoaDon_Label);
             panel7.Location = new Point(737, 0);
             panel7.Name = "panel7";
             panel7.Size = new Size(266, 57);
             panel7.TabIndex = 2;
             // 
-            // BirthDay_Date
+            // NgayTao_Date
             // 
-            BirthDay_Date.Format = DateTimePickerFormat.Short;
-            BirthDay_Date.Location = new Point(109, 10);
-            BirthDay_Date.Name = "BirthDay_Date";
-            BirthDay_Date.Size = new Size(145, 27);
-            BirthDay_Date.TabIndex = 4;
+            NgayTao_Date.Format = DateTimePickerFormat.Short;
+            NgayTao_Date.Location = new Point(109, 10);
+            NgayTao_Date.Name = "NgayTao_Date";
+            NgayTao_Date.Size = new Size(145, 27);
+            NgayTao_Date.TabIndex = 4;
             // 
             // NgayTaoHoaDon_Label
             // 
@@ -245,19 +276,19 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(Address_tb);
+            panel6.Controls.Add(loaiHoaDon_tb);
             panel6.Controls.Add(LoaiHoaDon_Label);
             panel6.Location = new Point(272, 58);
             panel6.Name = "panel6";
-            panel6.Size = new Size(459, 57);
+            panel6.Size = new Size(257, 57);
             panel6.TabIndex = 3;
             // 
-            // Address_tb
+            // loaiHoaDon_tb
             // 
-            Address_tb.Location = new Point(184, 12);
-            Address_tb.Name = "Address_tb";
-            Address_tb.Size = new Size(245, 27);
-            Address_tb.TabIndex = 1;
+            loaiHoaDon_tb.Location = new Point(112, 11);
+            loaiHoaDon_tb.Name = "loaiHoaDon_tb";
+            loaiHoaDon_tb.Size = new Size(140, 27);
+            loaiHoaDon_tb.TabIndex = 1;
             // 
             // LoaiHoaDon_Label
             // 
@@ -270,19 +301,19 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(Name_tb);
+            panel5.Controls.Add(phuongThucThanhToan_tb);
             panel5.Controls.Add(pttt_Label);
             panel5.Location = new Point(272, 0);
             panel5.Name = "panel5";
             panel5.Size = new Size(459, 57);
             panel5.TabIndex = 2;
             // 
-            // Name_tb
+            // phuongThucThanhToan_tb
             // 
-            Name_tb.Location = new Point(184, 12);
-            Name_tb.Name = "Name_tb";
-            Name_tb.Size = new Size(245, 27);
-            Name_tb.TabIndex = 1;
+            phuongThucThanhToan_tb.Location = new Point(184, 12);
+            phuongThucThanhToan_tb.Name = "phuongThucThanhToan_tb";
+            phuongThucThanhToan_tb.Size = new Size(245, 27);
+            phuongThucThanhToan_tb.TabIndex = 1;
             // 
             // pttt_Label
             // 
@@ -295,19 +326,19 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(maPhong_tb);
             panel4.Controls.Add(MaPhong_Label);
             panel4.Location = new Point(0, 58);
             panel4.Name = "panel4";
             panel4.Size = new Size(266, 57);
             panel4.TabIndex = 2;
             // 
-            // textBox1
+            // maPhong_tb
             // 
-            textBox1.Location = new Point(109, 11);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(140, 27);
-            textBox1.TabIndex = 2;
+            maPhong_tb.Location = new Point(109, 11);
+            maPhong_tb.Name = "maPhong_tb";
+            maPhong_tb.Size = new Size(140, 27);
+            maPhong_tb.TabIndex = 2;
             // 
             // MaPhong_Label
             // 
@@ -320,19 +351,19 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(MSSV_tb);
+            panel3.Controls.Add(maHoaDon_tb);
             panel3.Controls.Add(MaHoaDon_Label);
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(266, 57);
             panel3.TabIndex = 0;
             // 
-            // MSSV_tb
+            // maHoaDon_tb
             // 
-            MSSV_tb.Location = new Point(109, 12);
-            MSSV_tb.Name = "MSSV_tb";
-            MSSV_tb.Size = new Size(140, 27);
-            MSSV_tb.TabIndex = 1;
+            maHoaDon_tb.Location = new Point(109, 12);
+            maHoaDon_tb.Name = "maHoaDon_tb";
+            maHoaDon_tb.Size = new Size(140, 27);
+            maHoaDon_tb.TabIndex = 1;
             // 
             // MaHoaDon_Label
             // 
@@ -356,6 +387,7 @@
             // 
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -366,7 +398,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, MaPhong_Col, Pttt_Col, TypeHoaDon_Col, NgayTaoHoaDon_Col, Money, img_Col });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { MaHoaDon_Col, MaPhong_Col, PhuongThucThanhToan_Col, LoaiHoaDon_Col, SoTien_Col, NgayTao_Col, TrangThai_Col });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -395,72 +427,58 @@
             // MaHoaDon_Col
             // 
             MaHoaDon_Col.DataPropertyName = "MaHoaDon";
-            MaHoaDon_Col.FillWeight = 75F;
             MaHoaDon_Col.HeaderText = "Mã hóa đơn";
             MaHoaDon_Col.MinimumWidth = 6;
             MaHoaDon_Col.Name = "MaHoaDon_Col";
             MaHoaDon_Col.ReadOnly = true;
-            MaHoaDon_Col.Width = 122;
             // 
             // MaPhong_Col
             // 
             MaPhong_Col.DataPropertyName = "MaPhong";
-            MaPhong_Col.FillWeight = 77.19445F;
             MaPhong_Col.HeaderText = "Mã phòng";
             MaPhong_Col.MinimumWidth = 6;
             MaPhong_Col.Name = "MaPhong_Col";
             MaPhong_Col.ReadOnly = true;
-            MaPhong_Col.Width = 115;
             // 
-            // Pttt_Col
+            // PhuongThucThanhToan_Col
             // 
-            Pttt_Col.DataPropertyName = "PhuongThucThanhToan";
-            Pttt_Col.FillWeight = 126.583336F;
-            Pttt_Col.HeaderText = "Phương thức thanh toán";
-            Pttt_Col.MinimumWidth = 6;
-            Pttt_Col.Name = "Pttt_Col";
-            Pttt_Col.ReadOnly = true;
-            Pttt_Col.Width = 178;
+            PhuongThucThanhToan_Col.DataPropertyName = "PhuongThucThanhToan";
+            PhuongThucThanhToan_Col.HeaderText = "Phương thức thanh toán";
+            PhuongThucThanhToan_Col.MinimumWidth = 6;
+            PhuongThucThanhToan_Col.Name = "PhuongThucThanhToan_Col";
+            PhuongThucThanhToan_Col.ReadOnly = true;
             // 
-            // TypeHoaDon_Col
+            // LoaiHoaDon_Col
             // 
-            TypeHoaDon_Col.DataPropertyName = "LoaiHoaDon";
-            TypeHoaDon_Col.FillWeight = 119.777786F;
-            TypeHoaDon_Col.HeaderText = "Loại hóa đơn";
-            TypeHoaDon_Col.MinimumWidth = 6;
-            TypeHoaDon_Col.Name = "TypeHoaDon_Col";
-            TypeHoaDon_Col.ReadOnly = true;
-            TypeHoaDon_Col.Width = 150;
+            LoaiHoaDon_Col.DataPropertyName = "LoaiHoaDon";
+            LoaiHoaDon_Col.HeaderText = "Loại hóa đơn";
+            LoaiHoaDon_Col.MinimumWidth = 6;
+            LoaiHoaDon_Col.Name = "LoaiHoaDon_Col";
+            LoaiHoaDon_Col.ReadOnly = true;
             // 
-            // NgayTaoHoaDon_Col
+            // SoTien_Col
             // 
-            NgayTaoHoaDon_Col.DataPropertyName = "NgayTaoHoaDon";
-            NgayTaoHoaDon_Col.FillWeight = 85.75F;
-            NgayTaoHoaDon_Col.HeaderText = "Ngày tạo";
-            NgayTaoHoaDon_Col.MinimumWidth = 6;
-            NgayTaoHoaDon_Col.Name = "NgayTaoHoaDon_Col";
-            NgayTaoHoaDon_Col.ReadOnly = true;
-            NgayTaoHoaDon_Col.Width = 135;
+            SoTien_Col.DataPropertyName = "SoTien";
+            SoTien_Col.HeaderText = "Số tiền";
+            SoTien_Col.MinimumWidth = 6;
+            SoTien_Col.Name = "SoTien_Col";
+            SoTien_Col.ReadOnly = true;
             // 
-            // Money
+            // NgayTao_Col
             // 
-            Money.DataPropertyName = "SoTien";
-            Money.HeaderText = "Số tiền";
-            Money.MinimumWidth = 6;
-            Money.Name = "Money";
-            Money.ReadOnly = true;
-            Money.Width = 120;
+            NgayTao_Col.DataPropertyName = "NgayTaoHoaDon";
+            NgayTao_Col.HeaderText = "Ngày tạo";
+            NgayTao_Col.MinimumWidth = 6;
+            NgayTao_Col.Name = "NgayTao_Col";
+            NgayTao_Col.ReadOnly = true;
             // 
-            // img_Col
+            // TrangThai_Col
             // 
-            img_Col.DataPropertyName = "TrangThai";
-            img_Col.FillWeight = 115.69445F;
-            img_Col.HeaderText = "Trạng thái thanh toán";
-            img_Col.MinimumWidth = 6;
-            img_Col.Name = "img_Col";
-            img_Col.ReadOnly = true;
-            img_Col.Resizable = DataGridViewTriState.True;
-            img_Col.Width = 180;
+            TrangThai_Col.DataPropertyName = "TrangThai";
+            TrangThai_Col.HeaderText = "Trạng thái";
+            TrangThai_Col.MinimumWidth = 6;
+            TrangThai_Col.Name = "TrangThai_Col";
+            TrangThai_Col.ReadOnly = true;
             // 
             // fQuanLyHoaDon
             // 
@@ -473,6 +491,8 @@
             Name = "fQuanLyHoaDon";
             Text = "fQuanLyHoaDon";
             panel1.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel7.ResumeLayout(false);
@@ -500,29 +520,32 @@
         private Panel panel8;
         private Label Status_Label;
         private Panel panel7;
-        private DateTimePicker BirthDay_Date;
+        private DateTimePicker NgayTao_Date;
         private Label NgayTaoHoaDon_Label;
         private Panel panel6;
-        private TextBox Address_tb;
+        private TextBox loaiHoaDon_tb;
         private Label LoaiHoaDon_Label;
         private Panel panel5;
-        private TextBox Name_tb;
+        private TextBox phuongThucThanhToan_tb;
         private Label pttt_Label;
         private Panel panel4;
         private Label MaPhong_Label;
         private Panel panel3;
-        private TextBox MSSV_tb;
+        private TextBox maHoaDon_tb;
         private Label MaHoaDon_Label;
         private Guna.UI2.WinForms.Guna2RadioButton thanhToan_check;
-        private TextBox textBox1;
+        private TextBox maPhong_tb;
         private Panel panel2;
         private DataGridView dataGridView;
+        private Panel panel9;
+        private TextBox money_tb;
+        private Label label1;
         private DataGridViewTextBoxColumn MaHoaDon_Col;
         private DataGridViewTextBoxColumn MaPhong_Col;
-        private DataGridViewTextBoxColumn Pttt_Col;
-        private DataGridViewTextBoxColumn TypeHoaDon_Col;
-        private DataGridViewTextBoxColumn NgayTaoHoaDon_Col;
-        private DataGridViewTextBoxColumn Money;
-        private DataGridViewCheckBoxColumn img_Col;
+        private DataGridViewTextBoxColumn PhuongThucThanhToan_Col;
+        private DataGridViewTextBoxColumn LoaiHoaDon_Col;
+        private DataGridViewTextBoxColumn SoTien_Col;
+        private DataGridViewTextBoxColumn NgayTao_Col;
+        private DataGridViewCheckBoxColumn TrangThai_Col;
     }
 }
