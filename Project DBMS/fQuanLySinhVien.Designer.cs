@@ -56,7 +56,6 @@
             Address_tb = new TextBox();
             Address_Label = new Label();
             panel5 = new Panel();
-            Name_tb = new TextBox();
             Name_Label = new Label();
             panel4 = new Panel();
             GioiTinhcb = new ComboBox();
@@ -77,6 +76,7 @@
             img_Col = new DataGridViewImageColumn();
             tbMaPhong = new TextBox();
             tbMaTang = new TextBox();
+            Name_tb = new TextBox();
             panel1.SuspendLayout();
             panel9.SuspendLayout();
             panel8.SuspendLayout();
@@ -228,6 +228,7 @@
             // 
             sdt_tb.Location = new Point(109, 12);
             sdt_tb.Name = "sdt_tb";
+            sdt_tb.ReadOnly = true;
             sdt_tb.Size = new Size(140, 27);
             sdt_tb.TabIndex = 1;
             // 
@@ -280,6 +281,7 @@
             // 
             Address_tb.Location = new Point(132, 12);
             Address_tb.Name = "Address_tb";
+            Address_tb.ReadOnly = true;
             Address_tb.Size = new Size(297, 27);
             Address_tb.TabIndex = 1;
             // 
@@ -300,13 +302,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(459, 57);
             panel5.TabIndex = 2;
-            // 
-            // Name_tb
-            // 
-            Name_tb.Location = new Point(132, 12);
-            Name_tb.Name = "Name_tb";
-            Name_tb.Size = new Size(297, 27);
-            Name_tb.TabIndex = 1;
             // 
             // Name_Label
             // 
@@ -357,6 +352,7 @@
             // 
             MSSV_tb.Location = new Point(109, 12);
             MSSV_tb.Name = "MSSV_tb";
+            MSSV_tb.ReadOnly = true;
             MSSV_tb.Size = new Size(140, 27);
             MSSV_tb.TabIndex = 1;
             // 
@@ -493,6 +489,14 @@
             tbMaTang.TabIndex = 3;
             tbMaTang.Visible = false;
             // 
+            // Name_tb
+            // 
+            Name_tb.Location = new Point(132, 12);
+            Name_tb.Name = "Name_tb";
+            Name_tb.ReadOnly = true;
+            Name_tb.Size = new Size(297, 27);
+            Name_tb.TabIndex = 1;
+            // 
             // fQuanLySinhVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -531,7 +535,6 @@
         private TextBox Address_tb;
         private Label Address_Label;
         private Panel panel5;
-        private TextBox Name_tb;
         private Label Name_Label;
         private Panel panel4;
         private ComboBox GioiTinhcb;
@@ -565,5 +568,6 @@
         private DataGridViewImageColumn img_Col;
         private TextBox tbMaTang;
         private TextBox tbMaPhong;
+        private TextBox Name_tb;
     }
 }

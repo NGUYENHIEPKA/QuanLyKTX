@@ -82,6 +82,7 @@ namespace Project_DBMS.DAO
             try
             {
                 DataBase.Instance.ExecuteNonQuery(query, new object[] { MaSoSV, HoTen, GioiTinh, NgaySinh, Address, Sdt });
+                MessageBox.Show("Thêm tài khoản thành công!", "Thông báo", MessageBoxButtons.OK);
             }
             catch (SqlException ex)
             {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace Project_DBMS.DAO
 {
     public class DataBase
@@ -19,16 +20,25 @@ namespace Project_DBMS.DAO
         }
 
         private DataBase() { }
+        public string ConnectionSTR { get => connectionSTR; set => connectionSTR = value; }
 
-        string connectionSTR = @"Data Source=LAPTOP-4TT7LL7D\NGUYENHIEPKA;Initial Catalog=QuanLyKTX;Integrated Security=True;Encrypt=False";
+
+        //Chuỗi xác định kết nối
+        static string connectionSTR = @"Data Source=DuyHao\DUYHAO;Initial Catalog=QuanLyKTX;Integrated Security=True;Encrypt=False";
+        public void DangNhap (string UserName, string Password)
+        {
+            ConnectionSTR = @"Data Source=DuyHao\DUYHAO;Initial Catalog=QuanLyKTX;Integrated Security=True;User ID=" + UserName+", Password ="+ Password+ ";Encrypt=False";
+        }
+
         public DataTable Execute (string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SqlConnection connection = new SqlConnection(connectionSTR)) //kết nối từ client tới sever
             {
+                // mở connection
                 connection.Open();
 
+                // Thực thi câu truy vấn tới sever kết nối
                 SqlCommand command = new SqlCommand(query, connection);
 
                 if (parameter != null)
@@ -47,10 +57,13 @@ namespace Project_DBMS.DAO
                     }
                 }
 
+                // Trung gian để thực hiện câu truy vấn lấy dữ liệu ra
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
+                // Đổ dữ liệu đã lấy ra được vào data
                 adapter.Fill(data);
 
+                // Đóng connection
                 connection.Close();
 
                 return data;

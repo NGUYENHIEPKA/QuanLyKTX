@@ -15,12 +15,8 @@ namespace Project_DBMS
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             guna2ImageCheckBox1 = new Guna.UI2.WinForms.Guna2ImageCheckBox();
@@ -51,8 +47,6 @@ namespace Project_DBMS
             maQL_tb = new TextBox();
             maQL_Label = new Label();
             guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            ChangeImg_btn = new Guna.UI2.WinForms.Guna2Button();
-            ImgQL_ptbox = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2CustomGradientPanel1.SuspendLayout();
             guna2GroupBox2.SuspendLayout();
             panel8.SuspendLayout();
@@ -64,8 +58,6 @@ namespace Project_DBMS
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
-            guna2CustomGradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ImgQL_ptbox).BeginInit();
             SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -355,50 +347,14 @@ namespace Project_DBMS
             // 
             // guna2CustomGradientPanel2
             // 
-            guna2CustomGradientPanel2.Controls.Add(ChangeImg_btn);
-            guna2CustomGradientPanel2.Controls.Add(ImgQL_ptbox);
-            guna2CustomGradientPanel2.CustomizableEdges = customizableEdges14;
+            guna2CustomGradientPanel2.CustomizableEdges = customizableEdges10;
             guna2CustomGradientPanel2.Dock = DockStyle.Fill;
             guna2CustomGradientPanel2.Location = new Point(0, 0);
             guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2CustomGradientPanel2.Size = new Size(303, 697);
             guna2CustomGradientPanel2.TabIndex = 2;
             guna2CustomGradientPanel2.Paint += guna2CustomGradientPanel2_Paint;
-            // 
-            // ChangeImg_btn
-            // 
-            ChangeImg_btn.CustomizableEdges = customizableEdges10;
-            ChangeImg_btn.DisabledState.BorderColor = Color.DarkGray;
-            ChangeImg_btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            ChangeImg_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            ChangeImg_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            ChangeImg_btn.FillColor = Color.White;
-            ChangeImg_btn.Font = new Font("Segoe UI", 9F);
-            ChangeImg_btn.ForeColor = Color.Black;
-            ChangeImg_btn.Image = (Image)resources.GetObject("ChangeImg_btn.Image");
-            ChangeImg_btn.ImageAlign = HorizontalAlignment.Left;
-            ChangeImg_btn.Location = new Point(76, 276);
-            ChangeImg_btn.Name = "ChangeImg_btn";
-            ChangeImg_btn.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            ChangeImg_btn.Size = new Size(150, 45);
-            ChangeImg_btn.TabIndex = 8;
-            ChangeImg_btn.Text = "Thay đổi ảnh";
-            ChangeImg_btn.TextOffset = new Point(15, 0);
-            ChangeImg_btn.Click += ChangeImg_btn_Click;
-            // 
-            // ImgQL_ptbox
-            // 
-            ImgQL_ptbox.CustomizableEdges = customizableEdges12;
-            ImgQL_ptbox.FillColor = Color.Silver;
-            ImgQL_ptbox.ImageRotate = 0F;
-            ImgQL_ptbox.Location = new Point(76, 70);
-            ImgQL_ptbox.Name = "ImgQL_ptbox";
-            ImgQL_ptbox.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            ImgQL_ptbox.Size = new Size(150, 200);
-            ImgQL_ptbox.SizeMode = PictureBoxSizeMode.StretchImage;
-            ImgQL_ptbox.TabIndex = 1;
-            ImgQL_ptbox.TabStop = false;
             // 
             // fThongTinCaNhanQLcpy
             // 
@@ -429,8 +385,6 @@ namespace Project_DBMS
             panel1.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            guna2CustomGradientPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)ImgQL_ptbox).EndInit();
             ResumeLayout(false);
         }
 
@@ -454,8 +408,6 @@ namespace Project_DBMS
         private TextBox maQL_tb;
         private Label maQL_Label;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private Guna.UI2.WinForms.Guna2Button ChangeImg_btn;
-        private Guna.UI2.WinForms.Guna2PictureBox ImgQL_ptbox;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Panel panel8;

@@ -36,6 +36,7 @@ namespace Project_DBMS
                 if (MaSoSV.Substring(0, 2) == "SV")
                 {
                     SinhVienDAO.Instance.DangKySinhVien(MaSoSV, HoTen, GioiTinh, NgaySinh, Address, Sdt);
+                    this.Close();
                 }
                 else
                 {

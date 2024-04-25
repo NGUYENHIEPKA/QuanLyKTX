@@ -90,7 +90,7 @@
             dataGridView.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.MediumTurquoise;
-            dataGridViewCellStyle1.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -102,7 +102,7 @@
             dataGridView.Name = "dataGridView";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -169,6 +169,7 @@
             // 
             MaPhong_tb.Location = new Point(94, 12);
             MaPhong_tb.Name = "MaPhong_tb";
+            MaPhong_tb.ReadOnly = true;
             MaPhong_tb.Size = new Size(140, 27);
             MaPhong_tb.TabIndex = 1;
             // 
@@ -221,6 +222,7 @@
             // 
             SVHT_tb.Location = new Point(102, 12);
             SVHT_tb.Name = "SVHT_tb";
+            SVHT_tb.ReadOnly = true;
             SVHT_tb.Size = new Size(140, 27);
             SVHT_tb.TabIndex = 1;
             // 
@@ -237,6 +239,7 @@
             // 
             GiaPhong_tb.Location = new Point(101, 12);
             GiaPhong_tb.Name = "GiaPhong_tb";
+            GiaPhong_tb.ReadOnly = true;
             GiaPhong_tb.Size = new Size(140, 27);
             GiaPhong_tb.TabIndex = 1;
             // 
@@ -400,6 +403,7 @@
             // 
             MaLoaiPhong_tb.Location = new Point(115, 12);
             MaLoaiPhong_tb.Name = "MaLoaiPhong_tb";
+            MaLoaiPhong_tb.ReadOnly = true;
             MaLoaiPhong_tb.Size = new Size(120, 27);
             MaLoaiPhong_tb.TabIndex = 1;
             // 
@@ -425,6 +429,7 @@
             // 
             Matang_tb.Location = new Point(85, 12);
             Matang_tb.Name = "Matang_tb";
+            Matang_tb.ReadOnly = true;
             Matang_tb.Size = new Size(140, 27);
             Matang_tb.TabIndex = 1;
             Matang_tb.TextChanged += Matang_tb_TextChanged;

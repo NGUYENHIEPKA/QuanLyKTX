@@ -106,5 +106,10 @@ namespace Project_DBMS
             guna2Panel_container.Tag = fm;
             fm.Show();
         }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

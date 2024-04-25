@@ -44,13 +44,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Information));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             NameLB = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -76,8 +71,6 @@
             TangLB = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientPanel9 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            ChangeImg_btn = new Guna.UI2.WinForms.Guna2Button();
-            ImgSV_ptbox = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2GradientPanel1.SuspendLayout();
             guna2GradientPanel2.SuspendLayout();
             guna2GradientPanel3.SuspendLayout();
@@ -87,7 +80,6 @@
             guna2GradientPanel7.SuspendLayout();
             guna2GradientPanel8.SuspendLayout();
             guna2GradientPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ImgSV_ptbox).BeginInit();
             SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -95,7 +87,7 @@
             guna2GradientPanel1.Controls.Add(NameLB);
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel1);
             guna2GradientPanel1.CustomizableEdges = customizableEdges1;
-            guna2GradientPanel1.Location = new Point(39, 0);
+            guna2GradientPanel1.Location = new Point(39, 74);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2GradientPanel1.Size = new Size(436, 56);
@@ -126,7 +118,7 @@
             guna2GradientPanel2.Controls.Add(MSSVLB);
             guna2GradientPanel2.Controls.Add(guna2HtmlLabel4);
             guna2GradientPanel2.CustomizableEdges = customizableEdges3;
-            guna2GradientPanel2.Location = new Point(39, 62);
+            guna2GradientPanel2.Location = new Point(42, 189);
             guna2GradientPanel2.Name = "guna2GradientPanel2";
             guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2GradientPanel2.Size = new Size(436, 56);
@@ -157,7 +149,7 @@
             guna2GradientPanel3.Controls.Add(GioitinhLB);
             guna2GradientPanel3.Controls.Add(guna2HtmlLabel6);
             guna2GradientPanel3.CustomizableEdges = customizableEdges5;
-            guna2GradientPanel3.Location = new Point(39, 124);
+            guna2GradientPanel3.Location = new Point(42, 326);
             guna2GradientPanel3.Name = "guna2GradientPanel3";
             guna2GradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2GradientPanel3.Size = new Size(436, 56);
@@ -188,7 +180,7 @@
             guna2GradientPanel4.Controls.Add(BirthdayLB);
             guna2GradientPanel4.Controls.Add(guna2HtmlLabel8);
             guna2GradientPanel4.CustomizableEdges = customizableEdges7;
-            guna2GradientPanel4.Location = new Point(39, 186);
+            guna2GradientPanel4.Location = new Point(42, 457);
             guna2GradientPanel4.Name = "guna2GradientPanel4";
             guna2GradientPanel4.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2GradientPanel4.Size = new Size(436, 56);
@@ -219,7 +211,7 @@
             guna2GradientPanel5.Controls.Add(DiachiLB);
             guna2GradientPanel5.Controls.Add(guna2HtmlLabel10);
             guna2GradientPanel5.CustomizableEdges = customizableEdges9;
-            guna2GradientPanel5.Location = new Point(39, 248);
+            guna2GradientPanel5.Location = new Point(3, 326);
             guna2GradientPanel5.Name = "guna2GradientPanel5";
             guna2GradientPanel5.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2GradientPanel5.Size = new Size(436, 56);
@@ -250,7 +242,7 @@
             guna2GradientPanel6.Controls.Add(SdtLB);
             guna2GradientPanel6.Controls.Add(guna2HtmlLabel12);
             guna2GradientPanel6.CustomizableEdges = customizableEdges11;
-            guna2GradientPanel6.Location = new Point(39, 310);
+            guna2GradientPanel6.Location = new Point(3, 457);
             guna2GradientPanel6.Name = "guna2GradientPanel6";
             guna2GradientPanel6.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2GradientPanel6.Size = new Size(436, 56);
@@ -281,7 +273,7 @@
             guna2GradientPanel7.Controls.Add(PhongLB);
             guna2GradientPanel7.Controls.Add(Guna2HtmlLabel);
             guna2GradientPanel7.CustomizableEdges = customizableEdges13;
-            guna2GradientPanel7.Location = new Point(39, 372);
+            guna2GradientPanel7.Location = new Point(3, 189);
             guna2GradientPanel7.Name = "guna2GradientPanel7";
             guna2GradientPanel7.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2GradientPanel7.Size = new Size(436, 56);
@@ -312,7 +304,7 @@
             guna2GradientPanel8.Controls.Add(TangLB);
             guna2GradientPanel8.Controls.Add(guna2HtmlLabel3);
             guna2GradientPanel8.CustomizableEdges = customizableEdges15;
-            guna2GradientPanel8.Location = new Point(39, 434);
+            guna2GradientPanel8.Location = new Point(3, 74);
             guna2GradientPanel8.Name = "guna2GradientPanel8";
             guna2GradientPanel8.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2GradientPanel8.Size = new Size(436, 56);
@@ -340,47 +332,17 @@
             // 
             // guna2GradientPanel9
             // 
-            guna2GradientPanel9.Controls.Add(ChangeImg_btn);
-            guna2GradientPanel9.Controls.Add(ImgSV_ptbox);
-            guna2GradientPanel9.CustomizableEdges = customizableEdges21;
+            guna2GradientPanel9.Controls.Add(guna2GradientPanel8);
+            guna2GradientPanel9.Controls.Add(guna2GradientPanel6);
+            guna2GradientPanel9.Controls.Add(guna2GradientPanel7);
+            guna2GradientPanel9.Controls.Add(guna2GradientPanel5);
+            guna2GradientPanel9.CustomizableEdges = customizableEdges17;
             guna2GradientPanel9.Dock = DockStyle.Right;
             guna2GradientPanel9.Location = new Point(481, 0);
             guna2GradientPanel9.Name = "guna2GradientPanel9";
-            guna2GradientPanel9.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2GradientPanel9.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2GradientPanel9.Size = new Size(522, 697);
             guna2GradientPanel9.TabIndex = 9;
-            // 
-            // ChangeImg_btn
-            // 
-            ChangeImg_btn.CustomizableEdges = customizableEdges17;
-            ChangeImg_btn.DisabledState.BorderColor = Color.DarkGray;
-            ChangeImg_btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            ChangeImg_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            ChangeImg_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            ChangeImg_btn.FillColor = Color.White;
-            ChangeImg_btn.Font = new Font("Segoe UI", 9F);
-            ChangeImg_btn.ForeColor = Color.Black;
-            ChangeImg_btn.Image = (Image)resources.GetObject("ChangeImg_btn.Image");
-            ChangeImg_btn.ImageAlign = HorizontalAlignment.Left;
-            ChangeImg_btn.Location = new Point(5, 316);
-            ChangeImg_btn.Name = "ChangeImg_btn";
-            ChangeImg_btn.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            ChangeImg_btn.Size = new Size(187, 45);
-            ChangeImg_btn.TabIndex = 10;
-            ChangeImg_btn.Text = "Thay đổi ảnh";
-            ChangeImg_btn.TextOffset = new Point(15, 0);
-            // 
-            // ImgSV_ptbox
-            // 
-            ImgSV_ptbox.CustomizableEdges = customizableEdges19;
-            ImgSV_ptbox.FillColor = Color.Silver;
-            ImgSV_ptbox.ImageRotate = 0F;
-            ImgSV_ptbox.Location = new Point(5, 100);
-            ImgSV_ptbox.Name = "ImgSV_ptbox";
-            ImgSV_ptbox.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            ImgSV_ptbox.Size = new Size(187, 210);
-            ImgSV_ptbox.TabIndex = 9;
-            ImgSV_ptbox.TabStop = false;
             // 
             // Information
             // 
@@ -388,10 +350,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1003, 697);
             Controls.Add(guna2GradientPanel9);
-            Controls.Add(guna2GradientPanel8);
-            Controls.Add(guna2GradientPanel7);
-            Controls.Add(guna2GradientPanel6);
-            Controls.Add(guna2GradientPanel5);
             Controls.Add(guna2GradientPanel4);
             Controls.Add(guna2GradientPanel3);
             Controls.Add(guna2GradientPanel2);
@@ -416,7 +374,6 @@
             guna2GradientPanel8.ResumeLayout(false);
             guna2GradientPanel8.PerformLayout();
             guna2GradientPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)ImgSV_ptbox).EndInit();
             ResumeLayout(false);
         }
 
@@ -447,7 +404,5 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel TangLB;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel9;
-        private Guna.UI2.WinForms.Guna2Button ChangeImg_btn;
-        private Guna.UI2.WinForms.Guna2PictureBox ImgSV_ptbox;
     }
 }

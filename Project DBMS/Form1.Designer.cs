@@ -52,7 +52,6 @@
             label2 = new Label();
             label3 = new Label();
             RegisterBT = new Guna.UI2.WinForms.Guna2Button();
-            Forget = new LinkLabel();
             label4 = new Label();
             label5 = new Label();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
@@ -193,19 +192,6 @@
             RegisterBT.Text = "Đăng Ký";
             RegisterBT.Click += RegisterBT_Click;
             // 
-            // Forget
-            // 
-            Forget.AutoSize = true;
-            Forget.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Forget.LinkColor = SystemColors.ControlText;
-            Forget.Location = new Point(781, 233);
-            Forget.Name = "Forget";
-            Forget.Size = new Size(112, 15);
-            Forget.TabIndex = 10;
-            Forget.TabStop = true;
-            Forget.Text = "Quên mật khẩu?";
-            Forget.LinkClicked += Forget_LinkClicked;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -275,7 +261,6 @@
             Controls.Add(guna2ControlBox1);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(Forget);
             Controls.Add(RegisterBT);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -303,7 +288,6 @@
         private Label label2;
         private Label label3;
         private Guna.UI2.WinForms.Guna2Button RegisterBT;
-        private LinkLabel Forget;
         private Label label4;
         private Label label5;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;

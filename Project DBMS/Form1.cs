@@ -25,13 +25,6 @@ namespace Project_DBMS
             this.Close();
         }
 
-        private void Forget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ForgetPassword FGPW = new ForgetPassword();
-            this.Hide();
-            FGPW.ShowDialog();
-            this.Close();
-        }
 
         private void LoginBT_Click(object sender, EventArgs e)
         {
@@ -41,6 +34,7 @@ namespace Project_DBMS
             {
                 if(Ktra(Taikhoan)=="QL")
                 {
+                    DataBase.Instance.DangNhap(Taikhoan, Matkhau);
                     fQuanLy fQuanLy = new fQuanLy();
                     fQuanLy.TextBoxValue = UserTB.Text;
                     this.Hide();
@@ -49,6 +43,7 @@ namespace Project_DBMS
                 }
                 else if(Ktra(Taikhoan)=="SV")
                 {
+                    DataBase.Instance.DangNhap(Taikhoan, Matkhau);
                     fSinhVien fSinhVien = new fSinhVien();
                     fSinhVien.TextBoxValue = UserTB.Text;
                     this.Hide();

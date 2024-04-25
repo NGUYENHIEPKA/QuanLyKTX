@@ -96,5 +96,10 @@ namespace Project_DBMS
             container(new fHoaDonDien());
             hideware();
         }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

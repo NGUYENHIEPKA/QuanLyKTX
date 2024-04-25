@@ -228,6 +228,7 @@
             LogOutBtn.TabIndex = 11;
             LogOutBtn.Text = "Đăng xuất";
             LogOutBtn.TextOffset = new Point(8, 0);
+            LogOutBtn.Click += LogOutBtn_Click;
             // 
             // RequestBtn
             // 

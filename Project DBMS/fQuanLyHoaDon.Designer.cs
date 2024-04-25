@@ -120,6 +120,7 @@
             // 
             money_tb.Location = new Point(86, 12);
             money_tb.Name = "money_tb";
+            money_tb.ReadOnly = true;
             money_tb.Size = new Size(106, 27);
             money_tb.TabIndex = 2;
             // 
@@ -287,6 +288,7 @@
             // 
             loaiHoaDon_tb.Location = new Point(112, 11);
             loaiHoaDon_tb.Name = "loaiHoaDon_tb";
+            loaiHoaDon_tb.ReadOnly = true;
             loaiHoaDon_tb.Size = new Size(140, 27);
             loaiHoaDon_tb.TabIndex = 1;
             // 
@@ -312,6 +314,7 @@
             // 
             phuongThucThanhToan_tb.Location = new Point(184, 12);
             phuongThucThanhToan_tb.Name = "phuongThucThanhToan_tb";
+            phuongThucThanhToan_tb.ReadOnly = true;
             phuongThucThanhToan_tb.Size = new Size(245, 27);
             phuongThucThanhToan_tb.TabIndex = 1;
             // 
@@ -337,6 +340,7 @@
             // 
             maPhong_tb.Location = new Point(109, 11);
             maPhong_tb.Name = "maPhong_tb";
+            maPhong_tb.ReadOnly = true;
             maPhong_tb.Size = new Size(140, 27);
             maPhong_tb.TabIndex = 2;
             // 
@@ -362,6 +366,7 @@
             // 
             maHoaDon_tb.Location = new Point(109, 12);
             maHoaDon_tb.Name = "maHoaDon_tb";
+            maHoaDon_tb.ReadOnly = true;
             maHoaDon_tb.Size = new Size(140, 27);
             maHoaDon_tb.TabIndex = 1;
             // 

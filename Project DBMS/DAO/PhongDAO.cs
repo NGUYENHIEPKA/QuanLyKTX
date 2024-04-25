@@ -24,7 +24,7 @@ namespace Project_DBMS.DAO
         {
             //select từ hai bảng!!!
             string query = "SELECT Phong.*, LoaiPhong.GiaTien\r\n" +
-                "FROM Phong\r\n" +
+               "FROM Phong\r\n" +
                 "JOIN LoaiPhong ON Phong.MaLoaiPhong = LoaiPhong.MaLoaiPhong;\r\n";
 
             DataTable data = DataBase.Instance.Execute(query);

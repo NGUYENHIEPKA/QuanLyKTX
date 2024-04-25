@@ -41,29 +41,6 @@ namespace Project_DBMS
             }
         }
 
-        private void ChangeImg_btn_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-
-                openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG;)|*.BMP;*.JPG;*.GIF;*.PNG;";
-                openFileDialog.Title = "Chọn ảnh";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK) //Chưa cập nhật hình ảnh vào lại database
-                {
-                    try
-                    {
-                        ImgQL_ptbox.Image = new System.Drawing.Bitmap(openFileDialog.FileName);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Không thể mở tập tin: " + ex.Message);
-                    }
-                }
-            }
-        }
 
         private void guna2ImageRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
