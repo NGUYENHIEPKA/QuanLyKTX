@@ -229,7 +229,90 @@ BEGIN
 		insert into SinhVien (MaSV, HoTen, NgaySinh, GioiTinh, DiaChi, SDT) values (@MaSV, @HoTen, @NgaySinh, @GioiTinh, @DiaChi, @SDT)
 	END
 END
-	
+
+create trigger [dbo].[Trigger_CreateSQLAccount] on [dbo].[TaiKhoan]
+after insert
+as
+declare @username nvarchar(30), @passWord nvarchar(10)
+select @username = TaiKhoan, @passWord = MatKhau from inserted
+begin
+	declare @sqlString nvarchar(2000)
+	set @sqlString = 'CREATE LOGIN [' + @userName +'] WITH PASSWORD='''+ @passWord +''', DEFAULT_DATABASE=[QuanLyKTX], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF'
+	EXEC (@sqlString)
+
+	SET @sqlString= 'CREATE USER ' + @userName +' FOR LOGIN '+ @userName
+	EXEC (@sqlString)
+
+	SET @sqlString= 'ALTER ROLE SinhVien ADD MEMBER ['+ @userName +'];'
+	EXEC (@sqlString)
+end
+
+create trigger [dbo].[Trigger_Updatepass] on [dbo].[TaiKhoan] 
+after update 
+AS
+BEGIN
+	declare @MatKhauCu nvarchar(10),@MatKhauMoi1 nvarchar(10),@MatKhauMoi2 nvarchar(10),@TaiKhoan  nvarchar(30)
+	select @TaiKhoan = TaiKhoan, @MatKhauCu = MatKhau from inserted
+    IF @MatKhauCu = '' OR @MatKhauMoi1 = '' OR @MatKhauMoi2 = ''
+    BEGIN
+        RAISERROR ('Vui lòng nhập đầy đủ', 16, 1)
+        RETURN;
+    END
+	IF NOT EXISTS (SELECT 1 FROM TaiKhoan WHERE TaiKhoan = @TaiKhoan AND MatKhau = @MatKhauCu)
+	BEGIN
+		RAISERROR ('Nhập sai mật khẩu cũ', 16, 1)
+		RETURN;
+	END
+    IF @MatKhauMoi1 <> @MatKhauMoi2
+    BEGIN
+        RAISERROR ('Hai mật khẩu mới không trùng nhau', 16, 1)
+        RETURN;
+    END
+	IF @MatKhauCu = @MatKhauMoi1
+	BEGIN
+        RAISERROR ('Hai mật khẩu mới và cũ trùng nhau', 16, 1)
+		RETURN;
+	END
+    DECLARE @sqlString NVARCHAR(MAX);
+	SET @sqlString = 'ALTER LOGIN [' + @TaiKhoan + '] WITH PASSWORD = ''' + @MatKhauMoi1 + '''';
+
+	EXEC (@sqlString);
+END
+
+create proc Updatepass 
+@TaiKhoan NVARCHAR(100),
+@MatKhauCu NVARCHAR(100),
+@MatKhauMoi1 NVARCHAR(100),
+@MatKhauMoi2 NVARCHAR(100)
+AS
+BEGIN
+    IF @MatKhauCu = '' OR @MatKhauMoi1 = '' OR @MatKhauMoi2 = ''
+    BEGIN
+        RAISERROR ('Vui lòng nhập đầy đủ', 16, 1)
+        RETURN;
+    END
+	IF NOT EXISTS (SELECT 1 FROM TaiKhoan WHERE TaiKhoan = @TaiKhoan AND MatKhau = @MatKhauCu)
+	BEGIN
+		RAISERROR ('Nhập sai mật khẩu cũ', 16, 1)
+		RETURN;
+	END
+    IF @MatKhauMoi1 <> @MatKhauMoi2
+    BEGIN
+        RAISERROR ('Hai mật khẩu mới không trùng nhau', 16, 1)
+        RETURN;
+    END
+	IF @MatKhauCu = @MatKhauMoi1
+	BEGIN
+        RAISERROR ('Hai mật khẩu mới và cũ trùng nhau', 16, 1)
+		RETURN;
+	END
+
+    DECLARE @sqlString NVARCHAR(MAX);
+    SET @sqlString = 'ALTER LOGIN [' + @TaiKhoan + '] WITH PASSWORD = ''' + @MatKhauMoi1 + '''';
+
+    EXEC (@sqlString);
+END
+
 CREATE PROC UTP_ThemSinhVien
 @MaSV CHAR(8),
 @HoTen NVARCHAR(100),
@@ -591,3 +674,21 @@ INSERT INTO TaiKhoan(TaiKhoan, MatKhau, loai) VALUES
 ('SV003','SV003',1),
 ('SV004','SV004',1),
 ('SV005','SV005',1)
+
+
+-- Phân quyền
+use QuanLyKTX
+CREATE ROLE SinhVien;
+GRANT SELECT ON dbo.SinhVien TO SinhVien;
+GRANT SELECT ON dbo.HoaDon TO SinhVien;
+GRANT EXECUTE ON UTP_DoiMatKhau TO SinhVien;
+
+use QuanLyKTX
+CREATE ROLE QuanLy AUTHORIZATION dbo;
+GRANT SELECT, INSERT, UPDATE, DELETE ON SinhVien TO QuanLy;
+GRANT SELECT, INSERT, UPDATE, DELETE ON Tang TO QuanLy;
+GRANT SELECT, INSERT, UPDATE, DELETE ON Phong TO QuanLy;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TienDien TO QuanLy;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TienNuoc TO QuanLy;
+GRANT SELECT, INSERT, UPDATE, DELETE ON HoaDon TO QuanLy;
+GRANT EXECUTE TO QuanLy
