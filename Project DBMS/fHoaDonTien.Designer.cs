@@ -33,10 +33,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -52,8 +48,6 @@
             oldNum_tb = new TextBox();
             label1 = new Label();
             Renew_Btn = new Guna.UI2.WinForms.Guna2Button();
-            Delete_Btn = new Guna.UI2.WinForms.Guna2Button();
-            Edit_Btn = new Guna.UI2.WinForms.Guna2Button();
             Add_Btn = new Guna.UI2.WinForms.Guna2Button();
             panel7 = new Panel();
             CreateDay_Date = new DateTimePicker();
@@ -84,8 +78,6 @@
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(Renew_Btn);
-            panel1.Controls.Add(Delete_Btn);
-            panel1.Controls.Add(Edit_Btn);
             panel1.Controls.Add(Add_Btn);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel4);
@@ -101,7 +93,7 @@
             panel6.Controls.Add(label3);
             panel6.Location = new Point(544, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(266, 57);
+            panel6.Size = new Size(266, 56);
             panel6.TabIndex = 4;
             // 
             // money_tb
@@ -182,7 +174,7 @@
             Renew_Btn.ForeColor = Color.Black;
             Renew_Btn.Image = (Image)resources.GetObject("Renew_Btn.Image");
             Renew_Btn.ImageAlign = HorizontalAlignment.Left;
-            Renew_Btn.Location = new Point(844, 69);
+            Renew_Btn.Location = new Point(843, 70);
             Renew_Btn.Name = "Renew_Btn";
             Renew_Btn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             Renew_Btn.Size = new Size(123, 45);
@@ -190,47 +182,9 @@
             Renew_Btn.Text = "Renew";
             Renew_Btn.Click += Renew_Btn_Click;
             // 
-            // Delete_Btn
-            // 
-            Delete_Btn.CustomizableEdges = customizableEdges3;
-            Delete_Btn.DisabledState.BorderColor = Color.DarkGray;
-            Delete_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            Delete_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Delete_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Delete_Btn.FillColor = Color.White;
-            Delete_Btn.Font = new Font("Segoe UI", 9F);
-            Delete_Btn.ForeColor = Color.Black;
-            Delete_Btn.Image = (Image)resources.GetObject("Delete_Btn.Image");
-            Delete_Btn.ImageAlign = HorizontalAlignment.Left;
-            Delete_Btn.Location = new Point(844, 3);
-            Delete_Btn.Name = "Delete_Btn";
-            Delete_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            Delete_Btn.Size = new Size(123, 45);
-            Delete_Btn.TabIndex = 6;
-            Delete_Btn.Text = "Xóa";
-            // 
-            // Edit_Btn
-            // 
-            Edit_Btn.CustomizableEdges = customizableEdges5;
-            Edit_Btn.DisabledState.BorderColor = Color.DarkGray;
-            Edit_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            Edit_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Edit_Btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Edit_Btn.FillColor = Color.White;
-            Edit_Btn.Font = new Font("Segoe UI", 9F);
-            Edit_Btn.ForeColor = Color.Black;
-            Edit_Btn.Image = (Image)resources.GetObject("Edit_Btn.Image");
-            Edit_Btn.ImageAlign = HorizontalAlignment.Left;
-            Edit_Btn.Location = new Point(687, 70);
-            Edit_Btn.Name = "Edit_Btn";
-            Edit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Edit_Btn.Size = new Size(123, 45);
-            Edit_Btn.TabIndex = 5;
-            Edit_Btn.Text = "Sửa";
-            // 
             // Add_Btn
             // 
-            Add_Btn.CustomizableEdges = customizableEdges7;
+            Add_Btn.CustomizableEdges = customizableEdges3;
             Add_Btn.DisabledState.BorderColor = Color.DarkGray;
             Add_Btn.DisabledState.CustomBorderColor = Color.DarkGray;
             Add_Btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -240,9 +194,9 @@
             Add_Btn.ForeColor = Color.Black;
             Add_Btn.Image = (Image)resources.GetObject("Add_Btn.Image");
             Add_Btn.ImageAlign = HorizontalAlignment.Left;
-            Add_Btn.Location = new Point(544, 69);
+            Add_Btn.Location = new Point(638, 70);
             Add_Btn.Name = "Add_Btn";
-            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Add_Btn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Add_Btn.Size = new Size(123, 45);
             Add_Btn.TabIndex = 4;
             Add_Btn.Text = "Thêm";
@@ -424,8 +378,6 @@
         private TextBox oldNum_tb;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button Renew_Btn;
-        private Guna.UI2.WinForms.Guna2Button Delete_Btn;
-        private Guna.UI2.WinForms.Guna2Button Edit_Btn;
         private Guna.UI2.WinForms.Guna2Button Add_Btn;
         private Panel panel7;
         private DateTimePicker CreateDay_Date;

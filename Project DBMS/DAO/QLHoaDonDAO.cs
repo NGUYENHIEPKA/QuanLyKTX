@@ -96,12 +96,12 @@ namespace Project_DBMS.DAO
 
             }
         }
-        public void DeleteHoaDon (string MaHoaDon)
+        public void DeleteHoaDon (string MaHoaDon, string NgayTaoHoaDon)
         {
-            string query = "DeleteHoaDon @MaHoaDon";
+            string query = "DeleteHoaDon @MaHoaDon , @NgayTaoHoaDon";
             try
             {
-                DataBase.Instance.ExecuteNonQuery(query, new object[] { MaHoaDon });
+                DataBase.Instance.ExecuteNonQuery(query, new object[] { MaHoaDon, NgayTaoHoaDon });
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
             }
             catch (SqlException ex)
@@ -109,6 +109,14 @@ namespace Project_DBMS.DAO
                 MessageBox.Show("Error :" + ex.Message, "Message");
 
             }
+        }
+        public DataTable GetMaxIDBill()
+        {
+            string query = "select MAX(MaHoaDon) from HoaDon";
+
+            DataTable dt = DataBase.Instance.Execute(query);
+
+            return dt;
         }
     }
 }

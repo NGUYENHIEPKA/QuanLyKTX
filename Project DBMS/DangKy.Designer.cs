@@ -38,8 +38,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,11 +48,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             MSSVTB = new Guna.UI2.WinForms.Guna2TextBox();
             NameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            BirthDayTB = new Guna.UI2.WinForms.Guna2TextBox();
             CreateBT = new Guna.UI2.WinForms.Guna2Button();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(components);
@@ -63,6 +62,7 @@
             GioiTinhTB = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            birthday_date = new Guna.UI2.WinForms.Guna2DateTimePicker();
             SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -127,7 +127,7 @@
             NameTB.Location = new Point(599, 117);
             NameTB.Margin = new Padding(3, 4, 3, 4);
             NameTB.Name = "NameTB";
-            NameTB.PasswordChar = '•';
+            NameTB.PasswordChar = '\0';
             NameTB.PlaceholderText = "Họ tên";
             NameTB.SelectedText = "";
             NameTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -135,35 +135,11 @@
             NameTB.TabIndex = 4;
             NameTB.TextOffset = new Point(10, 0);
             // 
-            // BirthDayTB
-            // 
-            BirthDayTB.AutoRoundedCorners = true;
-            BirthDayTB.BorderRadius = 22;
-            BirthDayTB.CustomizableEdges = customizableEdges7;
-            BirthDayTB.DefaultText = "";
-            BirthDayTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            BirthDayTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            BirthDayTB.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            BirthDayTB.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            BirthDayTB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            BirthDayTB.Font = new Font("Segoe UI", 9F);
-            BirthDayTB.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            BirthDayTB.Location = new Point(599, 227);
-            BirthDayTB.Margin = new Padding(3, 4, 3, 4);
-            BirthDayTB.Name = "BirthDayTB";
-            BirthDayTB.PasswordChar = '\0';
-            BirthDayTB.PlaceholderText = "Ngày Sinh";
-            BirthDayTB.SelectedText = "";
-            BirthDayTB.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            BirthDayTB.Size = new Size(305, 47);
-            BirthDayTB.TabIndex = 5;
-            BirthDayTB.TextOffset = new Point(10, 0);
-            // 
             // CreateBT
             // 
             CreateBT.AutoRoundedCorners = true;
             CreateBT.BorderRadius = 19;
-            CreateBT.CustomizableEdges = customizableEdges9;
+            CreateBT.CustomizableEdges = customizableEdges7;
             CreateBT.DisabledState.BorderColor = Color.DarkGray;
             CreateBT.DisabledState.CustomBorderColor = Color.DarkGray;
             CreateBT.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -173,10 +149,11 @@
             CreateBT.ForeColor = Color.White;
             CreateBT.Location = new Point(682, 406);
             CreateBT.Name = "CreateBT";
-            CreateBT.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            CreateBT.ShadowDecoration.CustomizableEdges = customizableEdges8;
             CreateBT.Size = new Size(144, 40);
             CreateBT.TabIndex = 6;
             CreateBT.Text = "Đăng ký ";
+            CreateBT.Click += CreateBT_Click;
             // 
             // guna2DragControl1
             // 
@@ -287,19 +264,37 @@
             guna2ControlBox2.Size = new Size(26, 27);
             guna2ControlBox2.TabIndex = 15;
             // 
+            // birthday_date
+            // 
+            birthday_date.BorderRadius = 22;
+            birthday_date.Checked = true;
+            birthday_date.CustomFormat = "yyyy-MM-dd";
+            birthday_date.CustomizableEdges = customizableEdges9;
+            birthday_date.FillColor = SystemColors.HighlightText;
+            birthday_date.Font = new Font("Segoe UI", 9F);
+            birthday_date.Format = DateTimePickerFormat.Custom;
+            birthday_date.Location = new Point(599, 226);
+            birthday_date.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            birthday_date.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            birthday_date.Name = "birthday_date";
+            birthday_date.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            birthday_date.Size = new Size(305, 50);
+            birthday_date.TabIndex = 16;
+            birthday_date.Value = new DateTime(2024, 4, 24, 22, 44, 23, 476);
+            // 
             // DangKy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 246, 227);
             ClientSize = new Size(950, 530);
+            Controls.Add(birthday_date);
             Controls.Add(guna2ControlBox2);
             Controls.Add(guna2ControlBox1);
             Controls.Add(CreateBT);
             Controls.Add(GioiTinhTB);
             Controls.Add(SDTTB);
             Controls.Add(DiaChiTB);
-            Controls.Add(BirthDayTB);
             Controls.Add(NameTB);
             Controls.Add(MSSVTB);
             Controls.Add(guna2HtmlLabel1);
@@ -318,7 +313,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox MSSVTB;
         private Guna.UI2.WinForms.Guna2TextBox NameTB;
-        private Guna.UI2.WinForms.Guna2TextBox BirthDayTB;
         private Guna.UI2.WinForms.Guna2Button CreateBT;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
@@ -327,5 +321,6 @@
         private Guna.UI2.WinForms.Guna2TextBox GioiTinhTB;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker birthday_date;
     }
 }

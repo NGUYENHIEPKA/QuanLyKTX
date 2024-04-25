@@ -76,7 +76,7 @@
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             label_value = new Label();
             guna2Panel_container = new Guna.UI2.WinForms.Guna2Panel();
-            guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
+            guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(components);
             guna2Panel_Right.SuspendLayout();
             panelbill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -413,11 +413,11 @@
             guna2Panel_container.Size = new Size(1003, 697);
             guna2Panel_container.TabIndex = 3;
             // 
-            // guna2DragControl1
+            // guna2DragControl2
             // 
-            guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            guna2DragControl1.TargetControl = this;
-            guna2DragControl1.UseTransparentDrag = true;
+            guna2DragControl2.DockIndicatorTransparencyValue = 0.6D;
+            guna2DragControl2.TargetControl = guna2Panel1;
+            guna2DragControl2.UseTransparentDrag = true;
             // 
             // fQuanLy
             // 
@@ -454,10 +454,10 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Panel panelbill;
         private Guna.UI2.WinForms.Guna2Button WaterBill_Btn;
         private Guna.UI2.WinForms.Guna2Button SumBill_Btn;
         private Guna.UI2.WinForms.Guna2Button ElectricBill_Btn;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
     }
 }
