@@ -45,7 +45,7 @@ namespace Project_DBMS
             {
                 TrangThai = 0;
             }
-            QLHoaDonDAO.Instance.UpdateHoaDon(MaHoaDon, TrangThai);
+            QLHoaDonDAO.Instance.UpdateHoaDon(MaHoaDon, this.TrangThai);
             this.Close();
         }
     }

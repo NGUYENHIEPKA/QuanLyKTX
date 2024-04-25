@@ -177,6 +177,7 @@
             CreateBT.Size = new Size(144, 40);
             CreateBT.TabIndex = 6;
             CreateBT.Text = "Đăng ký ";
+            CreateBT.Click += CreateBT_Click;
             // 
             // guna2DragControl1
             // 

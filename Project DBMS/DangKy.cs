@@ -21,5 +21,10 @@ namespace Project_DBMS
         {
 
         }
+
+        private void CreateBT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
