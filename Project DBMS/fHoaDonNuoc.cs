@@ -58,5 +58,18 @@ namespace Project_DBMS
             Load();
             Binding();
         }
+
+        private void Delete_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Edit_Btn_Click(object sender, EventArgs e)
+        {
+            string MaPhong = MaPhong_tb.Text;
+            string SoNuocCu = oldNum_tb.Text;
+            string SoNuocMoi = newNum_tb.Text;
+            
+        }
     }
 }

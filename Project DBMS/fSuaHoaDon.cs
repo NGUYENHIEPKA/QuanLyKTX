@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Project_DBMS
 {
@@ -33,10 +32,9 @@ namespace Project_DBMS
                 unThanhToan_check.Checked = true;
             }
         }
-
-        private void Add_Btn_Click(object sender, EventArgs e)
+        private void Add_Btn_Click_1(object sender, EventArgs e)
         {
-            int TrangThai;
+            int TrangThai = this.TrangThai;
             if (thanhToan_check.Checked)
             {
                 TrangThai = 1;

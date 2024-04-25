@@ -34,6 +34,14 @@ namespace Project_DBMS
                 SdtLB.Text = row["SDT"].ToString();
                 PhongLB.Text = row["MaPhong"].ToString();
                 TangLB.Text = row["MaTang"].ToString();
+
+                byte[] imageData = (byte[])row["HinhAnh"];
+                Image image;
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    image = Image.FromStream(ms);
+                }
+                ImgSV_ptbox.Image = image;
             }
             else
             {

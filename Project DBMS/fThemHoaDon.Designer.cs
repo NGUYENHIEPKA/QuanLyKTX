@@ -83,6 +83,7 @@
             // 
             maHoaDon_tb.Location = new Point(219, 10);
             maHoaDon_tb.Name = "maHoaDon_tb";
+            maHoaDon_tb.ReadOnly = true;
             maHoaDon_tb.Size = new Size(228, 27);
             maHoaDon_tb.TabIndex = 1;
             // 

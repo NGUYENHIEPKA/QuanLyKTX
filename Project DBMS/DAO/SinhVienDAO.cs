@@ -76,5 +76,17 @@ namespace Project_DBMS.DAO
                 MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
             }
         }
+        public void DangKySinhVien (string MaSoSV ,string HoTen, string GioiTinh, string NgaySinh, string Address, string Sdt)
+        {
+            string query = "DangKyTaiKhoanSinhVien @MaSV , @HoTen , @GioiTinh , @NgaySinh , @DiaChi , @SDT";
+            try
+            {
+                DataBase.Instance.ExecuteNonQuery(query, new object[] { MaSoSV, HoTen, GioiTinh, NgaySinh, Address, Sdt });
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
+            }
+        }
     }
 }

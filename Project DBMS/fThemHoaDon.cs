@@ -18,27 +18,14 @@ namespace Project_DBMS
         public fThemHoaDon()
         {
             InitializeComponent();
-            LoadInvoiceNumber();
+            Load();
         }
-        private void LoadInvoiceNumber()
+        void Load()
         {
-            if (usedInvoiceNumbers.Count > 0)
-            {
-                nextInvoiceNumber = usedInvoiceNumbers.Max() + 1;
-            }
-            maHoaDon_tb.Text = nextInvoiceNumber.ToString();
-        }
-        private void SaveInvoiceNumber(int invoiceNumber)
-        {
-            usedInvoiceNumbers.Add(invoiceNumber);
-        }
-        private void CreateInvoice()
-        {
-            SaveInvoiceNumber(nextInvoiceNumber);
-
-            nextInvoiceNumber++;
-
-            maHoaDon_tb.Text = nextInvoiceNumber.ToString();
+            DataTable dt = QLHoaDonDAO.Instance.GetMaxIDBill();
+            int tmp = int.Parse(dt.Rows[0][0].ToString());
+            tmp += 1;
+            maHoaDon_tb.Text = tmp.ToString();
         }
         private void Add_Btn_Click(object sender, EventArgs e)
         {
@@ -54,7 +41,6 @@ namespace Project_DBMS
             else
             {
                 QLHoaDonDAO.Instance.InsertTongHoaDon(MaHoaDon, MaPhong, PhuongThucThanhToan, LoaiHoaDon, NgayTaoHoaDon);
-                CreateInvoice();
                 this.Close();
             }
         }

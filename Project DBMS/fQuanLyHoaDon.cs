@@ -84,7 +84,8 @@ namespace Project_DBMS
         private void Delete_Btn_Click(object sender, EventArgs e)
         {
             string MaHoaDon = maHoaDon_tb.Text;
-            QLHoaDonDAO.Instance.DeleteHoaDon(MaHoaDon);
+            string NgayTaoHoaDon = NgayTao_Date.Text;
+            QLHoaDonDAO.Instance.DeleteHoaDon(MaHoaDon, NgayTaoHoaDon);
             ShowListHoaDon();
             Binding();
         }
