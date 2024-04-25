@@ -156,8 +156,8 @@ AS
 BEGIN 
 	DECLARE @TienDien FLOAT, @TienNuoc FLOAT, @MaPhong NVARCHAR(5), @NgayTaoHoaDon DATE
 	SELECT @MaPhong = MaPhong, @NgayTaoHoaDon = NgayTaoHoaDon FROM INSERTED
-	SELECT @TienDien = TienDien FROM TienDien WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
-	SELECT @TienNuoc = TienNuoc FROM TienNuoc WHERE MaPhong = @MaPhong AND NgayLapBieu = @NgayTaoHoaDon
+	SELECT @TienDien = TienDien FROM TienDien WHERE MaPhong = @MaPhong AND MONTH(NgayLapBieu) = MONTH(@NgayTaoHoaDon)
+	SELECT @TienNuoc = TienNuoc FROM TienNuoc WHERE MaPhong = @MaPhong AND MONTH(NgayLapBieu) = MONTH(@NgayTaoHoaDon)
 	DECLARE @TongTien FLOAT = @TienDien + @TienNuoc
 	UPDATE HoaDon SET SoTien = @TongTien WHERE MaPhong = @MaPhong and NgayTaoHoaDon = @NgayTaoHoaDon
 END
@@ -212,6 +212,24 @@ RETURN(
 )
 GO
 -- Thủ tục
+create proc DangKyTaiKhoanSinhVien
+@MaSV CHAR(8),
+@HoTen NVARCHAR(100),
+@GioiTinh NVARCHAR(3),
+@NgaySinh DATE,
+@DiaChi NVARCHAR(100),
+@SDT CHAR(10)
+AS 
+BEGIN
+	IF EXISTS (Select 1 from TaiKhoan where TaiKhoan = @MaSV)
+		RAISERROR('Đã có tài khoản.', 16, 1)
+	ELSE
+	BEGIN
+		insert into TaiKhoan (TaiKhoan, MatKhau, Loai) values (@MaSV, @MaSV, 1)
+		insert into SinhVien (MaSV, HoTen, NgaySinh, GioiTinh, DiaChi, SDT) values (@MaSV, @HoTen, @NgaySinh, @GioiTinh, @DiaChi, @SDT)
+	END
+END
+	
 CREATE PROC UTP_ThemSinhVien
 @MaSV CHAR(8),
 @HoTen NVARCHAR(100),
@@ -276,6 +294,7 @@ BEGIN
 	IF EXISTS (SELECT 1 FROM SinhVien WHERE MaSV = @MaSV)
 	BEGIN
 		DELETE FROM SinhVien WHERE MaSV = @MaSV
+		DELETE FROM TaiKhoan WHERE TaiKhoan = @MaSV
 	END
 	ELSE
 	BEGIN
@@ -431,11 +450,14 @@ BEGIN
 END
 
 create proc DeleteHoaDon
-@MaHoaDon nvarchar(5)
+@MaHoaDon nvarchar(5),
+@NgayTaoHoaDon DATE
 as
 begin
 	IF EXISTS (SELECT 1 FROM HoaDon WHERE MaHoaDon = @MaHoaDon)
 	BEGIN
+		delete from TienDien where MONTH(NgayLapBieu) = MONTH(@NgayTaoHoaDon) AND YEAR(NgayLapBieu) = YEAR (NgayLapBieu)
+		delete from TienNuoc where MONTH(NgayLapBieu) = MONTH(@NgayTaoHoaDon) AND YEAR(NgayLapBieu) = YEAR (NgayLapBieu)
 		delete from HoaDon where MaHoaDon = @MaHoaDon
 	END
 	ELSE
