@@ -211,6 +211,16 @@ RETURN(
 	SELECT * FROM Phong
 )
 GO
+	
+CREATE FUNCTION GetMaxIdBill()
+RETURNS INT
+AS
+BEGIN
+    DECLARE @MaxId INT
+    SELECT @MaxId = MAX(MaHoaDon) FROM HoaDon
+    RETURN @MaxId
+END
+
 -- Thủ tục
 create proc DangKyTaiKhoanSinhVien
 @MaSV CHAR(8),
